@@ -16,8 +16,10 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Route files
+const reservations = require("./routes/Reservations");
 
 // Mount routers
+app.use("/api/v1/reservations", reservations);
 
 const PORT = 5002;
 
