@@ -16,8 +16,10 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Route files
+const movies = require('./routes/movies');
 
 // Mount routers
+app.use('/api/v1/movies', movies);
 
 const PORT = process.env.PORT || 5004;
 
