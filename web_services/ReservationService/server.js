@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const connectDB = require("./common/database")();
-const dotenv = require("dotenv").config();
+require("./common/database")();
+require("dotenv").config();
 
 const app = express();
 

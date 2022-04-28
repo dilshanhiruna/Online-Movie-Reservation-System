@@ -5,8 +5,10 @@ const {
   getReservations,
   getReservation,
   addReservation,
-} = require("../models/Reservation");
+} = require("../controllers/Reservations");
 
 router.get("/", getReservations);
 router.get("/:id", getReservation);
 router.post("/", addReservation);
+
+module.exports = router;
