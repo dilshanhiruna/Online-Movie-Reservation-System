@@ -16,8 +16,10 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Route files
+const theater = require("./routes/Theater");
 
 // Mount routers
+app.use("/api/v1/",theater);
 
 const PORT = 5001;
 
