@@ -18,10 +18,12 @@ app.use(cookieParser());
 // Route files
 const movies = require("./routes/Movies");
 const reservations = require("./routes/Reservations");
+const theater = require("./routes/Theater");
 
 // Mount routers
 app.use("/api/v1/movies", movies);
 app.use("/api/v1/reservations", reservations);
+app.use("/api/v1/",theater);
 
 const PORT = 5000;
 
