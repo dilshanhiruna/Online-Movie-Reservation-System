@@ -12,11 +12,11 @@ const Theater = new  Schema({
         require: true,
       },
       showDates: {
-        type: String,
+        type: [String],
         //monday..
       },
       showTime: {
-        type: String,
+        type: [String],
       },
       theaterArea:{
         type: String,
