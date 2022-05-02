@@ -11,14 +11,15 @@ const Theater = new  Schema({
         type: String,
         require: true,
       },
-      showDates: {
-        type: [String],
-        //monday..
+      // show:[{
+      //   MovieID:{type : mongoose.Schema.Types.ObjectId, ref:'Movie'},
+      //   ShowDate:{type:String},
+      //   ShowTime:{type:String},
+      // }],
+      seatPrice:{
+        type:Number,
       },
-      showTime: {
-        type: [String],
-      },
-      theaterArea:{
+      location:{
         type: String,
       },
 });

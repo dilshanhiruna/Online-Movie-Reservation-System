@@ -13,7 +13,7 @@ const {
   router.get("/:id", getTheater);
   router.post("/", addTheater);
   router.put("/:id", updateTheater);
-  router.post("/", deleteTheater);
+  router.delete("/delete/:id", deleteTheater);
   
   module.exports = router;
   

@@ -4,15 +4,15 @@ const Theater = require("../models/Theater");
 //@route  POST /api/v1/theater
 //@access Public
 exports.addTheater = async (req, res) => {
-    const { theaterID, theaterName, showDates, showTime, theaterArea } =
+    const { theaterID, theaterName, seatPrice, location } =
       req.body;
     try {
       const theater = await Theater.create({
           theaterID,
           theaterName,
-          showDates,
-          showTime,
-          theaterArea,
+          // show:{MovieID,ShowDate,ShowTime},
+          seatPrice,
+          location,
       });
       return res.status(201).json({
         success: true,
