@@ -1,0 +1,29 @@
+.res_component {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px;
+  padding: 0px 40px;
+}
+.res_movie__poster {
+  width: 100%;
+  /* background-color: orange; */
+}
+.res_details {
+  /* background-color: aqua; */
+  min-width: 60%;
+}
+.res_details h1 {
+  font-size: 40px;
+  margin: 0px;
+}
+.res_details__input {
+  display: flex;
+  margin: 25px;
+}
+.res_details__input p {
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  width: 30%;
+}

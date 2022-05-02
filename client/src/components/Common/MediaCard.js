@@ -8,8 +8,8 @@ import Typography from "@mui/material/Typography";
 
 export default function MediaCard({ title, description, btn1, btn2, image }) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia component="img" height="250" image={image} />
+    <Card sx={{ maxWidth: 350 }}>
+      <CardMedia component="img" height="450" image={image} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {title}
