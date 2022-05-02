@@ -20,6 +20,7 @@ function App() {
         {userType === "SysAdmin" ? <SysAdmin /> : ""}
         {userType === "movAdmin" ? <MovAdmin /> : ""}
         {userType === "customer" ? <Customer /> : ""}
+        <Redirect to="/404" />
       </BrowserRouter>
     </div>
   );
