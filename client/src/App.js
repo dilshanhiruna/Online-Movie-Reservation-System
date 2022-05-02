@@ -14,13 +14,17 @@ import SysAdmin from "./routes/SysAdmin";
 function App() {
   const [userType, setUserType] = useState("customer");
   //TODO: Check the user and set user type
+  const Page404 = () => {
+    return <h1>Page not found!</h1>;
+  };
   return (
     <div className="App">
       <BrowserRouter>
-        {userType === "SysAdmin" ? <SysAdmin /> : ""}
-        {userType === "movAdmin" ? <MovAdmin /> : ""}
-        {userType === "customer" ? <Customer /> : ""}
-        <Redirect to="/404" />
+        <Switch>
+          {userType === "SysAdmin" ? <SysAdmin /> : ""}
+          {userType === "movAdmin" ? <MovAdmin /> : ""}
+          {userType === "customer" ? <Customer /> : ""}
+        </Switch>
       </BrowserRouter>
     </div>
   );
