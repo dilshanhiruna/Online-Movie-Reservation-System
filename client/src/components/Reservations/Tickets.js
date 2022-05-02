@@ -37,19 +37,19 @@ export default function Tickets() {
         <div>
           <div className="tickets__details">
             <span>Movie: </span>
-            <Chip label={Reservation.movieName} variant="outlined" />
+            <Chip label={Reservation.movieName} />
           </div>
           <div className="tickets__details">
             <span>Tickets: </span>
-            <Chip label={Reservation.noOfTickets} variant="outlined" />
+            <Chip label={Reservation.noOfTickets} />
           </div>
           <div className="tickets__details">
             <span>Theater: </span>
-            <Chip label={Reservation.theaterName} variant="outlined" />
+            <Chip label={Reservation.theaterName} />
           </div>
           <div className="tickets__details">
             <span>Total Price: </span>
-            <Chip label={Reservation.totalPrice} variant="outlined" />
+            <Chip label={`LKR ${Reservation.totalPrice}`} />
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function Tickets() {
             <CardMedia
               component="img"
               height="240"
-              image="https://www.investopedia.com/thmb/ZG1jKEKttKbiHi0EkM8yJCJp6TU=/1148x1148/filters:no_upscale():max_bytes(150000):strip_icc()/qr-code-bc94057f452f4806af70fd34540f72ad.png"
+              image={ticket.qr}
               alt="green iguana"
             />
             <CardContent>

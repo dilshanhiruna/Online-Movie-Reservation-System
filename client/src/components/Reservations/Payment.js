@@ -4,8 +4,10 @@ import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import "./Payment.css";
 import Swal from "sweetalert2";
+import Axios from "axios";
 
 export default function Payment(props) {
+  const API = process.env.REACT_APP_API;
   const {
     handleClose,
     cardNumber,
@@ -30,14 +32,33 @@ export default function Payment(props) {
       cardName.length !== 0
     ) {
       handleClose();
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Payment Successful",
-        showConfirmButton: false,
-        timer: 1500,
+
+      const data = {
+        cardNumber,
+        cardName,
+        cardExpiry,
+        cardCvc,
+      };
+
+      //check payment
+      Axios.post(`${API}api/v1/payment`, data).then((res) => {
+        if (res.data.success) {
+          Swal.fire({
+            title: "Payment Successful",
+            text: "Your payment was successful",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+          DoReservation();
+        } else {
+          Swal.fire({
+            title: "Payment Failed",
+            text: "Your payment was failed",
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+        }
       });
-      DoReservation();
     }
   };
 

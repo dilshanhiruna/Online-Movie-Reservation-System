@@ -15,6 +15,7 @@ import {
 import { Box } from "@mui/system";
 import Payment from "./Payment";
 import { useHistory } from "react-router";
+import QRCode from "qrcode";
 
 export default function Reservations({ userID, movieID }) {
   let history = useHistory();
@@ -27,20 +28,6 @@ export default function Reservations({ userID, movieID }) {
   const [paymentType, setpaymentType] = useState(1); // 1 = visa, 2 = mobile
   const [totalPrice, settotalPrice] = useState(100);
   const [status, setstatus] = useState("Reserved");
-  const [tickets, settickets] = useState([
-    {
-      seatNumber: "A1",
-      price: 100,
-    },
-    {
-      seatNumber: "A2",
-      price: 100,
-    },
-    {
-      seatNumber: "A3",
-      price: 100,
-    },
-  ]);
 
   const [cardNumber, setCardNumber] = useState("");
   const [cardExpiry, setCardexpiry] = useState("");
@@ -107,34 +94,66 @@ export default function Reservations({ userID, movieID }) {
     p: 4,
   };
 
-  const DoReservation = () => {
-    //create a reservation
-    const reservation = {
-      customerID: customerID,
-      movieID: movieID,
-      movieName: Movie.name,
-      theaterName: theaterName,
-      noOfTickets: noOfTickets,
-      date: date,
-      timeSlot: timeSlot,
-      paymentType: paymentType,
-      totalPrice: totalPrice,
-      status: status,
-      tickets: tickets,
-    };
+  const CreateTickets = async () => {
+    let tickets = [];
 
-    Axios.post(`${API}api/v1/reservations`, reservation)
-      .then((res) => {
-        if (res.data.id) {
-          //navigate to next page
-          history.push(`/customer/reservation/tickets/${res.data.id}`);
+    QRCode.toDataURL([
+      {
+        customerID,
+        movieID,
+        theaterName,
+        date,
+        timeSlot,
+        paymentType,
+        totalPrice,
+        status,
+      },
+    ])
+      .then((url) => {
+        for (let i = 0; i < noOfTickets; i++) {
+          tickets.push({
+            qr: url,
+            seatNumber: `AB${i + 1}`,
+            price: ticketPrice,
+          });
         }
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
       });
+
+    return tickets;
   };
 
+  const DoReservation = () => {
+    CreateTickets().then((tickets) => {
+      //create a reservation
+      const reservation = {
+        customerID: customerID,
+        movieID: movieID,
+        movieName: Movie.name,
+        theaterName: theaterName,
+        noOfTickets: noOfTickets,
+        date: date,
+        timeSlot: timeSlot,
+        paymentType: paymentType,
+        totalPrice: totalPrice,
+        status: status,
+        tickets: tickets,
+      };
+
+      Axios.post(`${API}api/v1/reservations`, reservation)
+        .then((res) => {
+          if (res.data.id) {
+            //navigate to next page
+            history.push(`/customer/reservation/tickets/${res.data.id}`);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
+  };
   return (
     <>
       <div className="res_component">
