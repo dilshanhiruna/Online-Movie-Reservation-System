@@ -12,15 +12,12 @@ import {
   TextField,
 } from "@mui/material";
 
-export default function Reservations() {
+export default function Reservations({ userID, movieID }) {
   const API = process.env.REACT_APP_API;
   const [customerID, setcustomerID] = useState("TUG6786GK65476KJHF");
-  const [movieID, setmovieID] = useState("5e7b9f8f8d8f5b1b8c8b4567");
-  const [movieName, setmovieName] = useState("The Lion King");
-  const [theaterID, settheaterID] = useState("5e7b9f8f8d8f5b1b8c8b4567");
-  const [theaterName, settheaterName] = useState("Savoy");
+  const [theaterName, settheaterName] = useState("");
   const [noOfTickets, setnoOfTickets] = useState(1);
-  const [date, setdate] = useState("2020-06-01");
+  const [date, setdate] = useState("2022-06-01");
   const [timeSlot, settimeSlot] = useState(1);
   const [paymentType, setpaymentType] = useState(1); // 1 = visa, 2 = mobile
   const [totalPrice, settotalPrice] = useState(100);
@@ -39,22 +36,56 @@ export default function Reservations() {
       price: 100,
     },
   ]);
+
+  const [Movie, setMovie] = useState([]);
+  const [Theaters, setTheaters] = useState([]);
+  const [ticketPrice, setticketPrice] = useState(0);
   //get theaters from the database
   useEffect(() => {
-    Axios.get(`${API}api/v1/theater`).then((res) => {
-      console.log(res.data);
-    });
+    //get the movie details from movieID
+    Axios.get(`${API}api/v1/movies/${"626f92587693a1bc32eea276"}`)
+      .then((res) => {
+        setMovie(res.data.data);
+        if (res.data.data.theaters.length > 0) {
+          //map theater array and fetch all theaters and save them in the theater state
+          Axios.get(`${API}api/v1/theater/${res.data.data.theaters[0]}`).then(
+            (res) => {
+              settheaterName(res.data.data.theaterName);
+            }
+          );
+
+          res.data.data.theaters.map((theater) => {
+            Axios.get(`${API}api/v1/theater/${theater}`).then((res) => {
+              setTheaters((prev) => [...prev, res.data.data]);
+            });
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
-  console.log(API);
+
+  useEffect(() => {
+    //set ticket price from the theater seatPrice
+    let theaters = Theaters.find(
+      (theater) => theater.theaterName === theaterName
+    );
+    if (theaters) {
+      const price = theaters.seatPrice;
+      setticketPrice(price);
+      settotalPrice(price * noOfTickets);
+    }
+  }, [Theaters, theaterName]);
 
   return (
     <>
       <div className="res_component">
         <div className="res_movie__poster">
           <MediaCard
-            title="The Batman"
-            description="When the Riddler, a sadistic serial killer, begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement."
-            image="https://m.media-amazon.com/images/M/MV5BMDdmMTBiNTYtMDIzNi00NGVlLWIzMDYtZTk3MTQ3NGQxZGEwXkEyXkFqcGdeQXVyMzMwOTU5MDk@._V1_FMjpg_UX1000_.jpg"
+            title={Movie.name}
+            description={Movie.description}
+            image={Movie.banner}
           />
         </div>
         <div className="res_details">
@@ -94,7 +125,7 @@ export default function Reservations() {
                 <FormControl fullWidth>
                   <TextField
                     id="date"
-                    label="Birthday"
+                    label="Date"
                     type="date"
                     defaultValue={date}
                     sx={{ width: 220 }}
@@ -140,12 +171,15 @@ export default function Reservations() {
                     value={theaterName}
                     label="theater"
                     onChange={(event) => {
-                      settheaterID(event.target.value);
+                      settheaterName(event.target.value);
                     }}
-                    style={{ width: "150px" }}
+                    style={{ width: "200px" }}
                   >
-                    <MenuItem value={1}>Savoy</MenuItem>
-                    <MenuItem value={2}>Regal</MenuItem>
+                    {Theaters.map((theater, key) => (
+                      <MenuItem value={theater.theaterName} key={key}>
+                        {theater.theaterName}
+                      </MenuItem>
+                    ))}
                   </Select>
                 </FormControl>
               </div>
@@ -172,7 +206,7 @@ export default function Reservations() {
                 <p>Ticket Price</p>
                 <FormControl fullWidth>
                   <Chip
-                    label="LKR 1500"
+                    label={`LKR ${ticketPrice}`}
                     style={{ width: "200px", height: "40px" }}
                   />
                 </FormControl>
@@ -181,7 +215,7 @@ export default function Reservations() {
                 <p>Total Price</p>
                 <FormControl fullWidth>
                   <Chip
-                    label="LKR 3000"
+                    label={`LKR ${ticketPrice * noOfTickets}`}
                     style={{ width: "200px", height: "40px" }}
                   />
                 </FormControl>
