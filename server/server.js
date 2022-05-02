@@ -23,7 +23,7 @@ const theater = require("./routes/Theater");
 // Mount routers
 app.use("/api/v1/movies", movies);
 app.use("/api/v1/reservations", reservations);
-app.use("/api/v1/theater",theater);
+app.use("/api/v1/theater", theater);
 
 const PORT = 5000;
 

@@ -29,7 +29,6 @@ exports.getMovies = async (req, res, next) => {
 //@access public
 exports.getMovie = async (req, res, next) => {
   const movie = await Movie.findById(req.params.id);
-  console.log(movie);
   try {
     if (!movie) {
       return res.status(404).json({

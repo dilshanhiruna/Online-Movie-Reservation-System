@@ -8,7 +8,7 @@ const {
 } = require("../controllers/Reservations");
 
 router.get("/", getReservations);
-router.get("/:id", getReservation);
+router.get("/tickets/:id", getReservation);
 router.post("/", addReservation);
 
 module.exports = router;

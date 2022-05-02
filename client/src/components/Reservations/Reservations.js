@@ -8,11 +8,16 @@ import {
   FormControl,
   InputLabel,
   MenuItem,
+  Modal,
   Select,
   TextField,
 } from "@mui/material";
+import { Box } from "@mui/system";
+import Payment from "./Payment";
+import { useHistory } from "react-router";
 
 export default function Reservations({ userID, movieID }) {
+  let history = useHistory();
   const API = process.env.REACT_APP_API;
   const [customerID, setcustomerID] = useState("TUG6786GK65476KJHF");
   const [theaterName, settheaterName] = useState("");
@@ -37,12 +42,19 @@ export default function Reservations({ userID, movieID }) {
     },
   ]);
 
+  const [cardNumber, setCardNumber] = useState("");
+  const [cardExpiry, setCardexpiry] = useState("");
+  const [cardCvc, setCardcvc] = useState("");
+  const [cardName, setCardname] = useState("");
+
   const [Movie, setMovie] = useState([]);
   const [Theaters, setTheaters] = useState([]);
   const [ticketPrice, setticketPrice] = useState(0);
+
+  const [open, setOpen] = React.useState(false);
   //get theaters from the database
   useEffect(() => {
-    //get the movie details from movieID
+    //TODO: get the movie details from movieID
     Axios.get(`${API}api/v1/movies/${"626f92587693a1bc32eea276"}`)
       .then((res) => {
         setMovie(res.data.data);
@@ -76,7 +88,52 @@ export default function Reservations({ userID, movieID }) {
       setticketPrice(price);
       settotalPrice(price * noOfTickets);
     }
-  }, [Theaters, theaterName]);
+  }, [Theaters, theaterName, noOfTickets]);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 700,
+    height: 400,
+    bgcolor: "white",
+    border: "2px solid white",
+    borderRadius: "20px",
+    boxShadow: 24,
+    p: 4,
+  };
+
+  const DoReservation = () => {
+    //create a reservation
+    const reservation = {
+      customerID: customerID,
+      movieID: movieID,
+      movieName: Movie.name,
+      theaterName: theaterName,
+      noOfTickets: noOfTickets,
+      date: date,
+      timeSlot: timeSlot,
+      paymentType: paymentType,
+      totalPrice: totalPrice,
+      status: status,
+      tickets: tickets,
+    };
+
+    Axios.post(`${API}api/v1/reservations`, reservation)
+      .then((res) => {
+        if (res.data.id) {
+          //navigate to next page
+          history.push(`/customer/reservation/tickets/${res.data.id}`);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -225,8 +282,9 @@ export default function Reservations({ userID, movieID }) {
                   <Button
                     variant="contained"
                     style={{ width: "400px", height: "40px" }}
+                    onClick={handleOpen}
                   >
-                    Reserve
+                    Confirm
                   </Button>
                 </FormControl>
               </div>
@@ -234,6 +292,29 @@ export default function Reservations({ userID, movieID }) {
           </div>
         </div>
       </div>
+      <Modal
+        disableEnforceFocus
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Payment
+            handleClose={handleClose}
+            cardNumber={cardNumber}
+            cardName={cardName}
+            cardExpiry={cardExpiry}
+            cardCvc={cardCvc}
+            setCardNumber={setCardNumber}
+            setCardName={setCardname}
+            setCardExpiry={setCardexpiry}
+            setCardCvc={setCardcvc}
+            DoReservation={DoReservation}
+            totalPrice={totalPrice}
+          />
+        </Box>
+      </Modal>
     </>
   );
 }
