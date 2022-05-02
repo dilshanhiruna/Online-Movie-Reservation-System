@@ -3,12 +3,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Reservations = new Schema({
-  userID: {
+  customerID: {
     type: String,
     require: true,
-  },
-  qrcode: {
-    type: String,
   },
   movieID: {
     type: String,
@@ -22,12 +19,30 @@ const Reservations = new Schema({
   theaterName: {
     type: String,
   },
+  noOfTickets: {
+    type: Number,
+  },
+  date: {
+    type: Date,
+  },
+  timeSlot: {
+    type: String,
+  },
+  paymentType: {
+    type: String,
+  },
+  totalPrice: {
+    type: Number,
+  },
   status: {
     type: String,
   },
   reservedDate: {
     type: Date,
     require: true,
+  },
+  tickets: {
+    type: Array,
   },
 });
 const reservations = mongoose.model("Reservations", Reservations);

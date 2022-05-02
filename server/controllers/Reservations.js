@@ -53,18 +53,35 @@ exports.getReservation = async (req, res) => {
 //@route  POST /api/v1/reservations
 //@access Public
 exports.addReservation = async (req, res) => {
-  const { userID, qrcode, movieID, movieName, theaterID, theaterName, status } =
-    req.body;
   try {
-    const reservation = await Reservation.create({
-      userID,
-      qrcode,
+    const {
+      customerID,
       movieID,
       movieName,
       theaterID,
       theaterName,
+      noOfTickets,
+      date,
+      timeSlot,
+      paymentType,
+      totalPrice,
+      status,
+      tickets,
+    } = req.body;
+    const reservation = await Reservation.create({
+      customerID,
+      movieID,
+      movieName,
+      theaterID,
+      theaterName,
+      noOfTickets,
+      date,
+      timeSlot,
+      paymentType,
+      totalPrice,
       status,
       reservedDate: new Date(),
+      tickets,
     });
     return res.status(201).json({
       success: true,

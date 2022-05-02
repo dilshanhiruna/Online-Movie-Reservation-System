@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Axios from "axios";
 import "./Reservations.css";
 import MediaCard from "../Common/MediaCard";
 import {
@@ -12,11 +13,40 @@ import {
 } from "@mui/material";
 
 export default function Reservations() {
-  const [movie, setMovie] = React.useState("");
-  const [date, setDate] = React.useState("");
-  const [time, setTime] = React.useState("");
-  const [seats, setSeats] = React.useState("");
-  const [ticketCount, setticketCount] = useState(1);
+  const API = process.env.REACT_APP_API;
+  const [customerID, setcustomerID] = useState("TUG6786GK65476KJHF");
+  const [movieID, setmovieID] = useState("5e7b9f8f8d8f5b1b8c8b4567");
+  const [movieName, setmovieName] = useState("The Lion King");
+  const [theaterID, settheaterID] = useState("5e7b9f8f8d8f5b1b8c8b4567");
+  const [theaterName, settheaterName] = useState("Savoy");
+  const [noOfTickets, setnoOfTickets] = useState(1);
+  const [date, setdate] = useState("2020-06-01");
+  const [timeSlot, settimeSlot] = useState(1);
+  const [paymentType, setpaymentType] = useState(1); // 1 = visa, 2 = mobile
+  const [totalPrice, settotalPrice] = useState(100);
+  const [status, setstatus] = useState("Reserved");
+  const [tickets, settickets] = useState([
+    {
+      seatNumber: "A1",
+      price: 100,
+    },
+    {
+      seatNumber: "A2",
+      price: 100,
+    },
+    {
+      seatNumber: "A3",
+      price: 100,
+    },
+  ]);
+  //get theaters from the database
+  useEffect(() => {
+    Axios.get(`${API}api/v1/theater`).then((res) => {
+      console.log(res.data);
+    });
+  }, []);
+  console.log(API);
+
   return (
     <>
       <div className="res_component">
@@ -39,10 +69,10 @@ export default function Reservations() {
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={ticketCount}
+                    value={noOfTickets}
                     label="Count"
                     onChange={(event) => {
-                      setticketCount(event.target.value);
+                      setnoOfTickets(event.target.value);
                     }}
                     style={{ width: "100px" }}
                   >
@@ -66,10 +96,13 @@ export default function Reservations() {
                     id="date"
                     label="Birthday"
                     type="date"
-                    defaultValue="2017-05-24"
+                    defaultValue={date}
                     sx={{ width: 220 }}
                     InputLabelProps={{
                       shrink: true,
+                    }}
+                    onChange={(event) => {
+                      setdate(event.target.value);
                     }}
                   />
                 </FormControl>
@@ -83,10 +116,10 @@ export default function Reservations() {
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={ticketCount}
+                    value={timeSlot}
                     label="timeslot"
                     onChange={(event) => {
-                      setticketCount(event.target.value);
+                      settimeSlot(event.target.value);
                     }}
                     style={{ width: "150px" }}
                   >
@@ -104,10 +137,10 @@ export default function Reservations() {
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={ticketCount}
+                    value={theaterName}
                     label="theater"
                     onChange={(event) => {
-                      setticketCount(event.target.value);
+                      settheaterID(event.target.value);
                     }}
                     style={{ width: "150px" }}
                   >
@@ -123,10 +156,10 @@ export default function Reservations() {
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={ticketCount}
+                    value={paymentType}
                     label="payment"
                     onChange={(event) => {
-                      setticketCount(event.target.value);
+                      setpaymentType(event.target.value);
                     }}
                     style={{ width: "150px" }}
                   >
