@@ -22,8 +22,6 @@ export default function Payment(props) {
     DoReservation,
   } = props;
 
-  const [focus, setfocus] = useState(false);
-
   const PayNow = () => {
     if (
       cardNumber.length !== 0 ||
@@ -69,7 +67,6 @@ export default function Payment(props) {
           <Cards
             cvc={cardCvc}
             expiry={cardExpiry}
-            focused={focus}
             name={cardName}
             number={cardNumber}
           />
@@ -86,6 +83,9 @@ export default function Payment(props) {
               onChange={(event) => {
                 setCardNumber(event.target.value);
               }}
+              inputProps={{
+                maxLength: 16,
+              }}
             />
           </FormControl>
           <FormControl fullWidth>
@@ -98,6 +98,9 @@ export default function Payment(props) {
               sx={{ margin: "7px" }}
               onChange={(event) => {
                 setCardName(event.target.value);
+              }}
+              inputProps={{
+                maxLength: 30,
               }}
             />
           </FormControl>
@@ -113,6 +116,9 @@ export default function Payment(props) {
                   onChange={(event) => {
                     setCardExpiry(event.target.value);
                   }}
+                  inputProps={{
+                    maxLength: 4,
+                  }}
                 />
               </FormControl>
             </div>
@@ -127,6 +133,9 @@ export default function Payment(props) {
                   sx={{ width: "110px", margin: "7px" }}
                   onChange={(event) => {
                     setCardCvc(event.target.value);
+                  }}
+                  inputProps={{
+                    maxLength: 3,
                   }}
                 />
               </FormControl>

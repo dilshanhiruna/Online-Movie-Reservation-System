@@ -28,6 +28,29 @@ export default function Tickets() {
     });
   }, []);
 
+  const getTimeSlot = (slot) => {
+    if (slot === "1") {
+      return "09:00-11:00";
+    } else if (slot === "2") {
+      return "12:00-14:00";
+    } else if (slot === "3") {
+      return "15:00-17:00";
+    } else if (slot === "4") {
+      return "18:00-20:00";
+    } else {
+      return "Not Available";
+    }
+  };
+  const getPaymentType = (type) => {
+    if (type === "1") {
+      return "Visa";
+    } else if (type === "2") {
+      return "Mobile";
+    } else {
+      return "Not Available";
+    }
+  };
+
   return (
     <div className="tickets__component">
       <div>
@@ -37,22 +60,61 @@ export default function Tickets() {
         <div>
           <div className="tickets__details">
             <span>Movie: </span>
-            <Chip label={Reservation.movieName} />
+            <Chip sx={{ textAlign: "center" }} label={Reservation.movieName} />
+          </div>
+
+          <div className="tickets__details">
+            <span>Theater: </span>
+            <Chip
+              sx={{ textAlign: "center" }}
+              label={Reservation.theaterName}
+            />
           </div>
           <div className="tickets__details">
             <span>Tickets: </span>
-            <Chip label={Reservation.noOfTickets} />
+            <Chip
+              sx={{ textAlign: "center" }}
+              label={Reservation.noOfTickets}
+            />
           </div>
           <div className="tickets__details">
-            <span>Theater: </span>
-            <Chip label={Reservation.theaterName} />
+            <span>Movie Date: </span>
+            <Chip
+              sx={{ textAlign: "center" }}
+              label={new Date(Reservation.date).toLocaleDateString()}
+            />
+          </div>
+          <div className="tickets__details">
+            <span>Movie Time: </span>
+            <Chip
+              sx={{ textAlign: "center" }}
+              label={getTimeSlot(Reservation.timeSlot)}
+            />
+          </div>
+          <div className="tickets__details">
+            <span>Payment Type: </span>
+            <Chip
+              sx={{ textAlign: "center" }}
+              label={getPaymentType(Reservation.paymentType)}
+            />
           </div>
           <div className="tickets__details">
             <span>Total Price: </span>
-            <Chip label={`LKR ${Reservation.totalPrice}`} />
+            <Chip
+              label={`LKR ${Reservation.totalPrice}`}
+              sx={{ textAlign: "center" }}
+            />
+          </div>
+          <div className="tickets__details">
+            <span>Reserved Date: </span>
+            <Chip
+              sx={{ textAlign: "center" }}
+              label={new Date(Reservation.reservedDate).toLocaleDateString()}
+            />
           </div>
         </div>
       </div>
+
       <div className="tickets__component__cards">
         {Tickets.map((ticket) => (
           <Card sx={{ maxWidth: 250, minWidth: 250, margin: "10px" }}>
