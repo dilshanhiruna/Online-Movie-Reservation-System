@@ -1,15 +1,16 @@
 const mongoose = require('mongoose');
 
 const MovieSchema = new mongoose.Schema({
-  movieID: {
-    type: String,
-    required: [true, 'Please add an ID'],
-    unique: [true, 'Please enter an unique ID'],
-  },
+  // movieID: {
+  //   type: String,
+  //   required: [true, 'Please add an ID'],
+  // },
 
   name: {
     type: String,
     required: [true, 'Please add a name'],
+    unique: [true, 'Please enter an unique ID'],
+
     trim: true,
   },
 
@@ -27,6 +28,17 @@ const MovieSchema = new mongoose.Schema({
   banner: {
     type: String,
     default: 'no-photo.jpg',
+  },
+
+  theaters: {
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: 'Theater',
+    trim: true,
+  },
+
+  showTime: {
+    type: String,
+    trim: true,
   },
 });
 
