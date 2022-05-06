@@ -95,64 +95,96 @@ export default function Reservations({ userID, movieID }) {
   };
 
   const CreateTickets = async () => {
-    let tickets = [];
-
-    QRCode.toDataURL([
-      {
-        customerID,
-        movieID,
-        theaterName,
-        date,
-        timeSlot,
-        paymentType,
-        totalPrice,
-        status,
-      },
-    ])
-      .then((url) => {
-        for (let i = 0; i < noOfTickets; i++) {
-          tickets.push({
-            qr: url,
-            seatNumber: `AB${i + 1}`,
-            price: ticketPrice,
-          });
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-
-    return tickets;
+    // QRCode.toDataURL([
+    //   {
+    //     customerID,
+    //     movieID,
+    //     theaterName,
+    //     date,
+    //     timeSlot,
+    //     paymentType,
+    //     totalPrice,
+    //     status,
+    //   },
+    // ])
+    //   .then((url) => {
+    //     for (let i = 0; i < noOfTickets; i++) {
+    //       tickets.push({
+    //         qr: url,
+    //         seatNumber: `AB${i + 1}`,
+    //         price: ticketPrice,
+    //       });
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     console.error(err);
+    //   });
+    // return tickets;
   };
 
   const DoReservation = () => {
-    CreateTickets().then((tickets) => {
-      //create a reservation
-      const reservation = {
-        customerID: customerID,
-        movieID: movieID,
-        movieName: Movie.name,
-        theaterName: theaterName,
-        noOfTickets: noOfTickets,
-        date: date,
-        timeSlot: timeSlot,
-        paymentType: paymentType,
-        totalPrice: totalPrice,
-        status: status,
-        tickets: tickets,
-      };
+    //validate card details
+    if (paymentType === 1) {
+      if (
+        cardNumber.length === 16 &&
+        cardExpiry.length === 4 &&
+        cardCvc.length === 3 &&
+        cardName.length > 0
+      ) {
+        const payload = {
+          customerID: customerID,
+          movieID: movieID,
+          theaterName: theaterName,
+          noOfTickets: noOfTickets,
+          date: date,
+          timeSlot: timeSlot,
+          paymentType: paymentType,
+          totalPrice: totalPrice,
+        };
 
-      Axios.post(`${API}api/v1/reservations`, reservation)
-        .then((res) => {
-          if (res.data.id) {
-            //navigate to next page
-            history.push(`/customer/reservation/tickets/${res.data.id}`);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    });
+        Axios.post(`${API}api/v1/ticket`, { payload })
+          .then((res) => {
+            let tickets = [];
+            for (let i = 0; i < noOfTickets; i++) {
+              tickets.push({
+                qr: res.data.data,
+                seatNumber: `AB${i + 1}`,
+                price: ticketPrice,
+              });
+            }
+
+            //create a reservation
+            const reservation = {
+              customerID: customerID,
+              movieID: movieID,
+              movieName: Movie.name,
+              theaterName: theaterName,
+              noOfTickets: noOfTickets,
+              date: date,
+              timeSlot: timeSlot,
+              paymentType: paymentType,
+              totalPrice: totalPrice,
+              status: status,
+              tickets: tickets,
+            };
+
+            Axios.post(`${API}api/v1/reservations`, reservation)
+              .then((res) => {
+                if (res.data.id) {
+                  //navigate to next page
+                  history.push(`/customer/reservation/tickets/${res.data.id}`);
+                }
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    } else if (paymentType === 2) {
+    }
   };
   return (
     <>
