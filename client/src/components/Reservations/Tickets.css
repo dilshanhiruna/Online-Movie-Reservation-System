@@ -7,18 +7,17 @@
 }
 .tickets__details span {
   margin-right: 10px;
+  width: 150px;
 }
 .tickets__component {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-
-  margin: 5%;
+  margin: 8%;
 }
 .tickets__component__cards {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  overflow: scroll;
+  width: 65%;
 }

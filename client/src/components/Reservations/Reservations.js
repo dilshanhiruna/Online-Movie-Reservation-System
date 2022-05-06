@@ -38,7 +38,7 @@ export default function Reservations({ userID, movieID }) {
   const [Theaters, setTheaters] = useState([]);
   const [ticketPrice, setticketPrice] = useState(0);
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   //get theaters from the database
   useEffect(() => {
     //TODO: get the movie details from movieID
