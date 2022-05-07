@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const connectDB = require("./common/database")();
 const dotenv = require("dotenv").config();
 
 const app = express();
@@ -16,8 +15,10 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Route files
+const ticket = require("./routes/Ticket");
 
 // Mount routers
+app.use("/api/v1/ticket", ticket);
 
-const PORT = 5003;
+const PORT = 5005;
 app.listen(PORT, console.log(`Server running on port ${PORT}`));

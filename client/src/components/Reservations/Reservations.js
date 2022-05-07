@@ -15,12 +15,13 @@ import {
 import { Box } from "@mui/system";
 import Payment from "./Payment";
 import { useHistory, useLocation } from "react-router";
-import QRCode from "qrcode";
 
 export default function Reservations({ userID }) {
+  // component to book tickets
   let history = useHistory();
   const location = useLocation();
   const API = process.env.REACT_APP_API;
+  const QRCODE_API = process.env.REACT_APP_QRCODE_API;
   const [customerID, setcustomerID] = useState("TUG6786GK65476KJHF");
   const [theaterName, settheaterName] = useState("");
   const [noOfTickets, setnoOfTickets] = useState(1);
@@ -30,6 +31,7 @@ export default function Reservations({ userID }) {
   const [totalPrice, settotalPrice] = useState(100);
   const [status, setstatus] = useState("Reserved");
 
+  //states to hold card details
   const [cardNumber, setCardNumber] = useState("");
   const [cardExpiry, setCardexpiry] = useState("");
   const [cardCvc, setCardcvc] = useState("");
@@ -44,14 +46,12 @@ export default function Reservations({ userID }) {
 
   //get theaters from the database
   useEffect(() => {
-    //TODO: get the movie details from movieID
-    // setMovieID(location.id);
-
     if (!movieID) {
       history.push("/customer/movies");
       return;
     }
 
+    //get the movie details
     Axios.get(`${API}api/v1/movies/${movieID}`)
       .then((res) => {
         setMovie(res.data.data);
@@ -76,7 +76,7 @@ export default function Reservations({ userID }) {
   }, [location]);
 
   useEffect(() => {
-    //set ticket price from the theater seatPrice
+    //set the ticket price according to the theater seatPrice
     let theaters = Theaters.find(
       (theater) => theater.theaterName === theaterName
     );
@@ -87,25 +87,14 @@ export default function Reservations({ userID }) {
     }
   }, [Theaters, theaterName, noOfTickets]);
 
+  // open/close the payment modal
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 700,
-    height: 400,
-    bgcolor: "white",
-    border: "2px solid white",
-    borderRadius: "20px",
-    boxShadow: 24,
-    p: 4,
-  };
-
+  // function to handle the reservation
   const DoReservation = () => {
     //validate card details
+    // if visa card payment is selected
     if (paymentType === 1) {
       if (
         cardNumber.length === 16 &&
@@ -113,6 +102,7 @@ export default function Reservations({ userID }) {
         cardCvc.length === 3 &&
         cardName.length > 0
       ) {
+        //create a json object to make the QR CODE
         const payload = {
           customerID: customerID,
           movieID: movieID,
@@ -123,10 +113,11 @@ export default function Reservations({ userID }) {
           paymentType: paymentType,
           totalPrice: totalPrice,
         };
-
-        Axios.post(`${API}api/v1/ticket`, { payload })
+        //create a QR code
+        Axios.post(`${QRCODE_API}api/v1/ticket`, { payload })
           .then((res) => {
             let tickets = [];
+            // create tickets with the QR code
             for (let i = 0; i < noOfTickets; i++) {
               tickets.push({
                 qr: res.data.data,
@@ -135,7 +126,7 @@ export default function Reservations({ userID }) {
               });
             }
 
-            //create a reservation
+            //create a reservation json object
             const reservation = {
               customerID: customerID,
               movieID: movieID,
@@ -147,9 +138,10 @@ export default function Reservations({ userID }) {
               paymentType: paymentType,
               totalPrice: totalPrice,
               status: status,
-              tickets: tickets,
+              tickets: tickets, //add all tickets as a array
             };
 
+            // create a reservation in the database
             Axios.post(`${API}api/v1/reservations`, reservation)
               .then((res) => {
                 if (res.data.id) {
@@ -165,6 +157,7 @@ export default function Reservations({ userID }) {
             console.log(err);
           });
       }
+      // if mobile payment is selected
     } else if (paymentType === 2) {
     }
   };
@@ -332,7 +325,21 @@ export default function Reservations({ userID }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 700,
+            height: 400,
+            bgcolor: "white",
+            border: "2px solid white",
+            borderRadius: "20px",
+            boxShadow: 24,
+            p: 4,
+          }}
+        >
           <Payment
             handleClose={handleClose}
             cardNumber={cardNumber}
