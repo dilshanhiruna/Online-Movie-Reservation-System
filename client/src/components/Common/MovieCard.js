@@ -21,7 +21,8 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
   };
 
   const updateMovie = () => {
-    history.push({ pathname: 'movadmin/movies/edit', id: movie._id });
+    console.log('hey');
+    history.push({ pathname: '/movadmin/movies/edit', movie });
   };
   const deleteMovie = () => {
     const confirmation = window.confirm('Are you sure?');
@@ -41,7 +42,7 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
       <CardMedia component='img' height='250' image={movie.banner} />
       <CardContent>
         <Typography gutterBottom variant='h5' component='div'>
-          {movie.title}
+          {movie.name}
         </Typography>
         <Typography
           variant='body2'
