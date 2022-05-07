@@ -24,10 +24,10 @@ export default function Payment(props) {
 
   const PayNow = () => {
     if (
-      cardNumber.length !== 0 ||
-      cardExpiry.length !== 0 ||
-      cardCvc.length !== 0 ||
-      cardName.length !== 0
+      cardNumber.length === 16 &&
+      cardExpiry.length === 4 &&
+      cardCvc.length === 3 &&
+      cardName.length > 0
     ) {
       handleClose();
 

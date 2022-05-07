@@ -104,34 +104,6 @@ export default function Reservations({ userID }) {
     p: 4,
   };
 
-  const CreateTickets = async () => {
-    // QRCode.toDataURL([
-    //   {
-    //     customerID,
-    //     movieID,
-    //     theaterName,
-    //     date,
-    //     timeSlot,
-    //     paymentType,
-    //     totalPrice,
-    //     status,
-    //   },
-    // ])
-    //   .then((url) => {
-    //     for (let i = 0; i < noOfTickets; i++) {
-    //       tickets.push({
-    //         qr: url,
-    //         seatNumber: `AB${i + 1}`,
-    //         price: ticketPrice,
-    //       });
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //   });
-    // return tickets;
-  };
-
   const DoReservation = () => {
     //validate card details
     if (paymentType === 1) {
