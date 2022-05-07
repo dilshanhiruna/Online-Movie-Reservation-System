@@ -59,6 +59,9 @@ export default function Reservations({ userID }) {
     Axios.get(`${API}api/v1/movies/${movieID}`)
       .then((res) => {
         setMovie(res.data.data);
+        console.log(res.data.data.theaters[0]);
+        // setTheaters(res.data.data.theaters);
+        // settheaterName(res.data.data.theaters[0]);
         if (res.data.data.theaters.length > 0) {
           //map theater array and fetch all theaters and save them in the theater state
           Axios.get(`${API}api/v1/theater/${res.data.data.theaters[0]}`).then(
