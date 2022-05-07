@@ -4,10 +4,10 @@ var PhoneNumber = require("awesome-phonenumber");
 //@route  GET /api/v1/payment
 //@access Public
 exports.checkPayment = async (req, res) => {
-  const { phoneNumber, pin, totalPrice } = req.body;
+  const { phoneNumber, pin, totalPrice } = req.body.data;
 
   try {
-    const number = new PhoneNumber(phoneNumber, "LKR");
+    const number = new PhoneNumber(phoneNumber, "LK");
     // validate card number
     if (number.isValid()) {
       res.status(200).json({

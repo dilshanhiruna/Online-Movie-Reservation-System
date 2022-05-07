@@ -16,6 +16,7 @@ import { Box } from "@mui/system";
 import Payment from "./Payment";
 import { useHistory, useLocation } from "react-router";
 import MobilePay from "./MobilePay";
+import Swal from "sweetalert2";
 
 export default function Reservations({ userID }) {
   // component to book tickets
@@ -59,6 +60,7 @@ export default function Reservations({ userID }) {
     Axios.get(`${API}api/v1/movies/${movieID}`)
       .then((res) => {
         setMovie(res.data.data);
+        console.log(res.data.data);
         console.log(res.data.data.theaters[0]);
         // setTheaters(res.data.data.theaters);
         // settheaterName(res.data.data.theaters[0]);
@@ -104,69 +106,85 @@ export default function Reservations({ userID }) {
     // if visa card payment is selected
     if (paymentType === 1) {
       if (
-        cardNumber.length === 16 &&
-        cardExpiry.length === 4 &&
-        cardCvc.length === 3 &&
-        cardName.length > 0
+        cardNumber.length !== 16 &&
+        cardExpiry.length !== 4 &&
+        cardCvc.length !== 3 &&
+        !cardName.length > 0
       ) {
-        //create a json object to make the QR CODE
-        const payload = {
+        Swal.fire({
+          title: "Invalid Input",
+          text: "Your transaction was failed",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+        return;
+      }
+      // if mobile payment is selected
+    } else if (paymentType === 2) {
+      if (mobileNumber.length !== 10 && !mobilePin.length > 0) {
+        Swal.fire({
+          title: "Invalid Input",
+          text: "Your transaction was failed",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+        return;
+      }
+    }
+    //create a json object to make the QR CODE
+    const payload = {
+      customerID: customerID,
+      movieID: movieID,
+      theaterName: theaterName,
+      noOfTickets: noOfTickets,
+      date: date,
+      timeSlot: timeSlot,
+      paymentType: paymentType,
+      totalPrice: totalPrice,
+    };
+    //create a QR code
+    Axios.post(`${QRCODE_API}api/v1/ticket`, { payload })
+      .then((res) => {
+        let tickets = [];
+        // create tickets with the QR code
+        for (let i = 0; i < noOfTickets; i++) {
+          tickets.push({
+            qr: res.data.data,
+            seatNumber: `AB${i + 1}`,
+            price: ticketPrice,
+          });
+        }
+
+        //create a reservation json object
+        const reservation = {
           customerID: customerID,
           movieID: movieID,
+          movieName: Movie.name,
           theaterName: theaterName,
           noOfTickets: noOfTickets,
           date: date,
           timeSlot: timeSlot,
           paymentType: paymentType,
           totalPrice: totalPrice,
+          status: status,
+          tickets: tickets, //add all tickets as a array
         };
-        //create a QR code
-        Axios.post(`${QRCODE_API}api/v1/ticket`, { payload })
+
+        // create a reservation in the database
+        Axios.post(`${API}api/v1/reservations`, reservation)
           .then((res) => {
-            let tickets = [];
-            // create tickets with the QR code
-            for (let i = 0; i < noOfTickets; i++) {
-              tickets.push({
-                qr: res.data.data,
-                seatNumber: `AB${i + 1}`,
-                price: ticketPrice,
-              });
+            if (res.data.id) {
+              //navigate to next page
+              history.push(`/customer/reservation/tickets/${res.data.id}`);
             }
-
-            //create a reservation json object
-            const reservation = {
-              customerID: customerID,
-              movieID: movieID,
-              movieName: Movie.name,
-              theaterName: theaterName,
-              noOfTickets: noOfTickets,
-              date: date,
-              timeSlot: timeSlot,
-              paymentType: paymentType,
-              totalPrice: totalPrice,
-              status: status,
-              tickets: tickets, //add all tickets as a array
-            };
-
-            // create a reservation in the database
-            Axios.post(`${API}api/v1/reservations`, reservation)
-              .then((res) => {
-                if (res.data.id) {
-                  //navigate to next page
-                  history.push(`/customer/reservation/tickets/${res.data.id}`);
-                }
-              })
-              .catch((err) => {
-                console.log(err);
-              });
           })
           .catch((err) => {
             console.log(err);
           });
-      }
-      // if mobile payment is selected
-    } else if (paymentType === 2) {
-    }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <>

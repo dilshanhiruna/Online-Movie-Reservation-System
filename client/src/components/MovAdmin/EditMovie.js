@@ -8,10 +8,10 @@ import {
   FormControlLabel,
   FormGroup,
   Checkbox,
-} from '@mui/material';
-import { useState, useEffect } from 'react';
-import Axios from 'axios';
-import { useHistory, useLocation } from 'react-router';
+} from "@mui/material";
+import { useState, useEffect } from "react";
+import Axios from "axios";
+import { useHistory, useLocation } from "react-router";
 
 const API = process.env.REACT_APP_API;
 
@@ -55,8 +55,8 @@ export default function EditMovie() {
 
     Axios.put(`${API}api/v1/movies/${id}`, movieInfo)
       .then((res) => {
-        alert('Updated');
-        history.push({ pathname: '/movadmin/movies' });
+        alert("Updated");
+        history.push({ pathname: "/movadmin/movies" });
       })
       .catch((err) => {
         console.log(err);
@@ -77,31 +77,31 @@ export default function EditMovie() {
   };
   return (
     <>
-      <FormControl sx={{ width: '50ch' }}>
+      <FormControl sx={{ width: "50ch" }}>
         <TextField
-          id='outlined-basic'
-          label='Movie Name'
-          variant='outlined'
+          id="outlined-basic"
+          label="Movie Name"
+          variant="outlined"
           onChange={(e) => setName(e.target.value)}
           defaultValue={name}
         />
         <TextField
-          id='outlined-basic'
-          label='Movie Description'
-          variant='outlined'
+          id="outlined-basic"
+          label="Movie Description"
+          variant="outlined"
           onChange={(e) => setDescription(e.target.value)}
           defaultValue={description}
         />
         <TextField
-          id='outlined-basic'
-          label='Movie Cast'
-          variant='outlined'
+          id="outlined-basic"
+          label="Movie Cast"
+          variant="outlined"
           onChange={(e) => setCast(e.target.value)}
           defaultValue={cast}
         />
 
         <FormGroup>
-          <p id='label'>Select Theaters:</p>
+          <p id="label">Select Theaters:</p>
 
           {theatersDB.map((theater) => {
             return (
@@ -109,7 +109,7 @@ export default function EditMovie() {
                 key={theater._id}
                 control={<Checkbox />}
                 label={theater.theaterName}
-                value={theater.theaterName}
+                value={theater._id}
                 onChange={(e) =>
                   getSelectedTheaters(e.target.value, e.target.checked)
                 }
@@ -118,16 +118,16 @@ export default function EditMovie() {
           })}
         </FormGroup>
         <TextField
-          id='outlined-basic'
-          label='Show Time'
-          variant='outlined'
+          id="outlined-basic"
+          label="Show Time"
+          variant="outlined"
           onChange={(e) => setShowTime(e.target.value)}
           defaultValue={showTime}
         />
         <br></br>
         <Button
-          variant='contained'
-          style={{ width: '400px', height: '40px' }}
+          variant="contained"
+          style={{ width: "400px", height: "40px" }}
           onClick={onSubmit}
         >
           Submit
