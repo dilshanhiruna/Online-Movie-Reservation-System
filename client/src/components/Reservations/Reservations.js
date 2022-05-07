@@ -38,8 +38,8 @@ export default function Reservations({ userID }) {
   const [cardCvc, setCardcvc] = useState("");
   const [cardName, setCardname] = useState("");
 
-  const [mobileNumber, setmobileNumber] = useState(0);
-  const [mobilePin, setmobilePin] = useState(0);
+  const [mobileNumber, setmobileNumber] = useState("");
+  const [mobilePin, setmobilePin] = useState("");
 
   const [Movie, setMovie] = useState([]);
   const [Theaters, setTheaters] = useState([]);
@@ -363,6 +363,7 @@ export default function Reservations({ userID }) {
             />
           ) : (
             <MobilePay
+              handleClose={handleClose}
               DoReservation={DoReservation}
               totalPrice={totalPrice}
               mobileNumber={mobileNumber}

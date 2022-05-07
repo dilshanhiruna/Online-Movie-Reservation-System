@@ -1,14 +1,15 @@
-var valid = require("card-validator");
+var PhoneNumber = require("awesome-phonenumber");
 
 //@desc   Get all reservations
 //@route  GET /api/v1/payment
 //@access Public
 exports.checkPayment = async (req, res) => {
-  const { cardNumber, cardName, cardExpiry, cardCvc } = req.body;
+  const { phoneNumber, pin, totalPrice } = req.body;
+
   try {
-    var numberValidation = valid.number(cardNumber);
+    const number = new PhoneNumber(phoneNumber, "LKR");
     // validate card number
-    if (numberValidation.isPotentiallyValid) {
+    if (number.isValid()) {
       res.status(200).json({
         success: true,
         data: {

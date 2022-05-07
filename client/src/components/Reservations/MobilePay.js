@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import Axios from "axios";
 
 export default function MobilePay(props) {
-  const API = process.env.REACT_APP_CARDPAYMENT_API;
+  const API = process.env.REACT_APP_MOBILEPAYMENT_API;
 
   // get all the props from the parent component
   const {
@@ -15,30 +15,45 @@ export default function MobilePay(props) {
     setmobileNumber,
     mobilePin,
     setmobilePin,
+    handleClose,
   } = props;
 
   // function to handle the payment
   const PayNow = () => {
-    //check payment
-    Axios.post(`${API}api/v1/payment`, {}).then((res) => {
-      if (res.data.success) {
-        Swal.fire({
-          title: "Payment Successful",
-          text: "Your payment was successful",
-          icon: "success",
-          confirmButtonText: "OK",
-        });
-        // if payment is successful, call the DoReservation function in the parent component
-        DoReservation();
-      } else {
-        Swal.fire({
-          title: "Payment Failed",
-          text: "Your payment was failed",
-          icon: "error",
-          confirmButtonText: "OK",
-        });
-      }
-    });
+    // validate details
+    if (mobileNumber.length === 9 && mobilePin.length === 6) {
+      // close the payment modal
+      handleClose();
+
+      //add country code to the mobile number
+      const phoneNumber = `+94${mobileNumber}`;
+
+      const data = {
+        phoneNumber,
+        mobilePin,
+        totalPrice,
+      };
+
+      Axios.post(`${API}api/v1/payment`, { data }).then((res) => {
+        if (res.data.success) {
+          Swal.fire({
+            title: "Payment Successful",
+            text: "Your payment was successful",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+          // if payment is successful, call the DoReservation function in the parent component
+          DoReservation();
+        } else {
+          Swal.fire({
+            title: "Payment Failed",
+            text: "Your payment was failed",
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+        }
+      });
+    }
   };
 
   return (
@@ -60,6 +75,8 @@ export default function MobilePay(props) {
                   <InputAdornment position="start">+94</InputAdornment>
                 ),
               }}
+              value={mobileNumber}
+              onChange={(e) => setmobileNumber(e.target.value)}
             />
           </FormControl>
           <FormControl fullWidth>
@@ -72,6 +89,8 @@ export default function MobilePay(props) {
               inputProps={{
                 maxLength: 6,
               }}
+              value={mobilePin}
+              onChange={(e) => setmobilePin(e.target.value)}
             />
           </FormControl>
         </div>
