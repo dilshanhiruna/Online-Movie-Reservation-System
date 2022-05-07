@@ -14,7 +14,7 @@ exports.getMovies = async (req, res, next) => {
     }
     return res.status(200).json({
       success: true,
-      msg: movies,
+      data: movies,
     });
   } catch (error) {
     res.status(500).json({
