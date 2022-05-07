@@ -11,16 +11,19 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export default function MyReservations() {
+  // component to display the all reservations done by the user
+
   const API = process.env.REACT_APP_API;
   const [Reservations, setReservations] = useState([]);
 
   useEffect(() => {
-    //get all reservations
+    //get all reservations done by the user
     Axios.get(`${API}api/v1/reservations`).then((res) => {
       setReservations(res.data.data);
     });
   }, []);
 
+  // function to get the time slot according to the numbering
   const getTimeSlot = (slot) => {
     if (slot === "1") {
       return "09:00-11:00";
@@ -34,6 +37,7 @@ export default function MyReservations() {
       return "Not Available";
     }
   };
+  // function to get the payment type according to the numbering
   const getPaymentType = (type) => {
     if (type === "1") {
       return "Visa";

@@ -14,6 +14,9 @@ import {
 import "./Tickets.css";
 
 export default function Tickets() {
+  //component to display the tickets
+
+  // get the reservation id from the url
   let { id } = useParams();
   const API = process.env.REACT_APP_API;
 
@@ -23,11 +26,14 @@ export default function Tickets() {
   useEffect(() => {
     // get reservation details from database by param id
     Axios.get(`${API}api/v1/reservations/tickets/${id}`).then((res) => {
+      // set the reservation details
       setReservation(res.data.data);
+      // set the tickets details
       setTickets(res.data.data.tickets);
     });
   }, []);
 
+  // function to get the time slot according to the numbering
   const getTimeSlot = (slot) => {
     if (slot === "1") {
       return "09:00-11:00";
@@ -41,6 +47,7 @@ export default function Tickets() {
       return "Not Available";
     }
   };
+  // function to get the payment type according to the numbering
   const getPaymentType = (type) => {
     if (type === "1") {
       return "Visa";
