@@ -1,42 +1,34 @@
-import * as React from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import { useHistory } from "react-router-dom";
-import { color } from "@mui/system";
-import Axios from "axios";
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { useHistory } from 'react-router-dom';
+import { color } from '@mui/system';
+import Axios from 'axios';
 const API = process.env.REACT_APP_API;
 
-export default function MediaCard({
-  id,
-  title,
-  description,
-  btn1,
-  btn2,
-  btn3,
-  btn4,
-  image,
-}) {
+export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
   let history = useHistory();
   const viewDetails = () => {
     // history.push({ pathname: '/customer/reservation', id });
   };
 
   const bookNow = () => {
-    history.push({ pathname: "/customer/reservation", id });
+    history.push({ pathname: '/customer/reservation', id: movie._id });
   };
 
   const updateMovie = () => {
-    // history.push({ pathname: '/customer/reservation', id });
+    console.log('hey');
+    history.push({ pathname: '/movadmin/movies/edit', movie });
   };
   const deleteMovie = () => {
-    const confirmation = window.confirm("Are you sure?");
+    const confirmation = window.confirm('Are you sure?');
 
     if (confirmation) {
-      Axios.delete(`${API}api/v1/movies/${id}`)
+      Axios.delete(`${API}api/v1/movies/${movie._id}`)
         .then((res) => {
           window.location.reload();
         })
@@ -46,23 +38,23 @@ export default function MediaCard({
     }
   };
   return (
-    <Card sx={{ maxWidth: 350, margin: "15px" }}>
-      <CardMedia component="img" height="250" image={image} />
+    <Card sx={{ maxWidth: 350, margin: '15px' }}>
+      <CardMedia component='img' height='250' image={movie.banner} />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {title}
+        <Typography gutterBottom variant='h5' component='div'>
+          {movie.name}
         </Typography>
         <Typography
-          variant="body2"
-          color="text.secondary"
-          style={{ textAlign: "left" }}
+          variant='body2'
+          color='text.secondary'
+          style={{ textAlign: 'left' }}
         >
-          {description}
+          {movie.description}
         </Typography>
       </CardContent>
       <CardActions>
         <Button
-          size="small"
+          size='small'
           onClick={() => {
             viewDetails();
           }}
@@ -70,7 +62,7 @@ export default function MediaCard({
           {btn1}
         </Button>
         <Button
-          size="small"
+          size='small'
           onClick={() => {
             bookNow();
           }}
@@ -78,20 +70,20 @@ export default function MediaCard({
           {btn2}
         </Button>
         <Button
-          size="small"
+          size='small'
           onClick={() => {
             updateMovie();
           }}
-          style={{ marginLeft: "50px", color: "green" }}
+          style={{ marginLeft: '50px', color: 'green' }}
         >
           {btn3}
         </Button>
         <Button
-          size="small"
+          size='small'
           onClick={() => {
             deleteMovie();
           }}
-          style={{ color: "red" }}
+          style={{ color: 'red' }}
         >
           {btn4}
         </Button>

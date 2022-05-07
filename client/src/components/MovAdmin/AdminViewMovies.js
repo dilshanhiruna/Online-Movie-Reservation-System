@@ -24,10 +24,11 @@ export default function AdminViewMovies() {
             return (
               <MovieCard
                 key={movie._id.toString()}
-                id={movie._id}
-                title={movie.name}
-                description={movie.description}
-                image={movie.banner}
+                // id={movie._id}
+                // title={movie.name}
+                // description={movie.description}
+                // image={movie.banner}
+                movie={movie}
                 btn3='Update'
                 btn4='Delete'
               />
