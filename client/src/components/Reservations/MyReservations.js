@@ -18,7 +18,6 @@ export default function MyReservations() {
     //get all reservations
     Axios.get(`${API}api/v1/reservations`).then((res) => {
       setReservations(res.data.data);
-      console.log(res.data.data);
     });
   }, []);
 

@@ -25,10 +25,18 @@ export default function CusHeader({ title }) {
               >
                 Back
               </Button>
-              <Button variant="outlined" className="header__button">
+              <Button
+                variant="outlined"
+                className="header__button"
+                onClick={() => history.push("/customer/movies")}
+              >
                 Movies
               </Button>
-              <Button variant="outlined" className="header__button">
+              <Button
+                variant="outlined"
+                className="header__button"
+                onClick={() => history.push("/customer/theaters")}
+              >
                 Theaters
               </Button>
             </div>

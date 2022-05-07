@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import Axios from 'axios';
-import './Reservations.css';
-import MediaCard from '../Common/MediaCard';
+import React, { useEffect, useState } from "react";
+import Axios from "axios";
+import "./Reservations.css";
+import MediaCard from "../Common/MediaCard";
 import {
   Button,
   Chip,
@@ -11,29 +11,29 @@ import {
   Modal,
   Select,
   TextField,
-} from '@mui/material';
-import { Box } from '@mui/system';
-import Payment from './Payment';
-import { useHistory, useLocation } from 'react-router';
-import QRCode from 'qrcode';
+} from "@mui/material";
+import { Box } from "@mui/system";
+import Payment from "./Payment";
+import { useHistory, useLocation } from "react-router";
+import QRCode from "qrcode";
 
 export default function Reservations({ userID }) {
   let history = useHistory();
   const location = useLocation();
   const API = process.env.REACT_APP_API;
-  const [customerID, setcustomerID] = useState('TUG6786GK65476KJHF');
-  const [theaterName, settheaterName] = useState('');
+  const [customerID, setcustomerID] = useState("TUG6786GK65476KJHF");
+  const [theaterName, settheaterName] = useState("");
   const [noOfTickets, setnoOfTickets] = useState(1);
-  const [date, setdate] = useState('2022-06-01');
+  const [date, setdate] = useState("2022-06-01");
   const [timeSlot, settimeSlot] = useState(1);
   const [paymentType, setpaymentType] = useState(1); // 1 = visa, 2 = mobile
   const [totalPrice, settotalPrice] = useState(100);
-  const [status, setstatus] = useState('Reserved');
+  const [status, setstatus] = useState("Reserved");
 
-  const [cardNumber, setCardNumber] = useState('');
-  const [cardExpiry, setCardexpiry] = useState('');
-  const [cardCvc, setCardcvc] = useState('');
-  const [cardName, setCardname] = useState('');
+  const [cardNumber, setCardNumber] = useState("");
+  const [cardExpiry, setCardexpiry] = useState("");
+  const [cardCvc, setCardcvc] = useState("");
+  const [cardName, setCardname] = useState("");
 
   const [Movie, setMovie] = useState([]);
   const [Theaters, setTheaters] = useState([]);
@@ -46,6 +46,11 @@ export default function Reservations({ userID }) {
   useEffect(() => {
     //TODO: get the movie details from movieID
     // setMovieID(location.id);
+
+    if (!movieID) {
+      history.push("/customer/movies");
+      return;
+    }
 
     Axios.get(`${API}api/v1/movies/${movieID}`)
       .then((res) => {
@@ -86,15 +91,15 @@ export default function Reservations({ userID }) {
   const handleClose = () => setOpen(false);
 
   const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
     width: 700,
     height: 400,
-    bgcolor: 'white',
-    border: '2px solid white',
-    borderRadius: '20px',
+    bgcolor: "white",
+    border: "2px solid white",
+    borderRadius: "20px",
     boxShadow: 24,
     p: 4,
   };
@@ -193,32 +198,32 @@ export default function Reservations({ userID }) {
   };
   return (
     <>
-      <div className='res_component'>
-        <div className='res_movie__poster'>
+      <div className="res_component">
+        <div className="res_movie__poster">
           <MediaCard
             title={Movie.name}
             description={Movie.description}
             image={Movie.banner}
           />
         </div>
-        <div className='res_details'>
-          <div className='res_details__title'>
+        <div className="res_details">
+          <div className="res_details__title">
             <h1>Ticket Reservation</h1>
             <div>
               <br />
-              <div className='res_details__input'>
+              <div className="res_details__input">
                 <p>Tickets</p>
                 <FormControl fullWidth>
-                  <InputLabel id='demo-simple-select-label'>Count</InputLabel>
+                  <InputLabel id="demo-simple-select-label">Count</InputLabel>
                   <Select
-                    labelId='demo-simple-select-label'
-                    id='demo-simple-select'
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
                     value={noOfTickets}
-                    label='Count'
+                    label="Count"
                     onChange={(event) => {
                       setnoOfTickets(event.target.value);
                     }}
-                    style={{ width: '100px' }}
+                    style={{ width: "100px" }}
                   >
                     <MenuItem value={1}>1</MenuItem>
                     <MenuItem value={2}>2</MenuItem>
@@ -233,13 +238,13 @@ export default function Reservations({ userID }) {
                   </Select>
                 </FormControl>
               </div>
-              <div className='res_details__input'>
+              <div className="res_details__input">
                 <p>Date</p>
                 <FormControl fullWidth>
                   <TextField
-                    id='date'
-                    label='Date'
-                    type='date'
+                    id="date"
+                    label="Date"
+                    type="date"
                     defaultValue={date}
                     sx={{ width: 220 }}
                     InputLabelProps={{
@@ -251,21 +256,21 @@ export default function Reservations({ userID }) {
                   />
                 </FormControl>
               </div>
-              <div className='res_details__input'>
+              <div className="res_details__input">
                 <p>Time</p>
                 <FormControl fullWidth>
-                  <InputLabel id='demo-simple-select-label'>
+                  <InputLabel id="demo-simple-select-label">
                     Time Slot
                   </InputLabel>
                   <Select
-                    labelId='demo-simple-select-label'
-                    id='demo-simple-select'
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
                     value={timeSlot}
-                    label='timeslot'
+                    label="timeslot"
                     onChange={(event) => {
                       settimeSlot(event.target.value);
                     }}
-                    style={{ width: '150px' }}
+                    style={{ width: "150px" }}
                   >
                     <MenuItem value={1}>09:00-11:00</MenuItem>
                     <MenuItem value={2}>12:00-14:00</MenuItem>
@@ -274,19 +279,19 @@ export default function Reservations({ userID }) {
                   </Select>
                 </FormControl>
               </div>
-              <div className='res_details__input'>
+              <div className="res_details__input">
                 <p>Theater</p>
                 <FormControl fullWidth>
-                  <InputLabel id='demo-simple-select-label'>Theater</InputLabel>
+                  <InputLabel id="demo-simple-select-label">Theater</InputLabel>
                   <Select
-                    labelId='demo-simple-select-label'
-                    id='demo-simple-select'
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
                     value={theaterName}
-                    label='theater'
+                    label="theater"
                     onChange={(event) => {
                       settheaterName(event.target.value);
                     }}
-                    style={{ width: '200px' }}
+                    style={{ width: "200px" }}
                   >
                     {Theaters.map((theater, key) => (
                       <MenuItem value={theater.theaterName} key={key}>
@@ -296,48 +301,48 @@ export default function Reservations({ userID }) {
                   </Select>
                 </FormControl>
               </div>
-              <div className='res_details__input'>
+              <div className="res_details__input">
                 <p>Payment Method</p>
                 <FormControl fullWidth>
-                  <InputLabel id='demo-simple-select-label'>Method</InputLabel>
+                  <InputLabel id="demo-simple-select-label">Method</InputLabel>
                   <Select
-                    labelId='demo-simple-select-label'
-                    id='demo-simple-select'
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
                     value={paymentType}
-                    label='payment'
+                    label="payment"
                     onChange={(event) => {
                       setpaymentType(event.target.value);
                     }}
-                    style={{ width: '150px' }}
+                    style={{ width: "150px" }}
                   >
                     <MenuItem value={1}>Visa</MenuItem>
                     <MenuItem value={2}>Mobile</MenuItem>
                   </Select>
                 </FormControl>
               </div>
-              <div className='res_details__input'>
+              <div className="res_details__input">
                 <p>Ticket Price</p>
                 <FormControl fullWidth>
                   <Chip
                     label={`LKR ${ticketPrice}`}
-                    style={{ width: '200px', height: '40px' }}
+                    style={{ width: "200px", height: "40px" }}
                   />
                 </FormControl>
               </div>
-              <div className='res_details__input'>
+              <div className="res_details__input">
                 <p>Total Price</p>
                 <FormControl fullWidth>
                   <Chip
                     label={`LKR ${ticketPrice * noOfTickets}`}
-                    style={{ width: '200px', height: '40px' }}
+                    style={{ width: "200px", height: "40px" }}
                   />
                 </FormControl>
               </div>
-              <div className='res_details__input'>
+              <div className="res_details__input">
                 <FormControl fullWidth>
                   <Button
-                    variant='contained'
-                    style={{ width: '400px', height: '40px' }}
+                    variant="contained"
+                    style={{ width: "400px", height: "40px" }}
                     onClick={handleOpen}
                   >
                     Confirm
@@ -352,8 +357,8 @@ export default function Reservations({ userID }) {
         disableEnforceFocus
         open={open}
         onClose={handleClose}
-        aria-labelledby='modal-modal-title'
-        aria-describedby='modal-modal-description'
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
           <Payment
