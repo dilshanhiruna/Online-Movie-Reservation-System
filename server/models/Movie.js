@@ -21,7 +21,7 @@ const MovieSchema = new mongoose.Schema({
   },
 
   cast: {
-    type: [String],
+    type: String,
     trim: true,
   },
 
@@ -31,7 +31,7 @@ const MovieSchema = new mongoose.Schema({
   },
 
   theaters: {
-    type: [mongoose.Schema.Types.ObjectId],
+    type: [String],
     ref: 'Theater',
     trim: true,
   },

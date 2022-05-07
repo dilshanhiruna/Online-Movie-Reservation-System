@@ -35,13 +35,13 @@ export default function MovAdminHeader({ title }) {
               <Button
                 variant='outlined'
                 className='header__button'
-                onClick={() => history.push('/customer/theaters')}
+                onClick={() => history.push('/movadmin/movies/add')}
               >
                 Add_Movie
               </Button>
             </div>
           </div>
-          <div className='header__right'>
+          {/* <div className='header__right'>
             <Button
               variant='contained'
               style={{
@@ -61,7 +61,7 @@ export default function MovAdminHeader({ title }) {
                 My Reservations
               </Link>
             </Button>
-          </div>
+          </div> */}
         </div>
       </header>
     </>
