@@ -5,6 +5,7 @@ import AdminViewMovies from '../components/MovAdmin/AdminViewMovies';
 import MovAdminHeader from '../components/view/MovAdminHeader';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import AddMovie from '../components/MovAdmin/AddMovie';
+import EditMovie from '../components/MovAdmin/EditMovie';
 
 export default function MovAdmin() {
   return (
@@ -16,6 +17,9 @@ export default function MovAdmin() {
         </Route>
         <Route exact path='/movadmin/movies/add'>
           <AddMovie />
+        </Route>
+        <Route exact path='/movadmin/movies/edit'>
+          <EditMovie />
         </Route>
         <Route exact path='/movies/'></Route>
         <Redirect to='/movadmin/movies' />

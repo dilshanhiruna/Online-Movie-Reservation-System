@@ -10,33 +10,24 @@ import { color } from '@mui/system';
 import Axios from 'axios';
 const API = process.env.REACT_APP_API;
 
-export default function MediaCard({
-  id,
-  title,
-  description,
-  btn1,
-  btn2,
-  btn3,
-  btn4,
-  image,
-}) {
+export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
   let history = useHistory();
   const viewDetails = () => {
     // history.push({ pathname: '/customer/reservation', id });
   };
 
   const bookNow = () => {
-    history.push({ pathname: '/customer/reservation', id });
+    history.push({ pathname: '/customer/reservation', id: movie._id });
   };
 
   const updateMovie = () => {
-    // history.push({ pathname: '/customer/reservation', id });
+    history.push({ pathname: 'movadmin/movies/edit', id: movie._id });
   };
   const deleteMovie = () => {
     const confirmation = window.confirm('Are you sure?');
 
     if (confirmation) {
-      Axios.delete(`${API}api/v1/movies/${id}`)
+      Axios.delete(`${API}api/v1/movies/${movie._id}`)
         .then((res) => {
           window.location.reload();
         })
@@ -47,17 +38,17 @@ export default function MediaCard({
   };
   return (
     <Card sx={{ maxWidth: 350, margin: '15px' }}>
-      <CardMedia component='img' height='250' image={image} />
+      <CardMedia component='img' height='250' image={movie.banner} />
       <CardContent>
         <Typography gutterBottom variant='h5' component='div'>
-          {title}
+          {movie.title}
         </Typography>
         <Typography
           variant='body2'
           color='text.secondary'
           style={{ textAlign: 'left' }}
         >
-          {description}
+          {movie.description}
         </Typography>
       </CardContent>
       <CardActions>
