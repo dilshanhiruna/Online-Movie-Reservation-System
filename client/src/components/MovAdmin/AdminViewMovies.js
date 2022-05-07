@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import MovieCard from '../Common/MovieCard';
-import './CustomerViewMovies.css';
 
 const API = process.env.REACT_APP_API;
 
-export default function CustomerViewMovies() {
+export default function AdminViewMovies() {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     Axios.get(`${API}api/v1/movies`)
@@ -29,8 +28,8 @@ export default function CustomerViewMovies() {
                 title={movie.name}
                 description={movie.description}
                 image={movie.banner}
-                btn1='View Details'
-                btn2='Book Now'
+                btn3='Update'
+                btn4='Delete'
               />
             );
           })}
