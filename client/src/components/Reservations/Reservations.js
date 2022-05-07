@@ -15,6 +15,7 @@ import {
 import { Box } from "@mui/system";
 import Payment from "./Payment";
 import { useHistory, useLocation } from "react-router";
+import MobilePay from "./MobilePay";
 
 export default function Reservations({ userID }) {
   // component to book tickets
@@ -37,6 +38,9 @@ export default function Reservations({ userID }) {
   const [cardCvc, setCardcvc] = useState("");
   const [cardName, setCardname] = useState("");
 
+  const [mobileNumber, setmobileNumber] = useState(0);
+  const [mobilePin, setmobilePin] = useState(0);
+
   const [Movie, setMovie] = useState([]);
   const [Theaters, setTheaters] = useState([]);
   const [ticketPrice, setticketPrice] = useState(0);
@@ -55,6 +59,9 @@ export default function Reservations({ userID }) {
     Axios.get(`${API}api/v1/movies/${movieID}`)
       .then((res) => {
         setMovie(res.data.data);
+        console.log(res.data.data.theaters[0]);
+        // setTheaters(res.data.data.theaters);
+        // settheaterName(res.data.data.theaters[0]);
         if (res.data.data.theaters.length > 0) {
           //map theater array and fetch all theaters and save them in the theater state
           Axios.get(`${API}api/v1/theater/${res.data.data.theaters[0]}`).then(
@@ -340,19 +347,30 @@ export default function Reservations({ userID }) {
             p: 4,
           }}
         >
-          <Payment
-            handleClose={handleClose}
-            cardNumber={cardNumber}
-            cardName={cardName}
-            cardExpiry={cardExpiry}
-            cardCvc={cardCvc}
-            setCardNumber={setCardNumber}
-            setCardName={setCardname}
-            setCardExpiry={setCardexpiry}
-            setCardCvc={setCardcvc}
-            DoReservation={DoReservation}
-            totalPrice={totalPrice}
-          />
+          {paymentType === 1 ? (
+            <Payment
+              handleClose={handleClose}
+              cardNumber={cardNumber}
+              cardName={cardName}
+              cardExpiry={cardExpiry}
+              cardCvc={cardCvc}
+              setCardNumber={setCardNumber}
+              setCardName={setCardname}
+              setCardExpiry={setCardexpiry}
+              setCardCvc={setCardcvc}
+              DoReservation={DoReservation}
+              totalPrice={totalPrice}
+            />
+          ) : (
+            <MobilePay
+              DoReservation={DoReservation}
+              totalPrice={totalPrice}
+              mobileNumber={mobileNumber}
+              setmobileNumber={setmobileNumber}
+              mobilePin={mobilePin}
+              setmobilePin={setmobilePin}
+            />
+          )}
         </Box>
       </Modal>
     </>
