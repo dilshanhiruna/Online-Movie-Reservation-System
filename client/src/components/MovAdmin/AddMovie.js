@@ -20,6 +20,7 @@ export default function AddMovies() {
   const [theatersDB, setTheatersDB] = useState([{}]);
   const [theatersSelected, setTheatersSelected] = useState([]);
   const [showTime, setShowTime] = useState({});
+  const [banner, setBanner] = useState("");
 
   //   function updateForm(value) {
   //     return setForm((prev) => {
@@ -47,6 +48,7 @@ export default function AddMovies() {
       name,
       description,
       cast,
+      banner,
       theaters: theatersSelected,
       showTime,
     };
@@ -88,12 +90,21 @@ export default function AddMovies() {
           label="Movie Description"
           variant="outlined"
           onChange={(e) => setDescription(e.target.value)}
+          inputProps={{
+            maxLength: 50,
+          }}
         />
         <TextField
           id="outlined-basic"
           label="Movie Cast"
           variant="outlined"
           onChange={(e) => setCast(e.target.value)}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Banner (url)"
+          variant="outlined"
+          onChange={(e) => setBanner(e.target.value)}
         />
         {/* <TextField
           id='outlined-basic'
