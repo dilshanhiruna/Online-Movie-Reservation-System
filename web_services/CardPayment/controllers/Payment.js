@@ -6,6 +6,7 @@ var valid = require("card-validator");
 exports.checkPayment = async (req, res) => {
   const { cardNumber, cardName, cardExpiry, cardCvc } = req.body;
   var numberValidation = valid.number(cardNumber);
+  // validate card number
   if (numberValidation.isPotentiallyValid) {
     res.status(200).json({
       success: true,

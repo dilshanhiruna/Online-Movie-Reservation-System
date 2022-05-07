@@ -15,6 +15,7 @@ import {
 import { Box } from "@mui/system";
 import Payment from "./Payment";
 import { useHistory, useLocation } from "react-router";
+import MobilePay from "./MobilePay";
 
 export default function Reservations({ userID }) {
   // component to book tickets
@@ -36,6 +37,9 @@ export default function Reservations({ userID }) {
   const [cardExpiry, setCardexpiry] = useState("");
   const [cardCvc, setCardcvc] = useState("");
   const [cardName, setCardname] = useState("");
+
+  const [mobileNumber, setmobileNumber] = useState(0);
+  const [mobilePin, setmobilePin] = useState(0);
 
   const [Movie, setMovie] = useState([]);
   const [Theaters, setTheaters] = useState([]);
@@ -340,19 +344,30 @@ export default function Reservations({ userID }) {
             p: 4,
           }}
         >
-          <Payment
-            handleClose={handleClose}
-            cardNumber={cardNumber}
-            cardName={cardName}
-            cardExpiry={cardExpiry}
-            cardCvc={cardCvc}
-            setCardNumber={setCardNumber}
-            setCardName={setCardname}
-            setCardExpiry={setCardexpiry}
-            setCardCvc={setCardcvc}
-            DoReservation={DoReservation}
-            totalPrice={totalPrice}
-          />
+          {paymentType === 1 ? (
+            <Payment
+              handleClose={handleClose}
+              cardNumber={cardNumber}
+              cardName={cardName}
+              cardExpiry={cardExpiry}
+              cardCvc={cardCvc}
+              setCardNumber={setCardNumber}
+              setCardName={setCardname}
+              setCardExpiry={setCardexpiry}
+              setCardCvc={setCardcvc}
+              DoReservation={DoReservation}
+              totalPrice={totalPrice}
+            />
+          ) : (
+            <MobilePay
+              DoReservation={DoReservation}
+              totalPrice={totalPrice}
+              mobileNumber={mobileNumber}
+              setmobileNumber={setmobileNumber}
+              mobilePin={mobilePin}
+              setmobilePin={setmobilePin}
+            />
+          )}
         </Box>
       </Modal>
     </>
