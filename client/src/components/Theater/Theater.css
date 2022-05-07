@@ -11,7 +11,12 @@
     width: 45ch;
   }
   .Theater_Btn{
+    display: flex;
     margin-left: 2050px;
+  }
+  .Theater_insertBtn{
+    display: flex;
+    margin-left: "1100px";
   }
   .Theater_details__input {
     display: flex;

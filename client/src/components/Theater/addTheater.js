@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import "./Theater.css";
-import { Button, Box, FormControl, InputLabel, TextField } from "@mui/material";
+import { Button, FormControl, TextField } from "@mui/material";
 
 export const AddTheater = () => {
   const [theaterName, settheatername] = useState("");
