@@ -5,6 +5,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Reservations from "../components/Reservations/Reservations";
 import Theater from "../components/Theater/Theater";
 import { AddTheater } from "../components/Theater/AddTheater";
+import { EditTheater } from "../components/Theater/EditTheater";
 
 export default function SysAdmin() {
   return (
@@ -20,6 +21,9 @@ export default function SysAdmin() {
 
         <Route exact path="/theaters/add">
           <AddTheater />
+        </Route>
+        <Route exact path="/theaters/update/:id">
+          <EditTheater />
         </Route>
         <Route exact path="/customer/reservation">
           <Reservations />

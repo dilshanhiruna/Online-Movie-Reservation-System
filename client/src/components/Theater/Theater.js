@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-// import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Axios from "axios";
+
 import "./Theater.css";
 import "./AddTheater";
-import "./editTheater";
+import "./EditTheater";
 import {
   Button,
   Table,
@@ -16,6 +18,11 @@ import {
   Paper,
   styled,
   alpha,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
@@ -89,6 +96,7 @@ export default function Theater() {
 
   const [theaters, settheaters] = useState([]);
   const [searchedValue, setSearchedValue] = useState("");
+  const [open, setOpen] = useState(false);
 
   //get all theaters from the database
   useEffect(() => {
@@ -98,6 +106,21 @@ export default function Theater() {
     });
   }, []);
 
+  //delete model confirmation
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  //delete particular theater
+  // const deleteTheater = (id) => {
+  //   Axios.delete(`${API}api/v1/theater/${id}`).then((res) => {
+  //     console.log("deleted");
+  //   });
+  // };
   //redirect to another route
   // const history = useHistory();
 
@@ -176,7 +199,7 @@ export default function Theater() {
                         variant="contained"
                         style={{ width: "100px", height: "35px" }}
                       >
-                        Edit
+                        <Link to="/theaters/update/{theater._id}">Edit</Link>
                       </Button>
                     </StyledTableCell>
                     <StyledTableCell align="left">
@@ -184,6 +207,7 @@ export default function Theater() {
                         variant="contained"
                         color="error"
                         colostyle={{ width: "100px", height: "35px" }}
+                        onClick={handleClickOpen}
                       >
                         Delete
                       </Button>
@@ -193,6 +217,48 @@ export default function Theater() {
             </TableBody>
           </Table>
         </TableContainer>
+        <div>
+          <Dialog
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <DialogTitle id="alert-dialog-title" sx={{ m: 0, p: 2 }}>
+              {"Delete Confirmation"}
+            </DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-description">
+                <img
+                  src="https://www.pngplay.com/wp-content/uploads/5/Question-Mark-Symbol-PNG-Images-HD.png"
+                  alt="question mark"
+                  className="img_delete"
+                />
+                <br />
+                Are you sure you want to delete the theater?
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button
+                variant="contained"
+                color="success"
+                colostyle={{ width: "100px", height: "35px" }}
+                onClick={handleClose}
+              >
+                No
+              </Button>
+              <Button
+                variant="contained"
+                color="error"
+                colostyle={{ width: "100px", height: "35px" }}
+                // onClick={deleteTheater()}
+                autoFocus
+              >
+                Yes
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </div>
       </div>
     </div>
   );
