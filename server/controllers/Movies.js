@@ -14,7 +14,7 @@ exports.getMovies = async (req, res, next) => {
     }
     return res.status(200).json({
       success: true,
-      msg: movies,
+      data: movies,
     });
   } catch (error) {
     res.status(500).json({
@@ -59,6 +59,8 @@ exports.addMovie = async (req, res, next) => {
       data: movie,
     });
   } catch (error) {
+    console.error(error);
+
     res.status(500).json({
       success: false,
       msg: 'Server error',

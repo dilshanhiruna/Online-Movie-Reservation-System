@@ -1,0 +1,7 @@
+.movie_component {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin: 20px;
+  padding: 0px 40px;
+}

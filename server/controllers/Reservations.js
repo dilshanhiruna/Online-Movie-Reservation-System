@@ -85,7 +85,7 @@ exports.addReservation = async (req, res) => {
     });
     return res.status(201).json({
       success: true,
-      data: reservation,
+      id: reservation._id,
     });
   } catch (error) {
     return res.status(500).json({
