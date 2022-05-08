@@ -39,14 +39,14 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
   };
   return (
     <Card sx={{ maxWidth: 350, margin: '15px' }}>
-      <CardMedia component='img' height='250' image={movie.banner} />
+      <CardMedia component="img" height="250" image={movie.banner} />
       <CardContent>
-        <Typography gutterBottom variant='h5' component='div'>
+        <Typography gutterBottom variant="h5" component="div">
           {movie.name}
         </Typography>
         <Typography
-          variant='body2'
-          color='text.secondary'
+          variant="body2"
+          color="text.secondary"
           style={{ textAlign: 'left' }}
         >
           {movie.description}
@@ -54,7 +54,7 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
       </CardContent>
       <CardActions>
         <Button
-          size='small'
+          size="small"
           onClick={() => {
             viewDetails();
           }}
@@ -62,7 +62,7 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
           {btn1}
         </Button>
         <Button
-          size='small'
+          size="small"
           onClick={() => {
             bookNow();
           }}
@@ -70,7 +70,7 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
           {btn2}
         </Button>
         <Button
-          size='small'
+          size="small"
           onClick={() => {
             updateMovie();
           }}
@@ -79,7 +79,7 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
           {btn3}
         </Button>
         <Button
-          size='small'
+          size="small"
           onClick={() => {
             deleteMovie();
           }}
