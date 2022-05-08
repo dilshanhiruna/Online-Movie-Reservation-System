@@ -1,0 +1,36 @@
+.PaymentForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.payment__form {
+  margin: 20px;
+}
+.PaymentForm_bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.PaymentForm_bottom h3 {
+  margin: 6px;
+  font-family: "Roboto";
+  font-weight: 300;
+}
+.PaymentForm_bottom span {
+  font-family: "Roboto";
+  font-size: 35px;
+}
+.PaymentForm_bottom button {
+  margin: 10px;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 300;
+
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  cursor: pointer;
+}

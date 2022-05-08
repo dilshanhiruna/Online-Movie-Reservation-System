@@ -1,0 +1,24 @@
+.tickets__details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px;
+  font-size: 20px;
+}
+.tickets__details span {
+  margin-right: 10px;
+}
+.tickets__component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 5%;
+}
+.tickets__component__cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
