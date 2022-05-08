@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import Axios from "axios";
 import "./Theater.css";
 import { Button, FormControl, TextField } from "@mui/material";
+import { useHistory } from "react-router";
+import Swal from "sweetalert2";
 
 export const AddTheater = () => {
+  const history = useHistory();
   const [theaterName, settheatername] = useState("");
   const [location, setlocation] = useState("");
   const [seatPrice, setseatprice] = useState("");
@@ -17,7 +20,14 @@ export const AddTheater = () => {
       location,
       seatPrice,
     }).then((res) => {
-      console.log("succesful");
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      history.push("/theaters");
     });
   };
   return (

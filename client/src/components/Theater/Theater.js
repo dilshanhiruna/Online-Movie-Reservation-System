@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 //import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Axios from "axios";
+import Swal from "sweetalert2";
 
 import "./Theater.css";
 import "./AddTheater";
@@ -27,27 +28,6 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 
-//material design
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-  },
-}));
-
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  "&:nth-of-type(odd)": {
-    backgroundColor: theme.palette.action.hover,
-  },
-  // hide last border
-  "&:last-child td, &:last-child th": {
-    border: 0,
-  },
-}));
-
 //search bar
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -56,12 +36,12 @@ const Search = styled("div")(({ theme }) => ({
   "&:hover": {
     backgroundColor: alpha(theme.palette.common.black, 0.2),
   },
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(1),
-    width: "auto",
-  },
+
+  width: "70%",
+  // [theme.breakpoints.up("sm")]: {
+  //   marginLeft: theme.spacing(1),
+  //   width: "auto",
+  // },
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -114,6 +94,21 @@ export default function Theater() {
   const handleClose = () => {
     setOpen(false);
   };
+  const Delete = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
+    });
+  };
 
   //delete particular theater
   // const deleteTheater = (id) => {
@@ -131,17 +126,8 @@ export default function Theater() {
 
   return (
     <div className="res_details__title">
-      <div className="header__right">
-        <Button
-          variant="contained"
-          color="success"
-          sx={{ ml: "850px", display: "flex" }}
-          // onClick={routeChangetoInsert}
-          onClick={(event) => (window.location.href = "/theaters/add")}
-        >
-          Add Theater
-        </Button>
-
+      <div className="header__right"></div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <Search>
           <SearchIconWrapper>
             <SearchIcon />
@@ -153,23 +139,20 @@ export default function Theater() {
           />
         </Search>
       </div>
-      <br />
-      <br />
-      <div>
-        <TableContainer component={Paper}>
-          <Table
-            sx={{ maxWidth: 900, mx: "280px" }}
-            aria-label="customized table"
-          >
+
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <TableContainer
+          component={Paper}
+          sx={{ maxWidth: "70%", marginTop: "30px" }}
+        >
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <StyledTableCell align="left">Theater Name</StyledTableCell>
-                <StyledTableCell align="left">Location</StyledTableCell>
-                <StyledTableCell align="left">
-                  Price per seat&nbsp;(LK)
-                </StyledTableCell>
-                <StyledTableCell align="left">Edit</StyledTableCell>
-                <StyledTableCell align="left">Delete</StyledTableCell>
+                <TableCell align="left">Theater Name</TableCell>
+                <TableCell align="left">Location</TableCell>
+                <TableCell align="left"> Seat Price&nbsp;(LK)</TableCell>
+                <TableCell align="left">Edit</TableCell>
+                <TableCell align="left">Delete</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -183,83 +166,84 @@ export default function Theater() {
                       .toLowerCase()
                       .includes(searchedValue.toString().toLowerCase())
                 )
-                .map((theater) => (
-                  <StyledTableRow key={theater.theaterName}>
-                    <StyledTableCell align="left">
-                      {theater.theaterName}
-                    </StyledTableCell>
-                    <StyledTableCell align="left">
-                      {theater.location}
-                    </StyledTableCell>
-                    <StyledTableCell align="left">
-                      {theater.seatPrice}
-                    </StyledTableCell>
-                    <StyledTableCell align="left">
-                      <Button
-                        variant="contained"
-                        style={{ width: "100px", height: "35px" }}
-                      >
-                        <Link to="/theaters/update/{theater._id}">Edit</Link>
+                .reverse()
+                .map((row) => (
+                  <TableRow
+                    key={row.name}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
+                    <TableCell component="th" scope="row">
+                      {row.theaterName}
+                    </TableCell>
+                    <TableCell align="left">{row.location}</TableCell>
+                    <TableCell align="left">{row.seatPrice}</TableCell>
+                    <TableCell align="left">
+                      <Button variant="outlined">
+                        <Link
+                          to="/theaters/update/{theater._id}"
+                          style={{ textDecoration: "none" }}
+                        >
+                          Edit
+                        </Link>
                       </Button>
-                    </StyledTableCell>
-                    <StyledTableCell align="left">
+                    </TableCell>
+                    <TableCell align="left">
                       <Button
-                        variant="contained"
+                        variant="outlined"
                         color="error"
-                        colostyle={{ width: "100px", height: "35px" }}
-                        onClick={handleClickOpen}
+                        onClick={() => {
+                          Delete();
+                        }}
                       >
                         Delete
                       </Button>
-                    </StyledTableCell>
-                  </StyledTableRow>
+                    </TableCell>
+                  </TableRow>
                 ))}
             </TableBody>
           </Table>
         </TableContainer>
-        <div>
-          <Dialog
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="alert-dialog-title"
-            aria-describedby="alert-dialog-description"
-          >
-            <DialogTitle id="alert-dialog-title" sx={{ m: 0, p: 2 }}>
-              {"Delete Confirmation"}
-            </DialogTitle>
-            <DialogContent>
-              <DialogContentText id="alert-dialog-description">
-                <img
-                  src="https://www.pngplay.com/wp-content/uploads/5/Question-Mark-Symbol-PNG-Images-HD.png"
-                  alt="question mark"
-                  className="img_delete"
-                />
-                <br />
-                Are you sure you want to delete the theater?
-              </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button
-                variant="contained"
-                color="success"
-                colostyle={{ width: "100px", height: "35px" }}
-                onClick={handleClose}
-              >
-                No
-              </Button>
-              <Button
-                variant="contained"
-                color="error"
-                colostyle={{ width: "100px", height: "35px" }}
-                // onClick={deleteTheater()}
-                autoFocus
-              >
-                Yes
-              </Button>
-            </DialogActions>
-          </Dialog>
-        </div>
       </div>
+      {/* <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title" sx={{ m: 0, p: 2 }}>
+          {"Delete Confirmation"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            <img
+              src="https://www.pngplay.com/wp-content/uploads/5/Question-Mark-Symbol-PNG-Images-HD.png"
+              alt="question mark"
+              className="img_delete"
+            />
+            <br />
+            Are you sure you want to delete the theater?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            variant="contained"
+            color="success"
+            colostyle={{ width: "100px", height: "35px" }}
+            onClick={handleClose}
+          >
+            No
+          </Button>
+          <Button
+            variant="contained"
+            color="error"
+            colostyle={{ width: "100px", height: "35px" }}
+            // onClick={deleteTheater()}
+            autoFocus
+          >
+            Yes
+          </Button>
+        </DialogActions>
+      </Dialog> */}
     </div>
   );
 }

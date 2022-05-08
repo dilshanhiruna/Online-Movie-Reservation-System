@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/view/Header";
+import Header from "../components/view/SysHeader";
 import Footer from "../components/view/Footer";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Reservations from "../components/Reservations/Reservations";
@@ -18,7 +18,6 @@ export default function SysAdmin() {
         <Route exact path="/theaters">
           <Theater />
         </Route>
-
         <Route exact path="/theaters/add">
           <AddTheater />
         </Route>
