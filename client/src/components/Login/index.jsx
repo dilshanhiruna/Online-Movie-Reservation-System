@@ -1,32 +1,48 @@
 import { useState } from "react";
-import axios from "axios";
+import Axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
 	const [data, setData] = useState({ email: "", password: "" });
 	const [error, setError] = useState("");
+	const location = useHistory();
 
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
 	};
 
 	const handleSubmit = async (e) => {
+		console.log("Inside handle submit");
 		e.preventDefault();
-		try {
-			const url = "http://localhost:8080/api/auth";
-			const { data: res } = await axios.post(url, data);
-			localStorage.setItem("token", res.data);
-			window.location = "/";
-		} catch (error) {
-			if (
-				error.response &&
-				error.response.status >= 400 &&
-				error.response.status <= 500
-			) {
-				setError(error.response.data.message);
-			}
-		}
+		// try {
+		// 	const url = "http://localhost:5002/api/auth";
+		// 	const { data: res } = await axios.post(url, data);
+		// 	localStorage.setItem("token", res.data);
+		// 	window.location = "/";
+		// } catch (error) {
+		// 	if (
+		// 		error.response &&
+		// 		error.response.status >= 400 &&
+		// 		error.response.status <= 500
+		// 	) {
+		// 		setError(error.response.data.message);
+		// 	}
+		// }
+
+		Axios.post("http://localhost:5002/api/auth", data)
+		.then((res) => {
+		  alert("Logged In");
+		//   window.location.reload();
+		localStorage.setItem("token", res.data.data);
+		//history.push({ pathname: '/customer/reservation', id: movie._id });
+		window.location = "/";
+		console.log(res.data.data)
+		})
+		.catch((err) => {
+		  console.log(err);
+		});
 	};
 
 	return (

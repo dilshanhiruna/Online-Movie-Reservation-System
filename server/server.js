@@ -22,7 +22,7 @@ app.use(cookieParser());
 const movies = require("./routes/Movies");
 const reservations = require("./routes/Reservations");
 const theater = require("./routes/Theater");
-const payment = require("./routes/Payment");
+//const payment = require("./routes/Payment");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
 
@@ -30,7 +30,7 @@ const authRoutes = require("./routes/auth");
 app.use("/api/v1/movies", movies);
 app.use("/api/v1/reservations", reservations);
 app.use("/api/v1/theater", theater);
-app.use("/api/v1/payment", payment);
+//app.use("/api/v1/payment", payment);
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 
