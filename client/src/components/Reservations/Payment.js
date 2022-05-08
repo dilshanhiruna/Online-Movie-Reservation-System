@@ -7,7 +7,9 @@ import Swal from "sweetalert2";
 import Axios from "axios";
 
 export default function Payment(props) {
-  const API = process.env.REACT_APP_API;
+  const API = process.env.REACT_APP_CARDPAYMENT_API;
+
+  // get all the props from the parent component
   const {
     handleClose,
     cardNumber,
@@ -22,22 +24,24 @@ export default function Payment(props) {
     DoReservation,
   } = props;
 
-  const [focus, setfocus] = useState(false);
-
+  // function to handle the payment
   const PayNow = () => {
     if (
-      cardNumber.length !== 0 ||
-      cardExpiry.length !== 0 ||
-      cardCvc.length !== 0 ||
-      cardName.length !== 0
+      cardNumber.length === 16 &&
+      cardExpiry.length === 4 &&
+      cardCvc.length === 3 &&
+      cardName.length > 0
     ) {
+      // close the payment modal
       handleClose();
 
+      // create a json object with card details
       const data = {
         cardNumber,
         cardName,
         cardExpiry,
         cardCvc,
+        totalPrice,
       };
 
       //check payment
@@ -49,6 +53,7 @@ export default function Payment(props) {
             icon: "success",
             confirmButtonText: "OK",
           });
+          // if payment is successful, call the DoReservation function in the parent component
           DoReservation();
         } else {
           Swal.fire({
@@ -69,7 +74,6 @@ export default function Payment(props) {
           <Cards
             cvc={cardCvc}
             expiry={cardExpiry}
-            focused={focus}
             name={cardName}
             number={cardNumber}
           />
@@ -86,6 +90,9 @@ export default function Payment(props) {
               onChange={(event) => {
                 setCardNumber(event.target.value);
               }}
+              inputProps={{
+                maxLength: 16,
+              }}
             />
           </FormControl>
           <FormControl fullWidth>
@@ -98,6 +105,9 @@ export default function Payment(props) {
               sx={{ margin: "7px" }}
               onChange={(event) => {
                 setCardName(event.target.value);
+              }}
+              inputProps={{
+                maxLength: 30,
               }}
             />
           </FormControl>
@@ -113,6 +123,9 @@ export default function Payment(props) {
                   onChange={(event) => {
                     setCardExpiry(event.target.value);
                   }}
+                  inputProps={{
+                    maxLength: 4,
+                  }}
                 />
               </FormControl>
             </div>
@@ -127,6 +140,9 @@ export default function Payment(props) {
                   sx={{ width: "110px", margin: "7px" }}
                   onChange={(event) => {
                     setCardCvc(event.target.value);
+                  }}
+                  inputProps={{
+                    maxLength: 3,
                   }}
                 />
               </FormControl>

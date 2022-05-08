@@ -14,12 +14,16 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import Payment from "./Payment";
-import { useHistory } from "react-router";
-import QRCode from "qrcode";
+import { useHistory, useLocation } from "react-router";
+import MobilePay from "./MobilePay";
+import Swal from "sweetalert2";
 
-export default function Reservations({ userID, movieID }) {
+export default function Reservations({ userID }) {
+  // component to book tickets
   let history = useHistory();
+  const location = useLocation();
   const API = process.env.REACT_APP_API;
+  const QRCODE_API = process.env.REACT_APP_QRCODE_API;
   const [customerID, setcustomerID] = useState("TUG6786GK65476KJHF");
   const [theaterName, settheaterName] = useState("");
   const [noOfTickets, setnoOfTickets] = useState(1);
@@ -29,22 +33,37 @@ export default function Reservations({ userID, movieID }) {
   const [totalPrice, settotalPrice] = useState(100);
   const [status, setstatus] = useState("Reserved");
 
+  //states to hold card details
   const [cardNumber, setCardNumber] = useState("");
   const [cardExpiry, setCardexpiry] = useState("");
   const [cardCvc, setCardcvc] = useState("");
   const [cardName, setCardname] = useState("");
 
+  const [mobileNumber, setmobileNumber] = useState("");
+  const [mobilePin, setmobilePin] = useState("");
+
   const [Movie, setMovie] = useState([]);
   const [Theaters, setTheaters] = useState([]);
   const [ticketPrice, setticketPrice] = useState(0);
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [movieID, setMovieID] = useState(location.id);
+
   //get theaters from the database
   useEffect(() => {
-    //TODO: get the movie details from movieID
-    Axios.get(`${API}api/v1/movies/${"626f92587693a1bc32eea276"}`)
+    if (!movieID) {
+      history.push("/customer/movies");
+      return;
+    }
+
+    //get the movie details
+    Axios.get(`${API}api/v1/movies/${movieID}`)
       .then((res) => {
         setMovie(res.data.data);
+        console.log(res.data.data);
+        console.log(res.data.data.theaters[0]);
+        // setTheaters(res.data.data.theaters);
+        // settheaterName(res.data.data.theaters[0]);
         if (res.data.data.theaters.length > 0) {
           //map theater array and fetch all theaters and save them in the theater state
           Axios.get(`${API}api/v1/theater/${res.data.data.theaters[0]}`).then(
@@ -63,10 +82,10 @@ export default function Reservations({ userID, movieID }) {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [location]);
 
   useEffect(() => {
-    //set ticket price from the theater seatPrice
+    //set the ticket price according to the theater seatPrice
     let theaters = Theaters.find(
       (theater) => theater.theaterName === theaterName
     );
@@ -77,82 +96,95 @@ export default function Reservations({ userID, movieID }) {
     }
   }, [Theaters, theaterName, noOfTickets]);
 
+  // open/close the payment modal
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 700,
-    height: 400,
-    bgcolor: "white",
-    border: "2px solid white",
-    borderRadius: "20px",
-    boxShadow: 24,
-    p: 4,
-  };
-
-  const CreateTickets = async () => {
-    let tickets = [];
-
-    QRCode.toDataURL([
-      {
-        customerID,
-        movieID,
-        theaterName,
-        date,
-        timeSlot,
-        paymentType,
-        totalPrice,
-        status,
-      },
-    ])
-      .then((url) => {
+  // function to handle the reservation
+  const DoReservation = () => {
+    //validate card details
+    // if visa card payment is selected
+    if (paymentType === 1) {
+      if (
+        cardNumber.length !== 16 &&
+        cardExpiry.length !== 4 &&
+        cardCvc.length !== 3 &&
+        !cardName.length > 0
+      ) {
+        Swal.fire({
+          title: "Invalid Input",
+          text: "Your transaction was failed",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+        return;
+      }
+      // if mobile payment is selected
+    } else if (paymentType === 2) {
+      if (mobileNumber.length !== 10 && !mobilePin.length > 0) {
+        Swal.fire({
+          title: "Invalid Input",
+          text: "Your transaction was failed",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+        return;
+      }
+    }
+    //create a json object to make the QR CODE
+    const payload = {
+      customerID: customerID,
+      movieID: movieID,
+      theaterName: theaterName,
+      noOfTickets: noOfTickets,
+      date: date,
+      timeSlot: timeSlot,
+      paymentType: paymentType,
+      totalPrice: totalPrice,
+    };
+    //create a QR code
+    Axios.post(`${QRCODE_API}api/v1/ticket`, { payload })
+      .then((res) => {
+        let tickets = [];
+        // create tickets with the QR code
         for (let i = 0; i < noOfTickets; i++) {
           tickets.push({
-            qr: url,
+            qr: res.data.data,
             seatNumber: `AB${i + 1}`,
             price: ticketPrice,
           });
         }
+
+        //create a reservation json object
+        const reservation = {
+          customerID: customerID,
+          movieID: movieID,
+          movieName: Movie.name,
+          theaterName: theaterName,
+          noOfTickets: noOfTickets,
+          date: date,
+          timeSlot: timeSlot,
+          paymentType: paymentType,
+          totalPrice: totalPrice,
+          status: status,
+          tickets: tickets, //add all tickets as a array
+        };
+
+        // create a reservation in the database
+        Axios.post(`${API}api/v1/reservations`, reservation)
+          .then((res) => {
+            if (res.data.id) {
+              //navigate to next page
+              history.push(`/customer/reservation/tickets/${res.data.id}`);
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch((err) => {
-        console.error(err);
+        console.log(err);
       });
-
-    return tickets;
-  };
-
-  const DoReservation = () => {
-    CreateTickets().then((tickets) => {
-      //create a reservation
-      const reservation = {
-        customerID: customerID,
-        movieID: movieID,
-        movieName: Movie.name,
-        theaterName: theaterName,
-        noOfTickets: noOfTickets,
-        date: date,
-        timeSlot: timeSlot,
-        paymentType: paymentType,
-        totalPrice: totalPrice,
-        status: status,
-        tickets: tickets,
-      };
-
-      Axios.post(`${API}api/v1/reservations`, reservation)
-        .then((res) => {
-          if (res.data.id) {
-            //navigate to next page
-            history.push(`/customer/reservation/tickets/${res.data.id}`);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    });
   };
   return (
     <>
@@ -318,20 +350,46 @@ export default function Reservations({ userID, movieID }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <Payment
-            handleClose={handleClose}
-            cardNumber={cardNumber}
-            cardName={cardName}
-            cardExpiry={cardExpiry}
-            cardCvc={cardCvc}
-            setCardNumber={setCardNumber}
-            setCardName={setCardname}
-            setCardExpiry={setCardexpiry}
-            setCardCvc={setCardcvc}
-            DoReservation={DoReservation}
-            totalPrice={totalPrice}
-          />
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 700,
+            height: 400,
+            bgcolor: "white",
+            border: "2px solid white",
+            borderRadius: "20px",
+            boxShadow: 24,
+            p: 4,
+          }}
+        >
+          {paymentType === 1 ? (
+            <Payment
+              handleClose={handleClose}
+              cardNumber={cardNumber}
+              cardName={cardName}
+              cardExpiry={cardExpiry}
+              cardCvc={cardCvc}
+              setCardNumber={setCardNumber}
+              setCardName={setCardname}
+              setCardExpiry={setCardexpiry}
+              setCardCvc={setCardcvc}
+              DoReservation={DoReservation}
+              totalPrice={totalPrice}
+            />
+          ) : (
+            <MobilePay
+              handleClose={handleClose}
+              DoReservation={DoReservation}
+              totalPrice={totalPrice}
+              mobileNumber={mobileNumber}
+              setmobileNumber={setmobileNumber}
+              mobilePin={mobilePin}
+              setmobilePin={setmobilePin}
+            />
+          )}
         </Box>
       </Modal>
     </>

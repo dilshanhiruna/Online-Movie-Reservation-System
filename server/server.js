@@ -34,6 +34,6 @@ app.use("/api/v1/payment", payment);
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 
-const PORT = 5000;
+const PORT = 5002;
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`));

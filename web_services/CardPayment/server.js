@@ -15,10 +15,10 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Route files
-const ticket = require("./routes/Ticket");
+const payment = require("./routes/Payment");
 
 // Mount routers
-app.use("/api/v1/ticket", ticket);
+app.use("/api/v1/payment", payment);
 
-const PORT = 5005;
+const PORT = 5003;
 app.listen(PORT, console.log(`Server running on port ${PORT}`));

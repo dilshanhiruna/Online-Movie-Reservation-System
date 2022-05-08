@@ -1,4 +1,4 @@
-const Movie = require("../models/Movie");
+const Movie = require('../models/Movie');
 
 //@desc Get all movies
 //@route GET /api/v1/movies
@@ -9,17 +9,17 @@ exports.getMovies = async (req, res, next) => {
     if (movies.length == 0) {
       return res.status(404).json({
         success: false,
-        msg: "There are no any movie available",
+        msg: 'There are no any movie available',
       });
     }
     return res.status(200).json({
       success: true,
-      msg: movies,
+      data: movies,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      msg: "Server error",
+      msg: 'Server error',
     });
   }
 };
@@ -33,7 +33,7 @@ exports.getMovie = async (req, res, next) => {
     if (!movie) {
       return res.status(404).json({
         success: false,
-        msg: "Could not find a movie with the given ID",
+        msg: 'Could not find a movie with the given ID',
       });
     }
     res.status(200).json({
@@ -43,7 +43,7 @@ exports.getMovie = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({
       success: false,
-      msg: "Server error",
+      msg: 'Server error',
     });
   }
 };
@@ -59,9 +59,11 @@ exports.addMovie = async (req, res, next) => {
       data: movie,
     });
   } catch (error) {
+    console.error(error);
+
     res.status(500).json({
       success: false,
-      msg: "Server error",
+      msg: 'Server error',
     });
   }
 };
@@ -79,7 +81,7 @@ exports.updateMovie = async (req, res, next) => {
     if (!movie) {
       return res.status(404).json({
         success: false,
-        msg: "Could not find a movie with the given ID",
+        msg: 'Could not find a movie with the given ID',
       });
     }
 
@@ -90,7 +92,7 @@ exports.updateMovie = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({
       success: false,
-      msg: "Server error",
+      msg: 'Server error',
     });
   }
 };
@@ -105,7 +107,7 @@ exports.deleteMovie = async (req, res, next) => {
     if (!movie) {
       return res.status(404).json({
         success: false,
-        msg: "Could not find a movie with the given ID",
+        msg: 'Could not find a movie with the given ID',
       });
     }
 
@@ -116,7 +118,7 @@ exports.deleteMovie = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({
       success: false,
-      msg: "Server error",
+      msg: 'Server error',
     });
   }
 };
