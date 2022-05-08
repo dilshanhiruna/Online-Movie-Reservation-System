@@ -7,7 +7,7 @@ import {
   Router,
 } from "react-router-dom";
 import { useState, useEffect } from "react";
-import jwt from 'jwt-decode'
+import jwt from "jwt-decode";
 import Customer from "./routes/Customer";
 import MovAdmin from "./routes/MovAdmin";
 import SysAdmin from "./routes/SysAdmin";
@@ -18,26 +18,21 @@ import LoginRouter from "./routes/LoginRouter";
 // import Login from "./components/Login";
 
 function App() {
-
   const token = localStorage.getItem("token");
   let role = "";
 
-  if(token) {
+  if (token) {
     const payload = jwt(token);
     role = payload.role;
   }
 
   const [userType, setUserType] = useState(role);
 
-
-
   // useEffect(() => {
   //   if(token) {
   //     setUserType(payload.role);
   //   }
   // }, []);
-
-  console.log("Inside app");
 
   //TODO: Check the user and set user type
 
@@ -57,7 +52,6 @@ function App() {
 			    <Route path="/login" exact element={<Login />} />
 			    <Route path="/" element={<Navigate replace to="/login" />} />
         </Routes> */}
-        
       </BrowserRouter>
     </div>
   );
