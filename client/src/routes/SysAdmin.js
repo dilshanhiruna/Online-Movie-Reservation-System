@@ -4,8 +4,8 @@ import Footer from "../components/view/Footer";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Reservations from "../components/Reservations/Reservations";
 import Theater from "../components/Theater/Theater";
-import { AddTheater } from "../components/Theater/AddTheater";
-import { EditTheater } from "../components/Theater/EditTheater";
+import AddTheater from "../components/Theater/AddTheater";
+import EditTheater from "../components/Theater/EditTheater";
 
 export default function SysAdmin() {
   return (

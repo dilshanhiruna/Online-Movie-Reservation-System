@@ -5,7 +5,7 @@ import { Button, FormControl, TextField } from "@mui/material";
 import { useHistory } from "react-router";
 import Swal from "sweetalert2";
 
-export const AddTheater = () => {
+export default function AddTheater() {
   const history = useHistory();
   const [theaterName, settheatername] = useState("");
   const [location, setlocation] = useState("");
@@ -138,4 +138,4 @@ export const AddTheater = () => {
       </div>
     </div>
   );
-};
+}

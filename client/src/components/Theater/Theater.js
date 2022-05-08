@@ -5,8 +5,7 @@ import Axios from "axios";
 import Swal from "sweetalert2";
 
 import "./Theater.css";
-import "./AddTheater";
-import "./EditTheater";
+
 import {
   Button,
   Table,
@@ -79,11 +78,14 @@ export default function Theater() {
   const [open, setOpen] = useState(false);
 
   //get all theaters from the database
-  useEffect(() => {
+  const getAllTheaters = () => {
     Axios.get(`${API}api/v1/theater`).then((res) => {
-      console.log(res.data.data);
       settheaters(res.data.data);
     });
+  };
+
+  useEffect(() => {
+    getAllTheaters();
   }, []);
 
   //delete model confirmation
@@ -94,7 +96,7 @@ export default function Theater() {
   const handleClose = () => {
     setOpen(false);
   };
-  const Delete = () => {
+  const Delete = (id) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -105,7 +107,17 @@ export default function Theater() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        Axios.delete(`${API}api/v1/theater/${id}`).then((res) => {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          getAllTheaters();
+          Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        });
       }
     });
   };
@@ -167,9 +179,9 @@ export default function Theater() {
                       .includes(searchedValue.toString().toLowerCase())
                 )
                 .reverse()
-                .map((row) => (
+                .map((row, key) => (
                   <TableRow
-                    key={row.name}
+                    key={key}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
                     <TableCell component="th" scope="row">
@@ -178,21 +190,19 @@ export default function Theater() {
                     <TableCell align="left">{row.location}</TableCell>
                     <TableCell align="left">{row.seatPrice}</TableCell>
                     <TableCell align="left">
-                      <Button variant="outlined">
-                        <Link
-                          to="/theaters/update/{theater._id}"
-                          style={{ textDecoration: "none" }}
-                        >
-                          Edit
-                        </Link>
-                      </Button>
+                      <Link
+                        to={`/theaters/update/${row._id}`}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <Button variant="outlined"> Edit</Button>
+                      </Link>
                     </TableCell>
                     <TableCell align="left">
                       <Button
                         variant="outlined"
                         color="error"
                         onClick={() => {
-                          Delete();
+                          Delete(row._id);
                         }}
                       >
                         Delete
@@ -204,46 +214,6 @@ export default function Theater() {
           </Table>
         </TableContainer>
       </div>
-      {/* <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title" sx={{ m: 0, p: 2 }}>
-          {"Delete Confirmation"}
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            <img
-              src="https://www.pngplay.com/wp-content/uploads/5/Question-Mark-Symbol-PNG-Images-HD.png"
-              alt="question mark"
-              className="img_delete"
-            />
-            <br />
-            Are you sure you want to delete the theater?
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button
-            variant="contained"
-            color="success"
-            colostyle={{ width: "100px", height: "35px" }}
-            onClick={handleClose}
-          >
-            No
-          </Button>
-          <Button
-            variant="contained"
-            color="error"
-            colostyle={{ width: "100px", height: "35px" }}
-            // onClick={deleteTheater()}
-            autoFocus
-          >
-            Yes
-          </Button>
-        </DialogActions>
-      </Dialog> */}
     </div>
   );
 }
