@@ -49,6 +49,9 @@ export default function Reservations({ userID }) {
   const [open, setOpen] = useState(false);
   const [movieID, setMovieID] = useState(location.id);
 
+  //for email sending
+  const [reservation, setreservation] = useState([]);
+
   //get theaters from the database
   useEffect(() => {
     if (!movieID) {
@@ -176,6 +179,17 @@ export default function Reservations({ userID }) {
             if (res.data.id) {
               //navigate to next page
               history.push(`/customer/reservation/tickets/${res.data.id}`);
+
+              //TODO: Send SMS
+
+              //TODO: Send Email
+              Axios.get(
+                `${API}api/v1/reservations/tickets/${res.data.id}`
+              ).then((res) => {
+                setreservation(res.data.data);
+                console.log(res.data.data);
+                console.log("pabasara");
+              });
             }
           })
           .catch((err) => {

@@ -18,11 +18,6 @@ import {
   Paper,
   styled,
   alpha,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
@@ -37,10 +32,6 @@ const Search = styled("div")(({ theme }) => ({
   },
 
   width: "70%",
-  // [theme.breakpoints.up("sm")]: {
-  //   marginLeft: theme.spacing(1),
-  //   width: "auto",
-  // },
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -88,14 +79,14 @@ export default function Theater() {
     getAllTheaters();
   }, []);
 
-  //delete model confirmation
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  // //delete model confirmation
+  // const handleClickOpen = () => {
+  //   setOpen(true);
+  // };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
   const Delete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -121,20 +112,6 @@ export default function Theater() {
       }
     });
   };
-
-  //delete particular theater
-  // const deleteTheater = (id) => {
-  //   Axios.delete(`${API}api/v1/theater/${id}`).then((res) => {
-  //     console.log("deleted");
-  //   });
-  // };
-  //redirect to another route
-  // const history = useHistory();
-
-  // const routeChangetoInsert = () => {
-  //   let path = `/theaters/add`;
-  //   history.push(path);
-  // };
 
   return (
     <div className="res_details__title">
