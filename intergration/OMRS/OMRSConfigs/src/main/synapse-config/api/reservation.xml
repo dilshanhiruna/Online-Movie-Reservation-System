@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<api context="/reservation" name="reservation" xmlns="http://ws.apache.org/ns/synapse">
-    <resource methods="GET" url-mapping="/getReservations">
+<api context="/reservations" name="Reservation" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" url-mapping="/getall">
         <inSequence>
-            <log>
-                <property name="Reservation" value="hello world"/>
-            </log>
+            <log/>
             <send>
-                <endpoint key="reservations"/>
+                <endpoint key="getReservations"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/get/{id}">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="getReservation"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/add">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="addReservation"/>
             </send>
         </inSequence>
         <outSequence>

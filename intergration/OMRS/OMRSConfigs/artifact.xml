@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?><artifacts>
-    <artifact name="reservation" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
-        <file>src/main/synapse-config/api/reservation.xml</file>
+    <artifact name="Movies" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Movies.xml</file>
     </artifact>
-    <artifact name="reservation_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
-        <file>src/main/resources/metadata/reservation_swagger.yaml</file>
+    <artifact name="main_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/main_swagger.yaml</file>
     </artifact>
-    <artifact name="reservation_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
-        <file>src/main/resources/metadata/reservation_metadata.yaml</file>
+    <artifact name="main_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/main_metadata.yaml</file>
     </artifact>
-    <artifact name="reservations" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
-        <file>src/main/synapse-config/endpoints/reservations.xml</file>
+    <artifact name="getMovies" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getMovies.xml</file>
+    </artifact>
+    <artifact name="QRCode" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/QRCode.xml</file>
+    </artifact>
+    <artifact name="QRCode_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/QRCode_swagger.yaml</file>
+    </artifact>
+    <artifact name="QRCode_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/QRCode_metadata.yaml</file>
+    </artifact>
+    <artifact name="getQrcode" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getQrcode.xml</file>
+    </artifact>
+    <artifact name="getMovie" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getMovie.xml</file>
+    </artifact>
+    <artifact name="deleteMovies" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/deleteMovies.xml</file>
+    </artifact>
+    <artifact name="addMovies" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/addMovies.xml</file>
+    </artifact>
+    <artifact name="updateMovies" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/updateMovies.xml</file>
+    </artifact>
+    <artifact name="Theaters" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Theaters.xml</file>
+    </artifact>
+    <artifact name="Theaters_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Theaters_swagger.yaml</file>
+    </artifact>
+    <artifact name="Theaters_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Theaters_metadata.yaml</file>
+    </artifact>
+    <artifact name="getTheaters" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getTheaters.xml</file>
+    </artifact>
+    <artifact name="getTheater" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getTheater.xml</file>
+    </artifact>
+    <artifact name="addTheater" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/addTheater.xml</file>
+    </artifact>
+    <artifact name="updateTheater" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/updateTheater.xml</file>
+    </artifact>
+    <artifact name="deleteTheater" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/deleteTheater.xml</file>
+    </artifact>
+    <artifact name="Reservation" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Reservation.xml</file>
+    </artifact>
+    <artifact name="Reservation_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Reservation_swagger.yaml</file>
+    </artifact>
+    <artifact name="Reservation_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Reservation_metadata.yaml</file>
+    </artifact>
+    <artifact name="getReservations" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getReservations.xml</file>
+    </artifact>
+    <artifact name="getReservation" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getReservation.xml</file>
+    </artifact>
+    <artifact name="addReservation" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/addReservation.xml</file>
+    </artifact>
+    <artifact name="registration" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/registration.xml</file>
+    </artifact>
+    <artifact name="login" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/login.xml</file>
+    </artifact>
+    <artifact name="Users" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Users.xml</file>
+    </artifact>
+    <artifact name="Users_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Users_swagger.yaml</file>
+    </artifact>
+    <artifact name="Users_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Users_metadata.yaml</file>
     </artifact>
 </artifacts>

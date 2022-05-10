@@ -14,34 +14,230 @@
   <name>OMRSCompositeExporter</name>
   <description>OMRSCompositeExporter</description>
   <properties>
-    <com.example.api_._reservation>capp/EnterpriseServiceBus</com.example.api_._reservation>
-    <com.example.endpoint_._reservations>capp/EnterpriseServiceBus</com.example.endpoint_._reservations>
-    <com.example.metadata_._reservation_metadata>capp/EnterpriseServiceBus</com.example.metadata_._reservation_metadata>
-    <com.example.metadata_._reservation_swagger>capp/EnterpriseServiceBus</com.example.metadata_._reservation_swagger>
+    <com.example.endpoint_._addReservation>capp/EnterpriseServiceBus</com.example.endpoint_._addReservation>
+    <com.example.endpoint_._login>capp/EnterpriseServiceBus</com.example.endpoint_._login>
+    <com.example.metadata_._QRCode_swagger>capp/EnterpriseServiceBus</com.example.metadata_._QRCode_swagger>
+    <com.example.endpoint_._getQrcode>capp/EnterpriseServiceBus</com.example.endpoint_._getQrcode>
+    <com.example.metadata_._Reservation_metadata>capp/EnterpriseServiceBus</com.example.metadata_._Reservation_metadata>
+    <com.example.endpoint_._getReservations>capp/EnterpriseServiceBus</com.example.endpoint_._getReservations>
+    <com.example.endpoint_._addTheater>capp/EnterpriseServiceBus</com.example.endpoint_._addTheater>
+    <com.example.metadata_._Users_metadata>capp/EnterpriseServiceBus</com.example.metadata_._Users_metadata>
+    <com.example.endpoint_._registration>capp/EnterpriseServiceBus</com.example.endpoint_._registration>
+    <com.example.endpoint_._addMovies>capp/EnterpriseServiceBus</com.example.endpoint_._addMovies>
+    <com.example.metadata_._Theaters_metadata>capp/EnterpriseServiceBus</com.example.metadata_._Theaters_metadata>
+    <com.example.endpoint_._deleteMovies>capp/EnterpriseServiceBus</com.example.endpoint_._deleteMovies>
+    <com.example.api_._QRCode>capp/EnterpriseServiceBus</com.example.api_._QRCode>
+    <com.example.endpoint_._getTheaters>capp/EnterpriseServiceBus</com.example.endpoint_._getTheaters>
+    <com.example.metadata_._QRCode_metadata>capp/EnterpriseServiceBus</com.example.metadata_._QRCode_metadata>
+    <com.example.metadata_._main_swagger>capp/EnterpriseServiceBus</com.example.metadata_._main_swagger>
+    <com.example.endpoint_._getTheater>capp/EnterpriseServiceBus</com.example.endpoint_._getTheater>
+    <com.example.endpoint_._deleteTheater>capp/EnterpriseServiceBus</com.example.endpoint_._deleteTheater>
+    <com.example.api_._Movies>capp/EnterpriseServiceBus</com.example.api_._Movies>
+    <com.example.metadata_._Movies_metadata>capp/ApplicationServer</com.example.metadata_._Movies_metadata>
+    <com.example.endpoint_._getReservation>capp/EnterpriseServiceBus</com.example.endpoint_._getReservation>
+    <com.example.endpoint_._getMovies>capp/EnterpriseServiceBus</com.example.endpoint_._getMovies>
+    <com.example.api_._main>capp/ApplicationServer</com.example.api_._main>
+    <com.example.api_._Users>capp/EnterpriseServiceBus</com.example.api_._Users>
+    <com.example.api_._Reservation>capp/EnterpriseServiceBus</com.example.api_._Reservation>
+    <com.example.endpoint_._getMovie>capp/EnterpriseServiceBus</com.example.endpoint_._getMovie>
+    <com.example.api_._Theaters>capp/EnterpriseServiceBus</com.example.api_._Theaters>
+    <com.example.endpoint_._updateMovies>capp/EnterpriseServiceBus</com.example.endpoint_._updateMovies>
+    <com.example.metadata_._Reservation_swagger>capp/EnterpriseServiceBus</com.example.metadata_._Reservation_swagger>
+    <com.example.metadata_._Users_swagger>capp/EnterpriseServiceBus</com.example.metadata_._Users_swagger>
+    <com.example.endpoint_._updateTheater>capp/EnterpriseServiceBus</com.example.endpoint_._updateTheater>
+    <com.example.metadata_._Theaters_swagger>capp/EnterpriseServiceBus</com.example.metadata_._Theaters_swagger>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,synapse/metadata=yaml,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
   </properties>
   <dependencies>
     <dependency>
       <groupId>com.example.metadata</groupId>
-      <artifactId>reservation_metadata</artifactId>
+      <artifactId>Movies_metadata</artifactId>
       <version>1.0.0</version>
       <type>yaml</type>
     </dependency>
     <dependency>
       <groupId>com.example.metadata</groupId>
-      <artifactId>reservation_swagger</artifactId>
+      <artifactId>main_swagger</artifactId>
       <version>1.0.0</version>
       <type>yaml</type>
     </dependency>
     <dependency>
       <groupId>com.example.api</groupId>
-      <artifactId>reservation</artifactId>
+      <artifactId>main</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.api</groupId>
+      <artifactId>Movies</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>QRCode_metadata</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>QRCode_swagger</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.api</groupId>
+      <artifactId>QRCode</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
     <dependency>
       <groupId>com.example.endpoint</groupId>
-      <artifactId>reservations</artifactId>
+      <artifactId>getQrcode</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>getMovie</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>getMovies</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>addMovies</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>deleteMovies</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>Theaters_metadata</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>Theaters_swagger</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.api</groupId>
+      <artifactId>Theaters</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>addTheater</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>deleteTheater</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>getTheater</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>getTheaters</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>updateMovies</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>updateTheater</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>Reservation_metadata</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>Reservation_swagger</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.api</groupId>
+      <artifactId>Reservation</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>addReservation</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>getReservation</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>getReservations</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>Users_metadata</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>Users_swagger</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.api</groupId>
+      <artifactId>Users</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>login</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>registration</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>

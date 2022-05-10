@@ -4,7 +4,6 @@ const Joi = require("joi");
 const bcrypt = require("bcrypt");
 
 router.post("/", async (req, res) => {
-  console.log("1");
   try {
     const { error } = validate(req.body);
     if (error)
@@ -14,18 +13,16 @@ router.post("/", async (req, res) => {
     if (!user)
       return res.status(401).send({ message: "Invalid Password or Email" });
 
-    console.log("2");
     const validPassword = await bcrypt.compare(
       req.body.password,
       user.password
     );
 
-    console.log("3");
     if (!validPassword)
       return res.status(401).send({ message: "Invalid Password or Email" });
 
     const token = user.generateAuthToken();
-    console.log("4");
+
     res.status(200).send({ data: token, message: "Successfully Logged In" });
   } catch (error) {
     console.error(error);

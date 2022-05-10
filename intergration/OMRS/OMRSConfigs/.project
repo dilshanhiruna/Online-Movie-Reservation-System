@@ -3,6 +3,10 @@
 	<name>OMRSConfigs</name>
 	<comment></comment>
 	<projects>
+		<project>OMRS</project>
+		<project>OMRSCompositeExporter</project>
+		<project>OMRSConnectorExporter</project>
+		<project>OMRSRegistryResources</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>

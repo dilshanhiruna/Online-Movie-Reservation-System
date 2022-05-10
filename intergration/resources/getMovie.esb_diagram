@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_cQCbMNB8EeyU1NYn0QlmCg" type="Esb" name="getMovie" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_cRZtINB8EeyU1NYn0QlmCg" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_cRaUNNB8EeyU1NYn0QlmCg" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_coae8NB8EeyU1NYn0QlmCg" type="3668" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_coae8tB8EeyU1NYn0QlmCg" type="7044">
+          <children xmi:type="notation:Node" xmi:id="_coewYNB8EeyU1NYn0QlmCg" type="3669">
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_coewYdB8EeyU1NYn0QlmCg"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_coewYtB8EeyU1NYn0QlmCg" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_coewY9B8EeyU1NYn0QlmCg"/>
+            <element xmi:type="esb:APIResource" href="getMovie.esb#//@server/@children.0/@resources.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_coewZNB8EeyU1NYn0QlmCg" width="300" height="400"/>
+          </children>
+        </children>
+        <element xmi:type="esb:SynapseAPI" href="getMovie.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_coae8dB8EeyU1NYn0QlmCg" width="640" height="500"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_cRaUMNB8EeyU1NYn0QlmCg"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_cRaUMdB8EeyU1NYn0QlmCg" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_cRaUMtB8EeyU1NYn0QlmCg"/>
+    <element xmi:type="esb:EsbServer" href="getMovie.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cRaUM9B8EeyU1NYn0QlmCg"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_cQDCQNB8EeyU1NYn0QlmCg"/>
+  <element xmi:type="esb:EsbDiagram" href="getMovie.esb#/"/>
+</notation:Diagram>

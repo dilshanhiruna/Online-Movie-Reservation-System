@@ -1,3 +1,1 @@
 INDEX VERSION 1.131
-file:/E:/3Y2S/CourseWork/DS/Assessment2/Online-Movie-Reservation-System/intergration/.metadata/.plugins/org.eclipse.jdt.core/1865797976.index
-meta_index

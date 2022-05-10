@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/users  " name="users" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" url-mapping="/register">
+        <inSequence>
+            <log level="full">
+                <property name="Message" value="Register user"/>
+            </log>
+            <send>
+                <endpoint key="registration"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log>
+                <property name="Message" value="user registered"/>
+            </log>
+            <send receive=""/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/login">
+        <inSequence>
+            <log level="full">
+                <property name="Message" value="Login user"/>
+            </log>
+            <send>
+                <endpoint key="login"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log>
+                <property name="Message" value="user logged in"/>
+            </log>
+            <send receive=""/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

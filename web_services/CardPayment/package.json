@@ -10,13 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:web_services/MobilePayment/package.json
     "awesome-phonenumber": "^2.73.0",
-=======
->>>>>>> d0eee13583078d2525d4f7822b2ee0642dda3263:web_services/CardPayment/package.json
->>>>>>> d0eee13583078d2525d4f7822b2ee0642dda3263
     "card-validator": "^8.1.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",

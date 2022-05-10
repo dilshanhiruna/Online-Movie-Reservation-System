@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/getQrcode" name="QRCode" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <log>
+                <property name="Message" value="Generating QR code for tickets"/>
+            </log>
+            <send>
+                <endpoint key="getQrcode"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log>
+                <property name="Message" value="Got movies"/>
+            </log>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/theaters" name="theaters" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/get/{id}">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="getTheater"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/add">
+        <inSequence>
+            <log level="full">
+                <property name="Message" value="Add Theater"/>
+            </log>
+            <send>
+                <endpoint key="addTheater"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log>
+                <property name="Message" value="Theaters added"/>
+            </log>
+            <send receive=""/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" url-mapping="/getall">
+        <inSequence>
+            <!--This is generated API skeleton.-->
+            <!--Business Logic Goes Here-->
+            <log/>
+            <send>
+                <endpoint key="getTheaters"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE" uri-template="/delete/{id}">
+        <inSequence>
+            <log level="full">
+                <property name="Message" value="Delete theater"/>
+            </log>
+            <send>
+                <endpoint key="deleteTheater"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log>
+                <property name="Message" value="Theater deleted"/>
+            </log>
+            <send receive=""/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="PUT" uri-template="/update/{id}">
+        <inSequence>
+            <log level="full">
+                <property name="Message" value="update theater"/>
+            </log>
+            <send>
+                <endpoint key="updateTheater"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log>
+                <property name="Message" value="Theater updated"/>
+            </log>
+            <send receive=""/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>
