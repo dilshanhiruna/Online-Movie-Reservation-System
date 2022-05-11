@@ -92,4 +92,52 @@
     <artifact name="Users_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
         <file>src/main/resources/metadata/Users_metadata.yaml</file>
     </artifact>
+    <artifact name="CardPayment" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/CardPayment.xml</file>
+    </artifact>
+    <artifact name="CardPayment_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/CardPayment_swagger.yaml</file>
+    </artifact>
+    <artifact name="CardPayment_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/CardPayment_metadata.yaml</file>
+    </artifact>
+    <artifact name="cardPay" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/cardPay.xml</file>
+    </artifact>
+    <artifact name="MobilePayment" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/MobilePayment.xml</file>
+    </artifact>
+    <artifact name="MobilePayment_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/MobilePayment_swagger.yaml</file>
+    </artifact>
+    <artifact name="MobilePayment_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/MobilePayment_metadata.yaml</file>
+    </artifact>
+    <artifact name="mobilePay" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/mobilePay.xml</file>
+    </artifact>
+    <artifact name="SendSMS" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/SendSMS.xml</file>
+    </artifact>
+    <artifact name="SendSMS_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/SendSMS_swagger.yaml</file>
+    </artifact>
+    <artifact name="SendSMS_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/SendSMS_metadata.yaml</file>
+    </artifact>
+    <artifact name="SendEmail" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/SendEmail.xml</file>
+    </artifact>
+    <artifact name="SendEmail_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/SendEmail_swagger.yaml</file>
+    </artifact>
+    <artifact name="SendEmail_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/SendEmail_metadata.yaml</file>
+    </artifact>
+    <artifact name="email" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/email.xml</file>
+    </artifact>
+    <artifact name="sms" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/sms.xml</file>
+    </artifact>
 </artifacts>

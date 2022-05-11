@@ -5,13 +5,15 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server"
+    "dev": "nodemon server",
+    "services": " concurrently \"npm run dev\"  \" cd ../web_services/CardPayment && npm run dev\" \" cd ../web_services/MobilePayment && npm run dev\" \" cd ../web_services/QRCodeService && npm run dev\" \" cd ../web_services/SmsService && npm run dev\" \"cd ../client && npm start\""
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "card-validator": "^8.1.1",
+    "concurrently": "^7.1.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",

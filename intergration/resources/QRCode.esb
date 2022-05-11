@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <esb:EsbDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb">
   <server type="API">
-    <children xsi:type="esb:SynapseAPI" apiName="QRCode" context="/getQrcode">
+    <children xsi:type="esb:SynapseAPI" apiName="QRCode" context="/gettickets">
       <resources allowGet="true">
         <inputConnector incomingLinks="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@OutputConnector/@outgoingLink"/>
         <outputConnector>
@@ -15,7 +15,7 @@
         <container>
           <sequenceAndEndpointContainer>
             <mediatorFlow>
-              <children xsi:type="esb:LogMediator">
+              <children xsi:type="esb:LogMediator" logSeparator=", ">
                 <inputConnector incomingLinks="//@server/@children.0/@resources.0/@outputConnector/@outgoingLink"/>
                 <outputConnector>
                   <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@InputConnector"/>
@@ -56,7 +56,7 @@
                 <endpointOutputConnector/>
                 <mediatorFlow/>
               </children>
-              <children xsi:type="esb:LogMediator">
+              <children xsi:type="esb:LogMediator" logSeparator=", ">
                 <inputConnector incomingLinks="//@server/@children.0/@resources.0/@outSequenceOutputConnector/@outgoingLink"/>
                 <outputConnector>
                   <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@InputConnector"/>

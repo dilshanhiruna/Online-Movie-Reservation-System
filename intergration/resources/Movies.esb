@@ -69,7 +69,7 @@
         <outSequenceKey prettyName="Out Sequence Reference" keyName="key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
         <faultSequenceKey prettyName="Fault Sequence Reference" keyName="key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
       </resources>
-      <resources urlStyle="URI_TEMPLATE" uriTemplate="/add" allowPost="true">
+      <resources urlStyle="URL_MAPPING" urlMapping="/add" allowPost="true">
         <inputConnector incomingLinks="//@server/@children.0/@resources.1/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@OutputConnector/@outgoingLink"/>
         <outputConnector>
           <outgoingLink target="//@server/@children.0/@resources.1/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@inputConnector"/>
@@ -283,7 +283,7 @@
         <container>
           <sequenceAndEndpointContainer>
             <mediatorFlow>
-              <children xsi:type="esb:LogMediator">
+              <children xsi:type="esb:LogMediator" logSeparator=", ">
                 <inputConnector incomingLinks="//@server/@children.0/@resources.4/@outputConnector/@outgoingLink"/>
                 <outputConnector>
                   <outgoingLink target="//@server/@children.0/@resources.4/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@InputConnector"/>
