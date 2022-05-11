@@ -200,7 +200,10 @@ export default function Reservations({ userID }) {
                 email: "dilshanrex@gmail.com",
               };
 
-              Axios.post(`${API}api/v1/sendemail`, emailData).then((res) => {
+              Axios.post(
+                `http://localhost:5006/api/v1/sendemail`,
+                emailData
+              ).then((res) => {
                 console.log(res);
               });
             }

@@ -1,13 +1,10 @@
 var nodemailer = require("nodemailer");
 const EMAILADDRESS = process.env.EMAIL;
 const PASSWORD = process.env.PASSWORD;
-//pwd - sliit#DSa2
-//email -moviereservationsliit@gmail.com
 
 //@desc   Get all reservations
 //@route  GET /api/v1/
 //@access Public
-
 exports.sendEmail = async (req, res) => {
   const {
     movieName,
@@ -23,13 +20,13 @@ exports.sendEmail = async (req, res) => {
 
   // function to get the time slot according to the numbering
   const getTimeSlot = (slot) => {
-    if (slot === "1") {
+    if (slot == "1") {
       return "09:00-11:00";
-    } else if (slot === "2") {
+    } else if (slot == "2") {
       return "12:00-14:00";
-    } else if (slot === "3") {
+    } else if (slot == "3") {
       return "15:00-17:00";
-    } else if (slot === "4") {
+    } else if (slot == "4") {
       return "18:00-20:00";
     } else {
       return "Not Available";
@@ -48,6 +45,13 @@ exports.sendEmail = async (req, res) => {
     from: "moviereservationsliit@gmail.com",
     to: email,
     subject: "Confirm the movie reservation",
+    attachments: [
+      {
+        filename: "ticket.png",
+        path: ticketQRcode,
+        cid: "qr@cid",
+      },
+    ],
     html: `<style>
       table, th, td {
         border: 1px solid;
@@ -64,7 +68,7 @@ exports.sendEmail = async (req, res) => {
           <th>Time</th>
           <th>Payment</th>
           <th>Total Price</th>
-          <th>Status</th>
+  
           
         </tr>
         <tr>
@@ -78,16 +82,10 @@ exports.sendEmail = async (req, res) => {
         </tr>
       </table>
       <br/>
-      <img src=${ticketQRcode} alt="QR">
+      <h1>Ticket QR Code</h1>
+      <img src="cid:qr@cid" alt="QR Code" />
       <p>Thanks and Regards,<br/>Online Movie Reservation System</p>`,
   };
-
-  // attachments: [
-  //   {
-  //     filename: "image.png",
-  //     path: "/path/to/file",
-  //   },
-  // ];
   transpoter.sendMail(mailOption, function (error, info) {
     if (error) {
       console.log(error);
