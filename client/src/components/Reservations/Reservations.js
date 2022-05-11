@@ -49,6 +49,9 @@ export default function Reservations({ userID }) {
   const [open, setOpen] = useState(false);
   const [movieID, setMovieID] = useState(location.id);
 
+  //for email sending
+  const [reservation, setreservation] = useState([]);
+
   //get theaters from the database
   useEffect(() => {
     if (!movieID) {
@@ -142,9 +145,13 @@ export default function Reservations({ userID }) {
       paymentType: paymentType,
       totalPrice: totalPrice,
     };
+
+    let ticketQRcode = "";
+
     //create a QR code
     Axios.post(`${QRCODE_API}api/v1/ticket`, { payload })
       .then((res) => {
+        ticketQRcode = res.data.data;
         let tickets = [];
         // create tickets with the QR code
         for (let i = 0; i < noOfTickets; i++) {
@@ -176,6 +183,26 @@ export default function Reservations({ userID }) {
             if (res.data.id) {
               //navigate to next page
               history.push(`/customer/reservation/tickets/${res.data.id}`);
+
+              //TODO: Send SMS
+
+              //TODO: Send Email
+
+              const emailData = {
+                movieName: Movie.name,
+                theaterName,
+                noOfTickets,
+                date,
+                timeSlot: timeSlot,
+                paymentType,
+                totalPrice,
+                ticketQRcode,
+                email: "dilshanrex@gmail.com",
+              };
+
+              Axios.post(`${API}api/v1/sendemail`, emailData).then((res) => {
+                console.log(res);
+              });
             }
           })
           .catch((err) => {

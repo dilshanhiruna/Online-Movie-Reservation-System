@@ -1,0 +1,43 @@
+.Theater_details {
+    /* background-color: aqua; */
+    min-width: 60%;
+  }
+  .Theater_details h1 {
+    font-size: 35px;
+    margin-left: 250px;
+  }
+  .Theater_txt{
+    margin: 1;
+    width: 45ch;
+  }
+  .Theater_Btn{
+    display: flex;
+    margin-left: 2050px;
+  }
+  .Theater_insertBtn{
+    display: flex;
+    margin-left: "1100px";
+  }
+  .Theater_details__input {
+    display: flex;
+    margin: 28px;
+  }
+  .Theater_details__input p {
+    margin: 10px;
+    margin-left: 100px;
+    font-size: 20px;
+    font-weight: 400;
+    width: 25%;
+  }
+  .res_component {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 13px;
+    padding: 0px 35px;
+  }
+  .img_delete{
+    height: 100px;
+    margin-left: 100px;
+  }
+  
