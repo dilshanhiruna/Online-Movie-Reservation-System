@@ -4,6 +4,7 @@ import './Header.css';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import Logout from "../../components/Logout/index";
 
 export default function MovAdminHeader({ title }) {
   const history = useHistory();
@@ -39,6 +40,9 @@ export default function MovAdminHeader({ title }) {
               >
                 Add_Movie
               </Button>
+            </div>
+            <div>
+              <Logout/>
             </div>
           </div>
           {/* <div className='header__right'>
