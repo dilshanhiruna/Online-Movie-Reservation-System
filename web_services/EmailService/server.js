@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Route files
-const email = require("./routes/Email").default;
+const email = require("./routes/Email");
 
 // Mount routers
 app.use("/api/v1/sendemail", email);

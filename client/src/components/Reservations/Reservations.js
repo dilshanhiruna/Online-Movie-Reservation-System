@@ -145,9 +145,13 @@ export default function Reservations({ userID }) {
       paymentType: paymentType,
       totalPrice: totalPrice,
     };
+
+    let ticketQRcode = "";
+
     //create a QR code
     Axios.post(`${QRCODE_API}api/v1/ticket`, { payload })
       .then((res) => {
+        ticketQRcode = res.data.data;
         let tickets = [];
         // create tickets with the QR code
         for (let i = 0; i < noOfTickets; i++) {
@@ -183,12 +187,21 @@ export default function Reservations({ userID }) {
               //TODO: Send SMS
 
               //TODO: Send Email
-              Axios.get(
-                `${API}api/v1/reservations/tickets/${res.data.id}`
-              ).then((res) => {
-                setreservation(res.data.data);
-                console.log(res.data.data);
-                console.log("pabasara");
+
+              const emailData = {
+                movieName,
+                theaterName,
+                noOfTickets,
+                date,
+                Time,
+                paymentType,
+                totalPrice,
+                ticketQRcode,
+                email: "dilshanrex@gmail.com",
+              };
+
+              Axios.post(`${API}api/v1/sendemail`, emailData).then((res) => {
+                console.log(res);
               });
             }
           })
