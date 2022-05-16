@@ -104,6 +104,8 @@ export default function AddMovies() {
             label="Movie Name"
             variant="outlined"
             onChange={(e) => setName(e.target.value)}
+            required="true"
+            helperText="Error"
           />
           <TextField
             id="outlined-basic"

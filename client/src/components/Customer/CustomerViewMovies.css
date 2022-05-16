@@ -2,6 +2,14 @@
   display: flex;
   flex-direction: row;
   justify-content: start;
-  margin: 20px;
+  margin: 20px 20px 20px 100px;
   padding: 0px 40px;
+  flex-grow: 1;
 }
+
+/* .root {
+  flexGrow: 1,
+  padding: theme.spacing(2)
+  flex-grow: 1;
+  padding: theme.spacing(2);
+} */
