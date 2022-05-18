@@ -28,6 +28,7 @@ const MovieSchema = new mongoose.Schema({
   banner: {
     type: String,
     default: 'no-photo.jpg',
+    required: [true, 'Please add an image'],
   },
 
   theaters: {
