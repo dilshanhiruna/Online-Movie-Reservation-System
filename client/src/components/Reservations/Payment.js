@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import Axios from "axios";
 
 export default function Payment(props) {
-  const API = process.env.REACT_APP_CARDPAYMENT_API;
+  const API = process.env.REACT_APP_API;
 
   // get all the props from the parent component
   const {

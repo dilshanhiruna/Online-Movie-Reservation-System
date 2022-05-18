@@ -25,3 +25,14 @@ STEPS:
 This should run the client and all the internal and external web services
 
 NOTE: please make sure to run the integrated web services using WSO2 EI (workspace: intergration)
+
+
+
+
+
+For enabaling cors in WSO2 EI for data services
+https://docs.wso2.com/display/EI640/Enabling+CORS+for+Data+Services
+
+if cors problem exists, please check the following
+run the following command to open Chrom with web security in the "Run"
+chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security

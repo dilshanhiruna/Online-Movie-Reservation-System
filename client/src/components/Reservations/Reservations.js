@@ -62,20 +62,17 @@ export default function Reservations({ userID }) {
     Axios.get(`${API}movies/get/${movieID}`)
       .then((res) => {
         setMovie(res.data.data);
-        console.log(res.data.data);
-        console.log(res.data.data.theaters[0]);
-        // setTheaters(res.data.data.theaters);
-        // settheaterName(res.data.data.theaters[0]);
         if (res.data.data.theaters.length > 0) {
           //map theater array and fetch all theaters and save them in the theater state
-          Axios.get(`${API}theater/get/${res.data.data.theaters[0]}`).then(
+          Axios.get(`${API}theaters/get/${res.data.data.theaters[0]}`).then(
             (res) => {
               settheaterName(res.data.data.theaterName);
+              console.log(res.data.data.theaterName);
             }
           );
 
           res.data.data.theaters.map((theater) => {
-            Axios.get(`${API}theater/${theater}`).then((res) => {
+            Axios.get(`${API}theaters/get/${theater}`).then((res) => {
               setTheaters((prev) => [...prev, res.data.data]);
             });
           });

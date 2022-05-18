@@ -1,263 +1,263 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_sU6UsNZpEeyJ7Mf25LOs1A" type="Esb" name="QRCode" measurementUnit="Pixel">
-  <children xmi:type="notation:Node" xmi:id="_sV7oYNZpEeyJ7Mf25LOs1A" type="2001">
-    <children xmi:type="notation:DecorationNode" xmi:id="_sV8PcNZpEeyJ7Mf25LOs1A" type="7001">
-      <children xmi:type="notation:Shape" xmi:id="_sgDNsNZpEeyJ7Mf25LOs1A" type="3668" fontName="Segoe UI">
-        <children xmi:type="notation:BasicCompartment" xmi:id="_sgDNstZpEeyJ7Mf25LOs1A" type="7044">
-          <children xmi:type="notation:Node" xmi:id="_sgLwkNZpEeyJ7Mf25LOs1A" type="3669">
-            <children xmi:type="notation:Node" xmi:id="_sgOM0NZpEeyJ7Mf25LOs1A" type="3670">
-              <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgOM0dZpEeyJ7Mf25LOs1A"/>
-              <styles xmi:type="notation:FontStyle" xmi:id="_sgOM0tZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-              <styles xmi:type="notation:LineStyle" xmi:id="_sgOM09ZpEeyJ7Mf25LOs1A"/>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="__LVGcNZ8Eeylfuz1ffvgkw" type="Esb" name="QRCode" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="__MpVENZ8Eeylfuz1ffvgkw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="__Mp8INZ8Eeylfuz1ffvgkw" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="__XesENZ8Eeylfuz1ffvgkw" type="3668" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="__XesEtZ8Eeylfuz1ffvgkw" type="7044">
+          <children xmi:type="notation:Node" xmi:id="__XsHcNZ8Eeylfuz1ffvgkw" type="3669">
+            <children xmi:type="notation:Node" xmi:id="__Xt8oNZ8Eeylfuz1ffvgkw" type="3670">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="__Xt8odZ8Eeylfuz1ffvgkw"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="__Xt8otZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="__Xt8o9Z8Eeylfuz1ffvgkw"/>
               <element xmi:type="esb:APIResourceInputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@inputConnector"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgOM1NZpEeyJ7Mf25LOs1A" x="86" y="-11"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__Xt8pNZ8Eeylfuz1ffvgkw" x="86" y="-11"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_sgOz4NZpEeyJ7Mf25LOs1A" type="3671">
-              <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgOz4dZpEeyJ7Mf25LOs1A"/>
-              <styles xmi:type="notation:FontStyle" xmi:id="_sgOz4tZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-              <styles xmi:type="notation:LineStyle" xmi:id="_sgOz49ZpEeyJ7Mf25LOs1A"/>
+            <children xmi:type="notation:Node" xmi:id="__Xt8pdZ8Eeylfuz1ffvgkw" type="3671">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="__Xt8ptZ8Eeylfuz1ffvgkw"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="__Xt8p9Z8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="__Xt8qNZ8Eeylfuz1ffvgkw"/>
               <element xmi:type="esb:APIResourceOutputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@outputConnector"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgOz5NZpEeyJ7Mf25LOs1A" x="86" y="-23"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__Xt8qdZ8Eeylfuz1ffvgkw" x="86" y="-23"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_sgOz5dZpEeyJ7Mf25LOs1A" type="3730">
-              <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgOz5tZpEeyJ7Mf25LOs1A"/>
-              <styles xmi:type="notation:FontStyle" xmi:id="_sgOz59ZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-              <styles xmi:type="notation:LineStyle" xmi:id="_sgOz6NZpEeyJ7Mf25LOs1A"/>
+            <children xmi:type="notation:Node" xmi:id="__XujsNZ8Eeylfuz1ffvgkw" type="3730">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="__XujsdZ8Eeylfuz1ffvgkw"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="__XujstZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="__Xujs9Z8Eeylfuz1ffvgkw"/>
               <element xmi:type="esb:APIResourceOutSequenceOutputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@outSequenceOutputConnector"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgOz6dZpEeyJ7Mf25LOs1A" x="110" y="-11"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__XujtNZ8Eeylfuz1ffvgkw" x="110" y="-11"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_sgOz6tZpEeyJ7Mf25LOs1A" type="3672">
-              <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgOz69ZpEeyJ7Mf25LOs1A"/>
-              <styles xmi:type="notation:FontStyle" xmi:id="_sgOz7NZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-              <styles xmi:type="notation:LineStyle" xmi:id="_sgOz7dZpEeyJ7Mf25LOs1A"/>
+            <children xmi:type="notation:Node" xmi:id="__XujtdZ8Eeylfuz1ffvgkw" type="3672">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="__XujttZ8Eeylfuz1ffvgkw"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="__Xujt9Z8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="__XujuNZ8Eeylfuz1ffvgkw"/>
               <element xmi:type="esb:APIResourceFaultInputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@faultInputConnector"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgOz7tZpEeyJ7Mf25LOs1A" x="86" y="7"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__XujudZ8Eeylfuz1ffvgkw" x="86" y="7"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_sgPa8NZpEeyJ7Mf25LOs1A" type="3673">
-              <children xmi:type="notation:Node" xmi:id="_sgSeQNZpEeyJ7Mf25LOs1A" type="3487">
-                <children xmi:type="notation:Node" xmi:id="_sgTFUNZpEeyJ7Mf25LOs1A" type="3608">
-                  <children xmi:type="notation:DecorationNode" xmi:id="_sgTFVdZpEeyJ7Mf25LOs1A" type="7034">
-                    <children xmi:type="notation:Node" xmi:id="_sgfSkNZpEeyJ7Mf25LOs1A" type="3495">
-                      <children xmi:type="notation:DecorationNode" xmi:id="_sgfSldZpEeyJ7Mf25LOs1A" type="5168"/>
-                      <children xmi:type="notation:Node" xmi:id="_sgiV4NZpEeyJ7Mf25LOs1A" type="3018">
-                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgiV4dZpEeyJ7Mf25LOs1A"/>
-                        <styles xmi:type="notation:FontStyle" xmi:id="_sgiV4tZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                        <styles xmi:type="notation:LineStyle" xmi:id="_sgiV49ZpEeyJ7Mf25LOs1A"/>
+            <children xmi:type="notation:Node" xmi:id="__XujutZ8Eeylfuz1ffvgkw" type="3673">
+              <children xmi:type="notation:Node" xmi:id="__Xw_8NZ8Eeylfuz1ffvgkw" type="3487">
+                <children xmi:type="notation:Node" xmi:id="__XxnANZ8Eeylfuz1ffvgkw" type="3608">
+                  <children xmi:type="notation:DecorationNode" xmi:id="__XxnBdZ8Eeylfuz1ffvgkw" type="7034">
+                    <children xmi:type="notation:Node" xmi:id="__X5i0NZ8Eeylfuz1ffvgkw" type="3495">
+                      <children xmi:type="notation:DecorationNode" xmi:id="__X5i1dZ8Eeylfuz1ffvgkw" type="5168"/>
+                      <children xmi:type="notation:Node" xmi:id="__X7YANZ8Eeylfuz1ffvgkw" type="3018">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="__X7YAdZ8Eeylfuz1ffvgkw"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="__X7YAtZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="__X7YA9Z8Eeylfuz1ffvgkw"/>
                         <element xmi:type="esb:LogMediatorInputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@inputConnector"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgiV5NZpEeyJ7Mf25LOs1A" x="-6" y="-5"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__X7YBNZ8Eeylfuz1ffvgkw" x="-6" y="-5"/>
                       </children>
-                      <children xmi:type="notation:Node" xmi:id="_sgiV5dZpEeyJ7Mf25LOs1A" type="3019">
-                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgiV5tZpEeyJ7Mf25LOs1A"/>
-                        <styles xmi:type="notation:FontStyle" xmi:id="_sgiV59ZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                        <styles xmi:type="notation:LineStyle" xmi:id="_sgiV6NZpEeyJ7Mf25LOs1A"/>
+                      <children xmi:type="notation:Node" xmi:id="__X7YBdZ8Eeylfuz1ffvgkw" type="3019">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="__X7YBtZ8Eeylfuz1ffvgkw"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="__X7YB9Z8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="__X7YCNZ8Eeylfuz1ffvgkw"/>
                         <element xmi:type="esb:LogMediatorOutputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgiV6dZpEeyJ7Mf25LOs1A" x="64" y="-9"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__X7YCdZ8Eeylfuz1ffvgkw" x="64" y="-9"/>
                       </children>
-                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgfSkdZpEeyJ7Mf25LOs1A"/>
-                      <styles xmi:type="notation:FontStyle" xmi:id="_sgfSktZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                      <styles xmi:type="notation:LineStyle" xmi:id="_sgfSk9ZpEeyJ7Mf25LOs1A"/>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="__X5i0dZ8Eeylfuz1ffvgkw"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="__X5i0tZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="__X5i09Z8Eeylfuz1ffvgkw"/>
                       <element xmi:type="esb:LogMediator" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0"/>
-                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgfSlNZpEeyJ7Mf25LOs1A" x="25" y="38" width="84" height="115"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__X5i1NZ8Eeylfuz1ffvgkw" x="25" y="38" width="84" height="115"/>
                     </children>
-                    <children xmi:type="notation:Node" xmi:id="_sgpqoNZpEeyJ7Mf25LOs1A" type="3515">
-                      <children xmi:type="notation:Node" xmi:id="_sgrf0NZpEeyJ7Mf25LOs1A" type="3085">
-                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgrf0dZpEeyJ7Mf25LOs1A"/>
-                        <styles xmi:type="notation:FontStyle" xmi:id="_sgrf0tZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                        <styles xmi:type="notation:LineStyle" xmi:id="_sgrf09ZpEeyJ7Mf25LOs1A"/>
+                    <children xmi:type="notation:Node" xmi:id="__X_pcNZ8Eeylfuz1ffvgkw" type="3515">
+                      <children xmi:type="notation:Node" xmi:id="__YA3kNZ8Eeylfuz1ffvgkw" type="3085">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="__YA3kdZ8Eeylfuz1ffvgkw"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="__YA3ktZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="__YA3k9Z8Eeylfuz1ffvgkw"/>
                         <element xmi:type="esb:SendMediatorInputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@InputConnector"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgrf1NZpEeyJ7Mf25LOs1A" x="-6" y="-5"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YA3lNZ8Eeylfuz1ffvgkw" x="-6" y="-5"/>
                       </children>
-                      <children xmi:type="notation:Node" xmi:id="_sgsG4NZpEeyJ7Mf25LOs1A" type="3086">
-                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgsG4dZpEeyJ7Mf25LOs1A"/>
-                        <styles xmi:type="notation:FontStyle" xmi:id="_sgsG4tZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                        <styles xmi:type="notation:LineStyle" xmi:id="_sgsG49ZpEeyJ7Mf25LOs1A"/>
+                      <children xmi:type="notation:Node" xmi:id="__YA3ldZ8Eeylfuz1ffvgkw" type="3086">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="__YA3ltZ8Eeylfuz1ffvgkw"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="__YA3l9Z8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="__YA3mNZ8Eeylfuz1ffvgkw"/>
                         <element xmi:type="esb:SendMediatorOutputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@OutputConnector"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgsG5NZpEeyJ7Mf25LOs1A" x="-11" y="-9"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YA3mdZ8Eeylfuz1ffvgkw" x="-11" y="-9"/>
                       </children>
-                      <children xmi:type="notation:Node" xmi:id="_sgsG5dZpEeyJ7Mf25LOs1A" type="3539">
-                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgsG5tZpEeyJ7Mf25LOs1A"/>
-                        <styles xmi:type="notation:FontStyle" xmi:id="_sgsG59ZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                        <styles xmi:type="notation:LineStyle" xmi:id="_sgsG6NZpEeyJ7Mf25LOs1A"/>
+                      <children xmi:type="notation:Node" xmi:id="__YBeoNZ8Eeylfuz1ffvgkw" type="3539">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="__YBeodZ8Eeylfuz1ffvgkw"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="__YBeotZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="__YBeo9Z8Eeylfuz1ffvgkw"/>
                         <element xmi:type="esb:SendMediatorEndpointOutputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@endpointOutputConnector"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgsG6dZpEeyJ7Mf25LOs1A"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YBepNZ8Eeylfuz1ffvgkw"/>
                       </children>
-                      <children xmi:type="notation:Node" xmi:id="_sgsG6tZpEeyJ7Mf25LOs1A" type="3728">
-                        <children xmi:type="notation:DecorationNode" xmi:id="_sgsG79ZpEeyJ7Mf25LOs1A" type="7046">
-                          <children xmi:type="notation:Node" xmi:id="_sg1Q0NZpEeyJ7Mf25LOs1A" type="3660">
-                            <children xmi:type="notation:DecorationNode" xmi:id="_sg134NZpEeyJ7Mf25LOs1A" type="5165"/>
-                            <children xmi:type="notation:Node" xmi:id="_sg47MNZpEeyJ7Mf25LOs1A" type="3661">
-                              <styles xmi:type="notation:DescriptionStyle" xmi:id="_sg47MdZpEeyJ7Mf25LOs1A"/>
-                              <styles xmi:type="notation:FontStyle" xmi:id="_sg47MtZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                              <styles xmi:type="notation:LineStyle" xmi:id="_sg47M9ZpEeyJ7Mf25LOs1A"/>
+                      <children xmi:type="notation:Node" xmi:id="__YBepdZ8Eeylfuz1ffvgkw" type="3728">
+                        <children xmi:type="notation:DecorationNode" xmi:id="__YBeqtZ8Eeylfuz1ffvgkw" type="7046">
+                          <children xmi:type="notation:Node" xmi:id="__YHlQNZ8Eeylfuz1ffvgkw" type="3660">
+                            <children xmi:type="notation:DecorationNode" xmi:id="__YHlRdZ8Eeylfuz1ffvgkw" type="5165"/>
+                            <children xmi:type="notation:Node" xmi:id="__YKBgNZ8Eeylfuz1ffvgkw" type="3661">
+                              <styles xmi:type="notation:DescriptionStyle" xmi:id="__YKBgdZ8Eeylfuz1ffvgkw"/>
+                              <styles xmi:type="notation:FontStyle" xmi:id="__YKBgtZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                              <styles xmi:type="notation:LineStyle" xmi:id="__YKBg9Z8Eeylfuz1ffvgkw"/>
                               <element xmi:type="esb:NamedEndpointInputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@mediatorFlow/@children.0/@inputConnector"/>
-                              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sg47NNZpEeyJ7Mf25LOs1A"/>
+                              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YKBhNZ8Eeylfuz1ffvgkw"/>
                             </children>
-                            <styles xmi:type="notation:DescriptionStyle" xmi:id="_sg1Q0dZpEeyJ7Mf25LOs1A"/>
-                            <styles xmi:type="notation:FontStyle" xmi:id="_sg1Q0tZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                            <styles xmi:type="notation:LineStyle" xmi:id="_sg1Q09ZpEeyJ7Mf25LOs1A"/>
+                            <styles xmi:type="notation:DescriptionStyle" xmi:id="__YHlQdZ8Eeylfuz1ffvgkw"/>
+                            <styles xmi:type="notation:FontStyle" xmi:id="__YHlQtZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                            <styles xmi:type="notation:LineStyle" xmi:id="__YHlQ9Z8Eeylfuz1ffvgkw"/>
                             <element xmi:type="esb:NamedEndpoint" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@mediatorFlow/@children.0"/>
-                            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sg1Q1NZpEeyJ7Mf25LOs1A" x="5" y="103"/>
+                            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YHlRNZ8Eeylfuz1ffvgkw" x="5" y="103"/>
                           </children>
-                          <styles xmi:type="notation:TitleStyle" xmi:id="_sgsG8NZpEeyJ7Mf25LOs1A" showTitle="true"/>
+                          <styles xmi:type="notation:TitleStyle" xmi:id="__YBeq9Z8Eeylfuz1ffvgkw" showTitle="true"/>
                         </children>
-                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgsG69ZpEeyJ7Mf25LOs1A"/>
-                        <styles xmi:type="notation:FontStyle" xmi:id="_sgsG7NZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                        <styles xmi:type="notation:LineStyle" xmi:id="_sgsG7dZpEeyJ7Mf25LOs1A"/>
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="__YBeptZ8Eeylfuz1ffvgkw"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="__YBep9Z8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="__YBeqNZ8Eeylfuz1ffvgkw"/>
                         <element xmi:type="esb:MediatorFlow" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@mediatorFlow"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgsG7tZpEeyJ7Mf25LOs1A"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YBeqdZ8Eeylfuz1ffvgkw"/>
                       </children>
-                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgpqodZpEeyJ7Mf25LOs1A"/>
-                      <styles xmi:type="notation:FontStyle" xmi:id="_sgpqotZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                      <styles xmi:type="notation:LineStyle" xmi:id="_sgpqo9ZpEeyJ7Mf25LOs1A"/>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="__X_pcdZ8Eeylfuz1ffvgkw"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="__X_pctZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="__X_pc9Z8Eeylfuz1ffvgkw"/>
                       <element xmi:type="esb:SendMediator" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1"/>
-                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgpqpNZpEeyJ7Mf25LOs1A" x="149" y="38" width="170" height="100"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__X_pdNZ8Eeylfuz1ffvgkw" x="149" y="38" width="170" height="100"/>
                     </children>
-                    <children xmi:type="notation:Node" xmi:id="_sg_B0NZpEeyJ7Mf25LOs1A" type="3515">
-                      <children xmi:type="notation:Node" xmi:id="_shBeENZpEeyJ7Mf25LOs1A" type="3085">
-                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_shBeEdZpEeyJ7Mf25LOs1A"/>
-                        <styles xmi:type="notation:FontStyle" xmi:id="_shBeEtZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                        <styles xmi:type="notation:LineStyle" xmi:id="_shBeE9ZpEeyJ7Mf25LOs1A"/>
+                    <children xmi:type="notation:Node" xmi:id="__YPhENZ8Eeylfuz1ffvgkw" type="3515">
+                      <children xmi:type="notation:Node" xmi:id="__YRWQNZ8Eeylfuz1ffvgkw" type="3085">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="__YRWQdZ8Eeylfuz1ffvgkw"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="__YRWQtZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="__YRWQ9Z8Eeylfuz1ffvgkw"/>
                         <element xmi:type="esb:SendMediatorInputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@InputConnector"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_shBeFNZpEeyJ7Mf25LOs1A" x="-6" y="-5"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YRWRNZ8Eeylfuz1ffvgkw" x="-6" y="-5"/>
                       </children>
-                      <children xmi:type="notation:Node" xmi:id="_shBeFdZpEeyJ7Mf25LOs1A" type="3086">
-                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_shBeFtZpEeyJ7Mf25LOs1A"/>
-                        <styles xmi:type="notation:FontStyle" xmi:id="_shBeF9ZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                        <styles xmi:type="notation:LineStyle" xmi:id="_shBeGNZpEeyJ7Mf25LOs1A"/>
+                      <children xmi:type="notation:Node" xmi:id="__YRWRdZ8Eeylfuz1ffvgkw" type="3086">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="__YRWRtZ8Eeylfuz1ffvgkw"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="__YRWR9Z8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="__YRWSNZ8Eeylfuz1ffvgkw"/>
                         <element xmi:type="esb:SendMediatorOutputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@OutputConnector"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_shBeGdZpEeyJ7Mf25LOs1A" x="-11" y="-9"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YRWSdZ8Eeylfuz1ffvgkw" x="-11" y="-9"/>
                       </children>
-                      <children xmi:type="notation:Node" xmi:id="_shCFINZpEeyJ7Mf25LOs1A" type="3539">
-                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_shCFIdZpEeyJ7Mf25LOs1A"/>
-                        <styles xmi:type="notation:FontStyle" xmi:id="_shCFItZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                        <styles xmi:type="notation:LineStyle" xmi:id="_shCFI9ZpEeyJ7Mf25LOs1A"/>
+                      <children xmi:type="notation:Node" xmi:id="__YRWStZ8Eeylfuz1ffvgkw" type="3539">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="__YRWS9Z8Eeylfuz1ffvgkw"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="__YRWTNZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="__YRWTdZ8Eeylfuz1ffvgkw"/>
                         <element xmi:type="esb:SendMediatorEndpointOutputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@endpointOutputConnector"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_shCFJNZpEeyJ7Mf25LOs1A"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YRWTtZ8Eeylfuz1ffvgkw"/>
                       </children>
-                      <children xmi:type="notation:Node" xmi:id="_shCFJdZpEeyJ7Mf25LOs1A" type="3728">
-                        <children xmi:type="notation:DecorationNode" xmi:id="_shCFKtZpEeyJ7Mf25LOs1A" type="7046">
-                          <styles xmi:type="notation:TitleStyle" xmi:id="_shCFK9ZpEeyJ7Mf25LOs1A" showTitle="true"/>
+                      <children xmi:type="notation:Node" xmi:id="__YRWT9Z8Eeylfuz1ffvgkw" type="3728">
+                        <children xmi:type="notation:DecorationNode" xmi:id="__YRWVNZ8Eeylfuz1ffvgkw" type="7046">
+                          <styles xmi:type="notation:TitleStyle" xmi:id="__YRWVdZ8Eeylfuz1ffvgkw" showTitle="true"/>
                         </children>
-                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_shCFJtZpEeyJ7Mf25LOs1A"/>
-                        <styles xmi:type="notation:FontStyle" xmi:id="_shCFJ9ZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                        <styles xmi:type="notation:LineStyle" xmi:id="_shCFKNZpEeyJ7Mf25LOs1A"/>
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="__YRWUNZ8Eeylfuz1ffvgkw"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="__YRWUdZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="__YRWUtZ8Eeylfuz1ffvgkw"/>
                         <element xmi:type="esb:MediatorFlow" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@mediatorFlow"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_shCFKdZpEeyJ7Mf25LOs1A"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YRWU9Z8Eeylfuz1ffvgkw"/>
                       </children>
-                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_sg_B0dZpEeyJ7Mf25LOs1A"/>
-                      <styles xmi:type="notation:FontStyle" xmi:id="_sg_B0tZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                      <styles xmi:type="notation:LineStyle" xmi:id="_sg_B09ZpEeyJ7Mf25LOs1A"/>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="__YPhEdZ8Eeylfuz1ffvgkw"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="__YPhEtZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="__YPhE9Z8Eeylfuz1ffvgkw"/>
                       <element xmi:type="esb:SendMediator" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2"/>
-                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sg_B1NZpEeyJ7Mf25LOs1A" x="25" y="200" width="270" height="100"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YPhFNZ8Eeylfuz1ffvgkw" x="25" y="200" width="270" height="100"/>
                     </children>
-                    <children xmi:type="notation:Node" xmi:id="_shL2INZpEeyJ7Mf25LOs1A" type="3495">
-                      <children xmi:type="notation:DecorationNode" xmi:id="_shL2JdZpEeyJ7Mf25LOs1A" type="5168"/>
-                      <children xmi:type="notation:Node" xmi:id="_shNrUNZpEeyJ7Mf25LOs1A" type="3018">
-                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_shNrUdZpEeyJ7Mf25LOs1A"/>
-                        <styles xmi:type="notation:FontStyle" xmi:id="_shNrUtZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                        <styles xmi:type="notation:LineStyle" xmi:id="_shNrU9ZpEeyJ7Mf25LOs1A"/>
+                    <children xmi:type="notation:Node" xmi:id="__YZSENZ8Eeylfuz1ffvgkw" type="3495">
+                      <children xmi:type="notation:DecorationNode" xmi:id="__YZSFdZ8Eeylfuz1ffvgkw" type="5168"/>
+                      <children xmi:type="notation:Node" xmi:id="__YbuUNZ8Eeylfuz1ffvgkw" type="3018">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="__YbuUdZ8Eeylfuz1ffvgkw"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="__YbuUtZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="__YbuU9Z8Eeylfuz1ffvgkw"/>
                         <element xmi:type="esb:LogMediatorInputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@inputConnector"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_shNrVNZpEeyJ7Mf25LOs1A" x="-6" y="-5"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YbuVNZ8Eeylfuz1ffvgkw" x="-6" y="-5"/>
                       </children>
-                      <children xmi:type="notation:Node" xmi:id="_shOSYNZpEeyJ7Mf25LOs1A" type="3019">
-                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_shOSYdZpEeyJ7Mf25LOs1A"/>
-                        <styles xmi:type="notation:FontStyle" xmi:id="_shOSYtZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                        <styles xmi:type="notation:LineStyle" xmi:id="_shOSY9ZpEeyJ7Mf25LOs1A"/>
+                      <children xmi:type="notation:Node" xmi:id="__YcVYNZ8Eeylfuz1ffvgkw" type="3019">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="__YcVYdZ8Eeylfuz1ffvgkw"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="__YcVYtZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="__YcVY9Z8Eeylfuz1ffvgkw"/>
                         <element xmi:type="esb:LogMediatorOutputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@outputConnector"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_shOSZNZpEeyJ7Mf25LOs1A" x="64" y="-9"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YcVZNZ8Eeylfuz1ffvgkw" x="64" y="-9"/>
                       </children>
-                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_shL2IdZpEeyJ7Mf25LOs1A"/>
-                      <styles xmi:type="notation:FontStyle" xmi:id="_shL2ItZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                      <styles xmi:type="notation:LineStyle" xmi:id="_shL2I9ZpEeyJ7Mf25LOs1A"/>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="__YZSEdZ8Eeylfuz1ffvgkw"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="__YZSEtZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="__YZSE9Z8Eeylfuz1ffvgkw"/>
                       <element xmi:type="esb:LogMediator" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3"/>
-                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_shL2JNZpEeyJ7Mf25LOs1A" x="235" y="200" width="84" height="115"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YZSFNZ8Eeylfuz1ffvgkw" x="235" y="200" width="84" height="115"/>
                     </children>
-                    <styles xmi:type="notation:TitleStyle" xmi:id="_sgTFVtZpEeyJ7Mf25LOs1A" showTitle="true"/>
+                    <styles xmi:type="notation:TitleStyle" xmi:id="__XxnBtZ8Eeylfuz1ffvgkw" showTitle="true"/>
                   </children>
-                  <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgTFUdZpEeyJ7Mf25LOs1A"/>
-                  <styles xmi:type="notation:FontStyle" xmi:id="_sgTFUtZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                  <styles xmi:type="notation:LineStyle" xmi:id="_sgTFU9ZpEeyJ7Mf25LOs1A"/>
+                  <styles xmi:type="notation:DescriptionStyle" xmi:id="__XxnAdZ8Eeylfuz1ffvgkw"/>
+                  <styles xmi:type="notation:FontStyle" xmi:id="__XxnAtZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                  <styles xmi:type="notation:LineStyle" xmi:id="__XxnA9Z8Eeylfuz1ffvgkw"/>
                   <element xmi:type="esb:MediatorFlow" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgTFVNZpEeyJ7Mf25LOs1A"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="__XxnBNZ8Eeylfuz1ffvgkw"/>
                 </children>
-                <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgSeQdZpEeyJ7Mf25LOs1A"/>
-                <styles xmi:type="notation:FontStyle" xmi:id="_sgSeQtZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                <styles xmi:type="notation:LineStyle" xmi:id="_sgSeQ9ZpEeyJ7Mf25LOs1A"/>
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="__Xw_8dZ8Eeylfuz1ffvgkw"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="__Xw_8tZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="__Xw_89Z8Eeylfuz1ffvgkw"/>
                 <element xmi:type="esb:ProxyServiceSequenceAndEndpointContainer" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgSeRNZpEeyJ7Mf25LOs1A"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__Xw_9NZ8Eeylfuz1ffvgkw"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_sgSeRdZpEeyJ7Mf25LOs1A" type="3488">
-                <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgSeRtZpEeyJ7Mf25LOs1A"/>
-                <styles xmi:type="notation:FontStyle" xmi:id="_sgSeR9ZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-                <styles xmi:type="notation:LineStyle" xmi:id="_sgSeSNZpEeyJ7Mf25LOs1A"/>
+              <children xmi:type="notation:Node" xmi:id="__Xw_9dZ8Eeylfuz1ffvgkw" type="3488">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="__Xw_9tZ8Eeylfuz1ffvgkw"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="__Xw_99Z8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="__Xw_-NZ8Eeylfuz1ffvgkw"/>
                 <element xmi:type="esb:ProxyServiceFaultContainer" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@faultContainer"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgSeSdZpEeyJ7Mf25LOs1A"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__Xw_-dZ8Eeylfuz1ffvgkw"/>
               </children>
-              <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgPa8dZpEeyJ7Mf25LOs1A"/>
-              <styles xmi:type="notation:FontStyle" xmi:id="_sgPa8tZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-              <styles xmi:type="notation:LineStyle" xmi:id="_sgPa89ZpEeyJ7Mf25LOs1A"/>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="__Xuju9Z8Eeylfuz1ffvgkw"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="__XujvNZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="__XujvdZ8Eeylfuz1ffvgkw"/>
               <element xmi:type="esb:ProxyServiceContainer" href="QRCode.esb#//@server/@children.0/@resources.0/@container"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgPa9NZpEeyJ7Mf25LOs1A"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__XujvtZ8Eeylfuz1ffvgkw"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_sgxmcNZpEeyJ7Mf25LOs1A" type="3747">
-              <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgxmcdZpEeyJ7Mf25LOs1A"/>
-              <styles xmi:type="notation:FontStyle" xmi:id="_sgxmctZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-              <styles xmi:type="notation:LineStyle" xmi:id="_sgxmc9ZpEeyJ7Mf25LOs1A"/>
+            <children xmi:type="notation:Node" xmi:id="__YFJANZ8Eeylfuz1ffvgkw" type="3747">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="__YFJAdZ8Eeylfuz1ffvgkw"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="__YFJAtZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="__YFJA9Z8Eeylfuz1ffvgkw"/>
               <element xmi:type="esb:APIResourceInSequenceInputConnector" href="QRCode.esb#//@server/@children.0/@resources.0/@inSequenceInputConnectors.0"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgxmdNZpEeyJ7Mf25LOs1A"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YFJBNZ8Eeylfuz1ffvgkw"/>
             </children>
-            <styles xmi:type="notation:DescriptionStyle" xmi:id="_sgLwkdZpEeyJ7Mf25LOs1A"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_sgLwktZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-            <styles xmi:type="notation:LineStyle" xmi:id="_sgLwk9ZpEeyJ7Mf25LOs1A"/>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="__XsHcdZ8Eeylfuz1ffvgkw"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="__XsHctZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="__XsHc9Z8Eeylfuz1ffvgkw"/>
             <element xmi:type="esb:APIResource" href="QRCode.esb#//@server/@children.0/@resources.0"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgLwlNZpEeyJ7Mf25LOs1A" width="300" height="400"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__XsHdNZ8Eeylfuz1ffvgkw" width="300" height="400"/>
           </children>
         </children>
         <element xmi:type="esb:SynapseAPI" href="QRCode.esb#//@server/@children.0"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sgDNsdZpEeyJ7Mf25LOs1A" width="640" height="500"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__XesEdZ8Eeylfuz1ffvgkw" width="640" height="500"/>
       </children>
     </children>
-    <styles xmi:type="notation:DescriptionStyle" xmi:id="_sV7oYdZpEeyJ7Mf25LOs1A"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_sV7oYtZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
-    <styles xmi:type="notation:LineStyle" xmi:id="_sV7oY9ZpEeyJ7Mf25LOs1A"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="__MpVEdZ8Eeylfuz1ffvgkw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="__MpVEtZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="__MpVE9Z8Eeylfuz1ffvgkw"/>
     <element xmi:type="esb:EsbServer" href="QRCode.esb#//@server"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sV7oZNZpEeyJ7Mf25LOs1A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__MpVFNZ8Eeylfuz1ffvgkw"/>
   </children>
-  <styles xmi:type="notation:DiagramStyle" xmi:id="_sU6UsdZpEeyJ7Mf25LOs1A"/>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="__LVGcdZ8Eeylfuz1ffvgkw"/>
   <element xmi:type="esb:EsbDiagram" href="QRCode.esb#/"/>
-  <edges xmi:type="notation:Connector" xmi:id="_shbGsNZpEeyJ7Mf25LOs1A" type="4001" source="_sgOz4NZpEeyJ7Mf25LOs1A" target="_sgiV4NZpEeyJ7Mf25LOs1A" roundedBendpointsRadius="5" routing="Rectilinear">
-    <styles xmi:type="notation:FontStyle" xmi:id="_shbGsdZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
+  <edges xmi:type="notation:Connector" xmi:id="__YpwwNZ8Eeylfuz1ffvgkw" type="4001" source="__Xt8pdZ8Eeylfuz1ffvgkw" target="__X7YANZ8Eeylfuz1ffvgkw" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="__YpwwdZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
     <element xmi:type="esb:EsbLink" href="QRCode.esb#//@server/@children.0/@resources.0/@outputConnector/@outgoingLink"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_shbGstZpEeyJ7Mf25LOs1A" points="[6, 5, -5, 0]$[5, 0, -6, -5]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__YpwwtZ8Eeylfuz1ffvgkw" points="[6, 5, -5, 0]$[5, 0, -6, -5]"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_sheKANZpEeyJ7Mf25LOs1A" type="4001" source="_sgiV5dZpEeyJ7Mf25LOs1A" target="_sgrf0NZpEeyJ7Mf25LOs1A" roundedBendpointsRadius="5" routing="Rectilinear">
-    <styles xmi:type="notation:FontStyle" xmi:id="_sheKAdZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
+  <edges xmi:type="notation:Connector" xmi:id="__YsNANZ8Eeylfuz1ffvgkw" type="4001" source="__X7YBdZ8Eeylfuz1ffvgkw" target="__YA3kNZ8Eeylfuz1ffvgkw" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="__YsNAdZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
     <element xmi:type="esb:EsbLink" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sheKAtZpEeyJ7Mf25LOs1A" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__YsNAtZ8Eeylfuz1ffvgkw" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_shh0YNZpEeyJ7Mf25LOs1A" type="4001" source="_shBeFdZpEeyJ7Mf25LOs1A" target="_sgOM0NZpEeyJ7Mf25LOs1A" roundedBendpointsRadius="5" routing="Rectilinear">
-    <styles xmi:type="notation:FontStyle" xmi:id="_shh0YdZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
+  <edges xmi:type="notation:Connector" xmi:id="__Y7dkNZ8Eeylfuz1ffvgkw" type="4001" source="__YRWRdZ8Eeylfuz1ffvgkw" target="__Xt8oNZ8Eeylfuz1ffvgkw" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="__Y7dkdZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
     <element xmi:type="esb:EsbLink" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@OutputConnector/@outgoingLink"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_shh0YtZpEeyJ7Mf25LOs1A" points="[-11, 7, 5, 0]$[-10, 4, 6, -3]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__Y7dktZ8Eeylfuz1ffvgkw" points="[-11, 7, 5, 0]$[-10, 4, 6, -3]"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_shkQoNZpEeyJ7Mf25LOs1A" type="4001" source="_shOSYNZpEeyJ7Mf25LOs1A" target="_shBeENZpEeyJ7Mf25LOs1A" roundedBendpointsRadius="5" routing="Rectilinear">
-    <styles xmi:type="notation:FontStyle" xmi:id="_shkQodZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
+  <edges xmi:type="notation:Connector" xmi:id="__Y950NZ8Eeylfuz1ffvgkw" type="4001" source="__YcVYNZ8Eeylfuz1ffvgkw" target="__YRWQNZ8Eeylfuz1ffvgkw" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="__Y950dZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
     <element xmi:type="esb:EsbLink" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@outputConnector/@outgoingLink"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_shkQotZpEeyJ7Mf25LOs1A" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__Y950tZ8Eeylfuz1ffvgkw" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_shms4NZpEeyJ7Mf25LOs1A" type="4001" source="_sgOz5dZpEeyJ7Mf25LOs1A" target="_shNrUNZpEeyJ7Mf25LOs1A" roundedBendpointsRadius="5" routing="Rectilinear">
-    <styles xmi:type="notation:FontStyle" xmi:id="_shms4dZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
+  <edges xmi:type="notation:Connector" xmi:id="__ZA9INZ8Eeylfuz1ffvgkw" type="4001" source="__XujsNZ8Eeylfuz1ffvgkw" target="__YbuUNZ8Eeylfuz1ffvgkw" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="__ZA9IdZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
     <element xmi:type="esb:EsbLink" href="QRCode.esb#//@server/@children.0/@resources.0/@outSequenceOutputConnector/@outgoingLink"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_shms4tZpEeyJ7Mf25LOs1A" points="[-6, -4, 7, 3]$[-7, -4, 6, 3]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__ZA9ItZ8Eeylfuz1ffvgkw" points="[-6, -4, 7, 3]$[-7, -4, 6, 3]"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_siTQcNZpEeyJ7Mf25LOs1A" type="4001" source="_sgsG5dZpEeyJ7Mf25LOs1A" target="_sg47MNZpEeyJ7Mf25LOs1A" roundedBendpointsRadius="5" routing="Rectilinear">
-    <styles xmi:type="notation:FontStyle" xmi:id="_siTQcdZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
+  <edges xmi:type="notation:Connector" xmi:id="__Z3RsNZ8Eeylfuz1ffvgkw" type="4001" source="__YBeoNZ8Eeylfuz1ffvgkw" target="__YKBgNZ8Eeylfuz1ffvgkw" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="__Z3RsdZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
     <element xmi:type="esb:EsbLink" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@endpointOutputConnector/@outgoingLink"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_siTQctZpEeyJ7Mf25LOs1A" points="[2, 9, -31, -110]$[31, 114, -2, -5]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__Z3RstZ8Eeylfuz1ffvgkw" points="[2, 9, -31, -110]$[31, 114, -2, -5]"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_siYI8NZpEeyJ7Mf25LOs1A" type="4001" source="_sgsG4NZpEeyJ7Mf25LOs1A" target="_sgxmcNZpEeyJ7Mf25LOs1A" roundedBendpointsRadius="5" routing="Rectilinear">
-    <styles xmi:type="notation:FontStyle" xmi:id="_siYI8dZpEeyJ7Mf25LOs1A" fontName="Segoe UI"/>
+  <edges xmi:type="notation:Connector" xmi:id="__Z5t8NZ8Eeylfuz1ffvgkw" type="4001" source="__YA3ldZ8Eeylfuz1ffvgkw" target="__YFJANZ8Eeylfuz1ffvgkw" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="__Z5t8dZ8Eeylfuz1ffvgkw" fontName="Segoe UI"/>
     <element xmi:type="esb:EsbLink" href="QRCode.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@OutputConnector/@outgoingLink"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_siYI8tZpEeyJ7Mf25LOs1A" points="[11, -10, -12, 9]$[16, -14, -7, 5]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__Z5t8tZ8Eeylfuz1ffvgkw" points="[11, -10, -12, 9]$[16, -14, -7, 5]"/>
   </edges>
 </notation:Diagram>

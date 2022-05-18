@@ -31,8 +31,8 @@ app.use("/api/v1/movies", movies);
 app.use("/api/v1/reservations", reservations);
 app.use("/api/v1/theater", theater);
 //app.use("/api/v1/payment", payment);
-app.use("/api/users", userRoutes);
-app.use("/api/auth", authRoutes);
+app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/auth", authRoutes);
 
 const PORT = 5002;
 

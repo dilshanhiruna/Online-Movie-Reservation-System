@@ -6,7 +6,7 @@ const dotenv = require("dotenv").config();
 const app = express();
 
 //request allow any domain
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: true }));
 
 //Body parser
 app.use(express.json());
