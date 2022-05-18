@@ -23,7 +23,6 @@ export default function Reservations({ userID }) {
   let history = useHistory();
   const location = useLocation();
   const API = process.env.REACT_APP_API;
-  const QRCODE_API = process.env.REACT_APP_QRCODE_API;
   const [customerID, setcustomerID] = useState("TUG6786GK65476KJHF");
   const [theaterName, settheaterName] = useState("");
   const [noOfTickets, setnoOfTickets] = useState(1);
@@ -60,7 +59,7 @@ export default function Reservations({ userID }) {
     }
 
     //get the movie details
-    Axios.get(`${API}api/v1/movies/${movieID}`)
+    Axios.get(`${API}movies/get/${movieID}`)
       .then((res) => {
         setMovie(res.data.data);
         console.log(res.data.data);
@@ -69,14 +68,14 @@ export default function Reservations({ userID }) {
         // settheaterName(res.data.data.theaters[0]);
         if (res.data.data.theaters.length > 0) {
           //map theater array and fetch all theaters and save them in the theater state
-          Axios.get(`${API}api/v1/theater/${res.data.data.theaters[0]}`).then(
+          Axios.get(`${API}theater/get/${res.data.data.theaters[0]}`).then(
             (res) => {
               settheaterName(res.data.data.theaterName);
             }
           );
 
           res.data.data.theaters.map((theater) => {
-            Axios.get(`${API}api/v1/theater/${theater}`).then((res) => {
+            Axios.get(`${API}theater/${theater}`).then((res) => {
               setTheaters((prev) => [...prev, res.data.data]);
             });
           });
@@ -149,7 +148,7 @@ export default function Reservations({ userID }) {
     let ticketQRcode = "";
 
     //create a QR code
-    Axios.post(`${QRCODE_API}api/v1/ticket`, { payload })
+    Axios.post(`${API}gettickets`, { payload })
       .then((res) => {
         ticketQRcode = res.data.data;
         let tickets = [];
@@ -178,7 +177,7 @@ export default function Reservations({ userID }) {
         };
 
         // create a reservation in the database
-        Axios.post(`${API}api/v1/reservations`, reservation)
+        Axios.post(`${API}reservations/add`, reservation)
           .then((res) => {
             if (res.data.id) {
               //navigate to next page
@@ -200,10 +199,7 @@ export default function Reservations({ userID }) {
                 email: "dilshanrex@gmail.com",
               };
 
-              Axios.post(
-                `http://localhost:5006/api/v1/sendemail`,
-                emailData
-              ).then((res) => {
+              Axios.post(`${API}email`, emailData).then((res) => {
                 console.log(res);
               });
             }

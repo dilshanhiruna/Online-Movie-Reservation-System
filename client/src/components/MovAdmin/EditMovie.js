@@ -29,7 +29,7 @@ export default function EditMovie() {
 
   //get theater list form db
   useEffect(() => {
-    Axios.get(`${API}api/v1/theater`)
+    Axios.get(`${API}theaters/getall`)
       .then((res) => {
         setTheatersDB(res.data.data);
         console.log(theatersDB);
@@ -53,7 +53,7 @@ export default function EditMovie() {
     };
     console.log(movieInfo);
 
-    Axios.put(`${API}api/v1/movies/${id}`, movieInfo)
+    Axios.put(`${API}movies/update/${id}`, movieInfo)
       .then((res) => {
         alert("Updated");
         history.push({ pathname: "/movadmin/movies" });

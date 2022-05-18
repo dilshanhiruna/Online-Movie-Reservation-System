@@ -8,9 +8,9 @@ import {
   FormControlLabel,
   FormGroup,
   Checkbox,
-} from '@mui/material';
-import { useState, useEffect } from 'react';
-import Axios from 'axios';
+} from "@mui/material";
+import { useState, useEffect } from "react";
+import Axios from "axios";
 const API = process.env.REACT_APP_API;
 
 export default function AddMovies() {
@@ -20,7 +20,7 @@ export default function AddMovies() {
   const [theatersDB, setTheatersDB] = useState([{}]);
   const [theatersSelected, setTheatersSelected] = useState([]);
   const [showTime, setShowTime] = useState({});
-  const [banner, setBanner] = useState('');
+  const [banner, setBanner] = useState("");
 
   //   function updateForm(value) {
   //     return setForm((prev) => {
@@ -29,7 +29,7 @@ export default function AddMovies() {
   //   }
   //get theater list form db
   useEffect(() => {
-    Axios.get(`${API}api/v1/theater`)
+    Axios.get(`${API}theaters/getall`)
       .then((res) => {
         setTheatersDB(res.data.data);
         console.log(res.data.data);
@@ -54,9 +54,9 @@ export default function AddMovies() {
     };
     console.log(movieInfo);
 
-    Axios.post(`${API}api/v1/movies`, movieInfo)
+    Axios.post(`${API}movies/add`, movieInfo)
       .then((res) => {
-        alert('Added');
+        alert("Added");
         window.location.reload();
       })
       .catch((err) => {
@@ -79,15 +79,15 @@ export default function AddMovies() {
 
   //upload image file in cloudinary
   async function uploadImage(file) {
-    console.log('indide upload image');
+    console.log("indide upload image");
     const data = new FormData();
-    data.append('file', file);
-    data.append('upload_preset', 'xvtygjxv');
+    data.append("file", file);
+    data.append("upload_preset", "xvtygjxv");
 
     const res = await fetch(
       `https://api.cloudinary.com/v1_1/sliit-hashen/image/upload`,
       {
-        method: 'POST',
+        method: "POST",
         body: data,
       }
     );
@@ -98,7 +98,7 @@ export default function AddMovies() {
   return (
     <>
       <form>
-        <FormControl sx={{ width: '50ch' }}>
+        <FormControl sx={{ width: "50ch" }}>
           <TextField
             id="outlined-basic"
             label="Movie Name"
@@ -159,7 +159,7 @@ export default function AddMovies() {
           <br></br>
           <Button
             variant="contained"
-            style={{ width: '400px', height: '40px' }}
+            style={{ width: "400px", height: "40px" }}
             onClick={onSubmit}
           >
             Submit

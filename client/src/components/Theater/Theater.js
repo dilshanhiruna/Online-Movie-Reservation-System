@@ -70,7 +70,7 @@ export default function Theater() {
 
   //get all theaters from the database
   const getAllTheaters = () => {
-    Axios.get(`${API}api/v1/theater`).then((res) => {
+    Axios.get(`${API}theater/getall`).then((res) => {
       settheaters(res.data.data);
     });
   };
@@ -98,7 +98,7 @@ export default function Theater() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        Axios.delete(`${API}api/v1/theater/${id}`).then((res) => {
+        Axios.delete(`${API}theater/get/${id}`).then((res) => {
           Swal.fire({
             position: "top-end",
             icon: "success",

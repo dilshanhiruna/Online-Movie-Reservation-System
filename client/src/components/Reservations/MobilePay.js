@@ -34,7 +34,7 @@ export default function MobilePay(props) {
         totalPrice,
       };
 
-      Axios.post(`${API}api/v1/payment`, { data }).then((res) => {
+      Axios.post(`${API}mobilepayment`, { data }).then((res) => {
         if (res.data.success) {
           Swal.fire({
             title: "Payment Successful",

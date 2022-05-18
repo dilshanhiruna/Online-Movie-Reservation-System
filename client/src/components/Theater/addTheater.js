@@ -15,7 +15,7 @@ export default function AddTheater() {
 
   //using axios send theater details to api
   const sendTheaterToAPI = () => {
-    Axios.post(`${API}api/v1/theater`, {
+    Axios.post(`${API}theaters/add`, {
       theaterName,
       location,
       seatPrice,

@@ -1,13 +1,13 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { useHistory } from 'react-router-dom';
-import { color } from '@mui/system';
-import Axios from 'axios';
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import { useHistory } from "react-router-dom";
+import { color } from "@mui/system";
+import Axios from "axios";
 const API = process.env.REACT_APP_API;
 
 export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
@@ -17,18 +17,18 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
   };
 
   const bookNow = () => {
-    history.push({ pathname: '/customer/reservation', id: movie._id });
+    history.push({ pathname: "/customer/reservation", id: movie._id });
   };
 
   const updateMovie = () => {
-    console.log('hey');
-    history.push({ pathname: '/movadmin/movies/edit', movie });
+    console.log("hey");
+    history.push({ pathname: "/movadmin/movies/edit", movie });
   };
   const deleteMovie = () => {
-    const confirmation = window.confirm('Are you sure?');
+    const confirmation = window.confirm("Are you sure?");
 
     if (confirmation) {
-      Axios.delete(`${API}api/v1/movies/${movie._id}`)
+      Axios.delete(`${API}movies/get/${movie._id}`)
         .then((res) => {
           window.location.reload();
         })
@@ -38,7 +38,7 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
     }
   };
   return (
-    <Card sx={{ maxWidth: 350, margin: '15px' }}>
+    <Card sx={{ maxWidth: 350, margin: "15px" }}>
       <CardMedia component="img" height="250" image={movie.banner} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -47,7 +47,7 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
         <Typography
           variant="body2"
           color="text.secondary"
-          style={{ textAlign: 'left' }}
+          style={{ textAlign: "left" }}
         >
           {movie.description}
         </Typography>
@@ -74,7 +74,7 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
           onClick={() => {
             updateMovie();
           }}
-          style={{ marginLeft: '50px', color: 'green' }}
+          style={{ marginLeft: "50px", color: "green" }}
         >
           {btn3}
         </Button>
@@ -83,7 +83,7 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
           onClick={() => {
             deleteMovie();
           }}
-          style={{ color: 'red' }}
+          style={{ color: "red" }}
         >
           {btn4}
         </Button>

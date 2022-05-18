@@ -18,7 +18,7 @@ export default function MyReservations() {
 
   useEffect(() => {
     //get all reservations done by the user
-    Axios.get(`${API}api/v1/reservations`).then((res) => {
+    Axios.get(`${API}reservations/getall`).then((res) => {
       setReservations(res.data.data);
     });
   }, []);

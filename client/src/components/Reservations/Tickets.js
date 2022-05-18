@@ -25,7 +25,7 @@ export default function Tickets() {
 
   useEffect(() => {
     // get reservation details from database by param id
-    Axios.get(`${API}api/v1/reservations/tickets/${id}`).then((res) => {
+    Axios.get(`${API}reservations/get/${id}`).then((res) => {
       // set the reservation details
       setReservation(res.data.data);
       // set the tickets details

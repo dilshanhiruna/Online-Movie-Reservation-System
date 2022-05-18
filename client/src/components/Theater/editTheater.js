@@ -16,7 +16,7 @@ export default function EditTheater() {
 
   //get all theaters from the database
   useEffect(() => {
-    Axios.get(`${API}api/v1/theater/${id}`).then((res) => {
+    Axios.get(`${API}theaters/get/${id}`).then((res) => {
       settheatername(res.data.data.theaterName);
       setlocation(res.data.data.location);
       setseatprice(res.data.data.seatPrice);
@@ -29,7 +29,7 @@ export default function EditTheater() {
       location,
       seatPrice,
     };
-    Axios.put(`${API}api/v1/theater/${id}`, data).then((res) => {
+    Axios.put(`${API}theaters/update/${id}`, data).then((res) => {
       Swal.fire({
         position: "top-end",
         icon: "success",
