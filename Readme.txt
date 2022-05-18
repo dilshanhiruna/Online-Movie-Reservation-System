@@ -15,6 +15,14 @@ Back end services are divided in to two groups
     d) sms services
     e) email services
 
+First you need to install all the dependencies
+STEPS:
+1. be in the root directory (eg: C:\<location>\Online-Movie-Reservation-System)
+2. cd services/server
+3. npm i (will install the dependencies of internal web services)
+4. npm run dep (will install the dependencies of external web services and client)
+
+
 To run the client and all the internal and external web services
 you can use a single command
 STEPS:
