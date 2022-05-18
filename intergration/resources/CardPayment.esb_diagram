@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_UEJ30NZvEeyuvZ5SachVzA" type="Esb" name="CardPayment" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_VXAm0NZvEeyuvZ5SachVzA" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_VXnDwNZvEeyuvZ5SachVzA" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_WC1LANZvEeyuvZ5SachVzA" type="3668" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_WC1yENZvEeyuvZ5SachVzA" type="7044">
+          <children xmi:type="notation:Node" xmi:id="_WDGQwNZvEeyuvZ5SachVzA" type="3669">
+            <children xmi:type="notation:Node" xmi:id="_WDJ7INZvEeyuvZ5SachVzA" type="3670">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_WDJ7IdZvEeyuvZ5SachVzA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_WDJ7ItZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_WDJ7I9ZvEeyuvZ5SachVzA"/>
+              <element xmi:type="esb:APIResourceInputConnector" href="CardPayment.esb#//@server/@children.0/@resources.0/@inputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WDJ7JNZvEeyuvZ5SachVzA" x="86" y="-11"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_WDKiMNZvEeyuvZ5SachVzA" type="3671">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_WDKiMdZvEeyuvZ5SachVzA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_WDKiMtZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_WDKiM9ZvEeyuvZ5SachVzA"/>
+              <element xmi:type="esb:APIResourceOutputConnector" href="CardPayment.esb#//@server/@children.0/@resources.0/@outputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WDKiNNZvEeyuvZ5SachVzA" x="86" y="-23"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_WDKiNdZvEeyuvZ5SachVzA" type="3730">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_WDKiNtZvEeyuvZ5SachVzA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_WDKiN9ZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_WDKiONZvEeyuvZ5SachVzA"/>
+              <element xmi:type="esb:APIResourceOutSequenceOutputConnector" href="CardPayment.esb#//@server/@children.0/@resources.0/@outSequenceOutputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WDKiOdZvEeyuvZ5SachVzA" x="110" y="-11"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_WDLJQNZvEeyuvZ5SachVzA" type="3672">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_WDLJQdZvEeyuvZ5SachVzA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_WDLJQtZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_WDLJQ9ZvEeyuvZ5SachVzA"/>
+              <element xmi:type="esb:APIResourceFaultInputConnector" href="CardPayment.esb#//@server/@children.0/@resources.0/@faultInputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WDLJRNZvEeyuvZ5SachVzA" x="86" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_WDLJRdZvEeyuvZ5SachVzA" type="3673">
+              <children xmi:type="notation:Node" xmi:id="_WDQBwNZvEeyuvZ5SachVzA" type="3487">
+                <children xmi:type="notation:Node" xmi:id="_WDR28NZvEeyuvZ5SachVzA" type="3608">
+                  <children xmi:type="notation:DecorationNode" xmi:id="_WDSeANZvEeyuvZ5SachVzA" type="7034">
+                    <children xmi:type="notation:Node" xmi:id="_WDxmMNZvEeyuvZ5SachVzA" type="3495">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_WDyNQNZvEeyuvZ5SachVzA" type="5168"/>
+                      <children xmi:type="notation:Node" xmi:id="_WEFIMNZvEeyuvZ5SachVzA" type="3018">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_WEFIMdZvEeyuvZ5SachVzA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_WEFIMtZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_WEFIM9ZvEeyuvZ5SachVzA"/>
+                        <element xmi:type="esb:LogMediatorInputConnector" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WEFINNZvEeyuvZ5SachVzA" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_WEFINdZvEeyuvZ5SachVzA" type="3019">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_WEFINtZvEeyuvZ5SachVzA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_WEFIN9ZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_WEFIONZvEeyuvZ5SachVzA"/>
+                        <element xmi:type="esb:LogMediatorOutputConnector" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WEFIOdZvEeyuvZ5SachVzA" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_WDxmMdZvEeyuvZ5SachVzA"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_WDxmMtZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_WDxmM9ZvEeyuvZ5SachVzA"/>
+                      <element xmi:type="esb:LogMediator" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WDxmNNZvEeyuvZ5SachVzA" x="25" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_WEwdoNZvEeyuvZ5SachVzA" type="3515">
+                      <children xmi:type="notation:Node" xmi:id="_WE5AgNZvEeyuvZ5SachVzA" type="3085">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_WE5AgdZvEeyuvZ5SachVzA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_WE5AgtZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_WE5Ag9ZvEeyuvZ5SachVzA"/>
+                        <element xmi:type="esb:SendMediatorInputConnector" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@InputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WE5AhNZvEeyuvZ5SachVzA" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_WE5nkNZvEeyuvZ5SachVzA" type="3086">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_WE5nkdZvEeyuvZ5SachVzA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_WE5nktZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_WE5nk9ZvEeyuvZ5SachVzA"/>
+                        <element xmi:type="esb:SendMediatorOutputConnector" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@OutputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WE5nlNZvEeyuvZ5SachVzA" x="-11" y="-9"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_WE6OoNZvEeyuvZ5SachVzA" type="3539">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_WE6OodZvEeyuvZ5SachVzA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_WE6OotZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_WE6Oo9ZvEeyuvZ5SachVzA"/>
+                        <element xmi:type="esb:SendMediatorEndpointOutputConnector" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@endpointOutputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WE6OpNZvEeyuvZ5SachVzA"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_WE6OpdZvEeyuvZ5SachVzA" type="3728">
+                        <children xmi:type="notation:DecorationNode" xmi:id="_WE6OqtZvEeyuvZ5SachVzA" type="7046">
+                          <children xmi:type="notation:Node" xmi:id="_WFYIsNZvEeyuvZ5SachVzA" type="3660">
+                            <children xmi:type="notation:DecorationNode" xmi:id="_WFYvwNZvEeyuvZ5SachVzA" type="5165"/>
+                            <children xmi:type="notation:Node" xmi:id="_WFkV8NZvEeyuvZ5SachVzA" type="3661">
+                              <styles xmi:type="notation:DescriptionStyle" xmi:id="_WFkV8dZvEeyuvZ5SachVzA"/>
+                              <styles xmi:type="notation:FontStyle" xmi:id="_WFkV8tZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                              <styles xmi:type="notation:LineStyle" xmi:id="_WFkV89ZvEeyuvZ5SachVzA"/>
+                              <element xmi:type="esb:NamedEndpointInputConnector" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@mediatorFlow/@children.0/@inputConnector"/>
+                              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WFkV9NZvEeyuvZ5SachVzA"/>
+                            </children>
+                            <styles xmi:type="notation:DescriptionStyle" xmi:id="_WFYIsdZvEeyuvZ5SachVzA"/>
+                            <styles xmi:type="notation:FontStyle" xmi:id="_WFYIstZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                            <styles xmi:type="notation:LineStyle" xmi:id="_WFYIs9ZvEeyuvZ5SachVzA"/>
+                            <element xmi:type="esb:NamedEndpoint" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@mediatorFlow/@children.0"/>
+                            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WFYItNZvEeyuvZ5SachVzA" x="5" y="103"/>
+                          </children>
+                          <styles xmi:type="notation:TitleStyle" xmi:id="_WE6Oq9ZvEeyuvZ5SachVzA" showTitle="true"/>
+                        </children>
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_WE6OptZvEeyuvZ5SachVzA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_WE6Op9ZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_WE6OqNZvEeyuvZ5SachVzA"/>
+                        <element xmi:type="esb:MediatorFlow" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@mediatorFlow"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WE6OqdZvEeyuvZ5SachVzA"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_WEwdodZvEeyuvZ5SachVzA"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_WEwdotZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_WEwdo9ZvEeyuvZ5SachVzA"/>
+                      <element xmi:type="esb:SendMediator" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WEwdpNZvEeyuvZ5SachVzA" x="149" y="38" width="170" height="100"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_WFwjMNZvEeyuvZ5SachVzA" type="3515">
+                      <children xmi:type="notation:Node" xmi:id="_WF0NkNZvEeyuvZ5SachVzA" type="3085">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_WF0NkdZvEeyuvZ5SachVzA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_WF0NktZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_WF0Nk9ZvEeyuvZ5SachVzA"/>
+                        <element xmi:type="esb:SendMediatorInputConnector" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@InputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WF0NlNZvEeyuvZ5SachVzA" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_WF0NldZvEeyuvZ5SachVzA" type="3086">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_WF0NltZvEeyuvZ5SachVzA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_WF0Nl9ZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_WF0NmNZvEeyuvZ5SachVzA"/>
+                        <element xmi:type="esb:SendMediatorOutputConnector" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@OutputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WF0NmdZvEeyuvZ5SachVzA" x="-11" y="-9"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_WF00oNZvEeyuvZ5SachVzA" type="3539">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_WF00odZvEeyuvZ5SachVzA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_WF00otZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_WF00o9ZvEeyuvZ5SachVzA"/>
+                        <element xmi:type="esb:SendMediatorEndpointOutputConnector" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@endpointOutputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WF00pNZvEeyuvZ5SachVzA"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_WF1bsNZvEeyuvZ5SachVzA" type="3728">
+                        <children xmi:type="notation:DecorationNode" xmi:id="_WF1btdZvEeyuvZ5SachVzA" type="7046">
+                          <styles xmi:type="notation:TitleStyle" xmi:id="_WF1bttZvEeyuvZ5SachVzA" showTitle="true"/>
+                        </children>
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_WF1bsdZvEeyuvZ5SachVzA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_WF1bstZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_WF1bs9ZvEeyuvZ5SachVzA"/>
+                        <element xmi:type="esb:MediatorFlow" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@mediatorFlow"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WF1btNZvEeyuvZ5SachVzA"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_WFwjMdZvEeyuvZ5SachVzA"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_WFwjMtZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_WFwjM9ZvEeyuvZ5SachVzA"/>
+                      <element xmi:type="esb:SendMediator" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WFwjNNZvEeyuvZ5SachVzA" x="25" y="200" width="270" height="100"/>
+                    </children>
+                    <styles xmi:type="notation:TitleStyle" xmi:id="_WDSeAdZvEeyuvZ5SachVzA" showTitle="true"/>
+                  </children>
+                  <styles xmi:type="notation:DescriptionStyle" xmi:id="_WDR28dZvEeyuvZ5SachVzA"/>
+                  <styles xmi:type="notation:FontStyle" xmi:id="_WDR28tZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                  <styles xmi:type="notation:LineStyle" xmi:id="_WDR289ZvEeyuvZ5SachVzA"/>
+                  <element xmi:type="esb:MediatorFlow" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WDR29NZvEeyuvZ5SachVzA"/>
+                </children>
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_WDQBwdZvEeyuvZ5SachVzA"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_WDQBwtZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_WDQBw9ZvEeyuvZ5SachVzA"/>
+                <element xmi:type="esb:ProxyServiceSequenceAndEndpointContainer" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WDQBxNZvEeyuvZ5SachVzA"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_WDQBxdZvEeyuvZ5SachVzA" type="3488">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_WDQBxtZvEeyuvZ5SachVzA"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_WDQBx9ZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_WDQByNZvEeyuvZ5SachVzA"/>
+                <element xmi:type="esb:ProxyServiceFaultContainer" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@faultContainer"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WDQBydZvEeyuvZ5SachVzA"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_WDLJRtZvEeyuvZ5SachVzA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_WDLJR9ZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_WDLJSNZvEeyuvZ5SachVzA"/>
+              <element xmi:type="esb:ProxyServiceContainer" href="CardPayment.esb#//@server/@children.0/@resources.0/@container"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WDLwUNZvEeyuvZ5SachVzA"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_WFQM4NZvEeyuvZ5SachVzA" type="3747">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_WFQM4dZvEeyuvZ5SachVzA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_WFQM4tZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_WFQM49ZvEeyuvZ5SachVzA"/>
+              <element xmi:type="esb:APIResourceInSequenceInputConnector" href="CardPayment.esb#//@server/@children.0/@resources.0/@inSequenceInputConnectors.0"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WFQM5NZvEeyuvZ5SachVzA"/>
+            </children>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_WDGQwdZvEeyuvZ5SachVzA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_WDGQwtZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_WDGQw9ZvEeyuvZ5SachVzA"/>
+            <element xmi:type="esb:APIResource" href="CardPayment.esb#//@server/@children.0/@resources.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WDG30NZvEeyuvZ5SachVzA" width="300" height="400"/>
+          </children>
+        </children>
+        <element xmi:type="esb:SynapseAPI" href="CardPayment.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WC1LAdZvEeyuvZ5SachVzA" width="640" height="500"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_VXAm0dZvEeyuvZ5SachVzA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_VXAm0tZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_VXAm09ZvEeyuvZ5SachVzA"/>
+    <element xmi:type="esb:EsbServer" href="CardPayment.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VXAm1NZvEeyuvZ5SachVzA"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_UEKe4NZvEeyuvZ5SachVzA"/>
+  <element xmi:type="esb:EsbDiagram" href="CardPayment.esb#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_WLFvINZvEeyuvZ5SachVzA" type="4001" source="_WDKiMNZvEeyuvZ5SachVzA" target="_WEFIMNZvEeyuvZ5SachVzA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_WLFvIdZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="CardPayment.esb#//@server/@children.0/@resources.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WLFvItZvEeyuvZ5SachVzA" points="[6, 5, -5, 0]$[5, 0, -6, -5]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_WLhM8NZvEeyuvZ5SachVzA" type="4001" source="_WEFINdZvEeyuvZ5SachVzA" target="_WE5AgNZvEeyuvZ5SachVzA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_WLhM8dZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WLhM8tZvEeyuvZ5SachVzA" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_WLn6oNZvEeyuvZ5SachVzA" type="4001" source="_WF0NldZvEeyuvZ5SachVzA" target="_WDJ7INZvEeyuvZ5SachVzA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_WLn6odZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@OutputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WLn6otZvEeyuvZ5SachVzA" points="[-11, 7, 5, 0]$[-10, 4, 6, -3]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_WLuBQNZvEeyuvZ5SachVzA" type="4001" source="_WDKiNdZvEeyuvZ5SachVzA" target="_WF0NkNZvEeyuvZ5SachVzA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_WLuBQdZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="CardPayment.esb#//@server/@children.0/@resources.0/@outSequenceOutputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WLuBQtZvEeyuvZ5SachVzA" points="[-6, -4, 7, 3]$[-7, -4, 6, 3]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_WNN2ENZvEeyuvZ5SachVzA" type="4001" source="_WE6OoNZvEeyuvZ5SachVzA" target="_WFkV8NZvEeyuvZ5SachVzA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_WNN2EdZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@endpointOutputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WNN2EtZvEeyuvZ5SachVzA" points="[2, 9, -31, -110]$[31, 114, -2, -5]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_WNaqYNZvEeyuvZ5SachVzA" type="4001" source="_WE5nkNZvEeyuvZ5SachVzA" target="_WFQM4NZvEeyuvZ5SachVzA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_WNaqYdZvEeyuvZ5SachVzA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="CardPayment.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@OutputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WNaqYtZvEeyuvZ5SachVzA" points="[11, -10, -12, 9]$[16, -14, -7, 5]"/>
+  </edges>
+</notation:Diagram>
