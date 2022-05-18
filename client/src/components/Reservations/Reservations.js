@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import Axios from "axios";
-import "./Reservations.css";
-import MediaCard from "../Common/MediaCard";
+import React, { useEffect, useState } from 'react';
+import Axios from 'axios';
+import './Reservations.css';
+import MediaCard from '../Common/MediaCard';
 import {
   Button,
   Chip,
@@ -11,12 +11,12 @@ import {
   Modal,
   Select,
   TextField,
-} from "@mui/material";
-import { Box } from "@mui/system";
-import Payment from "./Payment";
-import { useHistory, useLocation } from "react-router";
-import MobilePay from "./MobilePay";
-import Swal from "sweetalert2";
+} from '@mui/material';
+import { Box } from '@mui/system';
+import Payment from './Payment';
+import { useHistory, useLocation } from 'react-router';
+import MobilePay from './MobilePay';
+import Swal from 'sweetalert2';
 
 export default function Reservations({ userID }) {
   // component to book tickets
@@ -24,23 +24,23 @@ export default function Reservations({ userID }) {
   const location = useLocation();
   const API = process.env.REACT_APP_API;
   const QRCODE_API = process.env.REACT_APP_QRCODE_API;
-  const [customerID, setcustomerID] = useState("TUG6786GK65476KJHF");
-  const [theaterName, settheaterName] = useState("");
+  const [customerID, setcustomerID] = useState('TUG6786GK65476KJHF');
+  const [theaterName, settheaterName] = useState('');
   const [noOfTickets, setnoOfTickets] = useState(1);
-  const [date, setdate] = useState("2022-06-01");
+  const [date, setdate] = useState('2022-06-01');
   const [timeSlot, settimeSlot] = useState(1);
   const [paymentType, setpaymentType] = useState(1); // 1 = visa, 2 = mobile
   const [totalPrice, settotalPrice] = useState(100);
-  const [status, setstatus] = useState("Reserved");
+  const [status, setstatus] = useState('Reserved');
 
   //states to hold card details
-  const [cardNumber, setCardNumber] = useState("");
-  const [cardExpiry, setCardexpiry] = useState("");
-  const [cardCvc, setCardcvc] = useState("");
-  const [cardName, setCardname] = useState("");
+  const [cardNumber, setCardNumber] = useState('');
+  const [cardExpiry, setCardexpiry] = useState('');
+  const [cardCvc, setCardcvc] = useState('');
+  const [cardName, setCardname] = useState('');
 
-  const [mobileNumber, setmobileNumber] = useState("");
-  const [mobilePin, setmobilePin] = useState("");
+  const [mobileNumber, setmobileNumber] = useState('');
+  const [mobilePin, setmobilePin] = useState('');
 
   const [Movie, setMovie] = useState([]);
   const [Theaters, setTheaters] = useState([]);
@@ -52,7 +52,7 @@ export default function Reservations({ userID }) {
   //get theaters from the database
   useEffect(() => {
     if (!movieID) {
-      history.push("/customer/movies");
+      history.push('/customer/movies');
       return;
     }
 
@@ -112,10 +112,10 @@ export default function Reservations({ userID }) {
         !cardName.length > 0
       ) {
         Swal.fire({
-          title: "Invalid Input",
-          text: "Your transaction was failed",
-          icon: "error",
-          confirmButtonText: "OK",
+          title: 'Invalid Input',
+          text: 'Your transaction was failed',
+          icon: 'error',
+          confirmButtonText: 'OK',
         });
         return;
       }
@@ -123,10 +123,10 @@ export default function Reservations({ userID }) {
     } else if (paymentType === 2) {
       if (mobileNumber.length !== 10 && !mobilePin.length > 0) {
         Swal.fire({
-          title: "Invalid Input",
-          text: "Your transaction was failed",
-          icon: "error",
-          confirmButtonText: "OK",
+          title: 'Invalid Input',
+          text: 'Your transaction was failed',
+          icon: 'error',
+          confirmButtonText: 'OK',
         });
         return;
       }
@@ -181,6 +181,15 @@ export default function Reservations({ userID }) {
           .catch((err) => {
             console.log(err);
           });
+
+        //call sms service api to send confirmation sms to user
+        Axios.post(`http://localhost:5009/api/v1/sms`, reservation)
+          .then((res) => {
+            console.log(res.data.msg);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch((err) => {
         console.log(err);
@@ -213,7 +222,7 @@ export default function Reservations({ userID }) {
                     onChange={(event) => {
                       setnoOfTickets(event.target.value);
                     }}
-                    style={{ width: "100px" }}
+                    style={{ width: '100px' }}
                   >
                     <MenuItem value={1}>1</MenuItem>
                     <MenuItem value={2}>2</MenuItem>
@@ -260,7 +269,7 @@ export default function Reservations({ userID }) {
                     onChange={(event) => {
                       settimeSlot(event.target.value);
                     }}
-                    style={{ width: "150px" }}
+                    style={{ width: '150px' }}
                   >
                     <MenuItem value={1}>09:00-11:00</MenuItem>
                     <MenuItem value={2}>12:00-14:00</MenuItem>
@@ -281,7 +290,7 @@ export default function Reservations({ userID }) {
                     onChange={(event) => {
                       settheaterName(event.target.value);
                     }}
-                    style={{ width: "200px" }}
+                    style={{ width: '200px' }}
                   >
                     {Theaters.map((theater, key) => (
                       <MenuItem value={theater.theaterName} key={key}>
@@ -303,7 +312,7 @@ export default function Reservations({ userID }) {
                     onChange={(event) => {
                       setpaymentType(event.target.value);
                     }}
-                    style={{ width: "150px" }}
+                    style={{ width: '150px' }}
                   >
                     <MenuItem value={1}>Visa</MenuItem>
                     <MenuItem value={2}>Mobile</MenuItem>
@@ -315,7 +324,7 @@ export default function Reservations({ userID }) {
                 <FormControl fullWidth>
                   <Chip
                     label={`LKR ${ticketPrice}`}
-                    style={{ width: "200px", height: "40px" }}
+                    style={{ width: '200px', height: '40px' }}
                   />
                 </FormControl>
               </div>
@@ -324,7 +333,7 @@ export default function Reservations({ userID }) {
                 <FormControl fullWidth>
                   <Chip
                     label={`LKR ${ticketPrice * noOfTickets}`}
-                    style={{ width: "200px", height: "40px" }}
+                    style={{ width: '200px', height: '40px' }}
                   />
                 </FormControl>
               </div>
@@ -332,7 +341,7 @@ export default function Reservations({ userID }) {
                 <FormControl fullWidth>
                   <Button
                     variant="contained"
-                    style={{ width: "400px", height: "40px" }}
+                    style={{ width: '400px', height: '40px' }}
                     onClick={handleOpen}
                   >
                     Confirm
@@ -352,15 +361,15 @@ export default function Reservations({ userID }) {
       >
         <Box
           sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
             width: 700,
             height: 400,
-            bgcolor: "white",
-            border: "2px solid white",
-            borderRadius: "20px",
+            bgcolor: 'white',
+            border: '2px solid white',
+            borderRadius: '20px',
             boxShadow: 24,
             p: 4,
           }}
