@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server",
     "dev": "nodemon server",
+    "dep": " concurrently \"npm i\"  \" cd ../web_services/CardPayment && npm i\" \" cd ../web_services/MobilePayment && npm i\" \" cd ../web_services/QRCodeService && npm i\" \" cd ../web_services/SmsService && npm i\" \" cd ../web_services/EmailService && npm i\"",
     "all": " concurrently \"npm run dev\"  \" cd ../web_services/CardPayment && npm run dev\" \" cd ../web_services/MobilePayment && npm run dev\" \" cd ../web_services/QRCodeService && npm run dev\" \" cd ../web_services/SmsService && npm run dev\" \" cd ../web_services/EmailService && npm run dev\" \"cd ../../client && npm start\""
   },
   "author": "",
