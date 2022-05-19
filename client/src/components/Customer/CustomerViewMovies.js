@@ -34,8 +34,8 @@ export default function CustomerViewMovies() {
                 <MovieCard
                   key={movie._id.toString()}
                   movie={movie}
-                  btn1="View Details"
-                  btn2="Book Now"
+                  btn1="Details"
+                  btn2="Book_Now"
                 />
               );
             })}

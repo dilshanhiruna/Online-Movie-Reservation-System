@@ -13,7 +13,7 @@ const API = process.env.REACT_APP_API;
 export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
   let history = useHistory();
   const viewDetails = () => {
-    // history.push({ pathname: '/customer/reservation', id });
+    history.push({ pathname: '/customer/moviedetails', movie });
   };
 
   const bookNow = () => {
@@ -58,6 +58,7 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
           onClick={() => {
             viewDetails();
           }}
+          style={{ marginLeft: '10px' }}
         >
           {btn1}
         </Button>
@@ -66,6 +67,7 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
           onClick={() => {
             bookNow();
           }}
+          style={{ marginLeft: '25px' }}
         >
           {btn2}
         </Button>
@@ -74,7 +76,7 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
           onClick={() => {
             updateMovie();
           }}
-          style={{ marginLeft: '50px', color: 'green' }}
+          style={{ marginLeft: '25px', color: 'green' }}
         >
           {btn3}
         </Button>
