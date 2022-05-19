@@ -9,6 +9,7 @@ import {
   FormGroup,
   Checkbox,
   Grid,
+  TextareaAutosize,
 } from '@mui/material';
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
@@ -140,15 +141,25 @@ export default function AddMovies() {
               onChange={(e) => setName(e.target.value)}
             />
             <br></br>
-            <TextField
+
+            <TextareaAutosize
               id="outlined-basic"
+              aria-label="Movie Description"
               label="Movie Description"
-              variant="outlined"
-              onChange={(e) => setDescription(e.target.value)}
-              inputProps={{
-                maxLength: 50,
+              minRows={3}
+              placeholder="Movie Description"
+              style={{
+                width: '92%',
+                fontSize: '17px',
+                backgroundColor: 'transparent',
+                borderColor: '#B8B8B8',
+                padding: '15px',
+                borderRadius: '5px',
               }}
+              maxLength="200"
+              onChange={(e) => setDescription(e.target.value)}
             />
+
             <br></br>
             <TextField
               id="outlined-basic"
@@ -212,7 +223,7 @@ const styles = {
   preview: {
     marginTop: 20,
   },
-  image: { maxWidth: '100%', maxHeight: '500px' },
+  image: { maxWidth: '100%', maxHeight: '600px' },
   delete: {
     cursor: 'pointer',
     padding: 15,

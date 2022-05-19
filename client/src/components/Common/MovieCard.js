@@ -40,7 +40,7 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
   return (
     <Card sx={{ maxWidth: 350, margin: '15px' }}>
       <CardMedia component="img" height="250" image={movie.banner} />
-      <CardContent>
+      <CardContent style={{ minHeight: '120px' }}>
         <Typography gutterBottom variant="h5" component="div">
           {movie.name}
         </Typography>

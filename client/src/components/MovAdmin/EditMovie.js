@@ -9,6 +9,7 @@ import {
   FormGroup,
   Checkbox,
   Grid,
+  TextareaAutosize,
 } from '@mui/material';
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
@@ -125,7 +126,7 @@ export default function EditMovie() {
 
           {selectedImage == '' ? (
             <img
-              style={{ maxWidth: '100%', maxHeight: '600px' }}
+              style={{ maxWidth: '100%', maxHeight: '600px', marginTop: 20 }}
               src={`${banner}`}
             />
           ) : (
@@ -142,7 +143,7 @@ export default function EditMovie() {
               defaultValue={name}
             />
             <br></br>
-            <TextField
+            {/* <TextField
               id="outlined-basic"
               label="Movie Description"
               variant="outlined"
@@ -151,6 +152,24 @@ export default function EditMovie() {
                 maxLength: 50,
               }}
               defaultValue={description}
+            /> */}
+            <TextareaAutosize
+              id="outlined-basic"
+              aria-label="Movie Description"
+              label="Movie Description"
+              minRows={3}
+              placeholder="Movie Description"
+              style={{
+                width: '92%',
+                fontSize: '17px',
+                backgroundColor: 'transparent',
+                borderColor: '#B8B8B8',
+                padding: '15px',
+                borderRadius: '5px',
+              }}
+              maxLength="200"
+              defaultValue={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
             <br></br>
             <TextField
@@ -216,7 +235,7 @@ const styles = {
   preview: {
     marginTop: 20,
   },
-  image: { maxWidth: '100%', maxHeight: '500px' },
+  image: { maxWidth: '100%', maxHeight: '600px' },
   delete: {
     cursor: 'pointer',
     padding: 15,
