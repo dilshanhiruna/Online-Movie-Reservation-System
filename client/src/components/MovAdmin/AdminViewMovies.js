@@ -6,7 +6,10 @@ import { Grid } from '@mui/material';
 const API = process.env.REACT_APP_API;
 
 export default function AdminViewMovies() {
+  //array to store all movies retrieved from the db
   const [movies, setMovies] = useState([]);
+
+  //axios call to get all movies backedn endpoint
   useEffect(() => {
     Axios.get(`${API}api/v1/movies`)
       .then((res) => {
@@ -17,25 +20,11 @@ export default function AdminViewMovies() {
         console.log(err);
       });
   }, []);
+
+  //Display retrieved movies (Passing details for a separate movie card component)
   return (
     <>
       <div>
-        {/* <div className="movie_component">
-          {movies.map((movie) => {
-            return (
-              <MovieCard
-                key={movie._id.toString()}
-                // id={movie._id}
-                // title={movie.name}
-                // description={movie.description}
-                // image={movie.banner}
-                movie={movie}
-                btn3="Update"
-                btn4="Delete"
-              />
-            );
-          })}
-        </div> */}
         <div className="movie_component">
           <Grid
             container

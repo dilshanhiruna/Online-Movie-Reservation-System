@@ -12,7 +12,7 @@ import MovAdmin from './routes/MovAdmin';
 import SysAdmin from './routes/SysAdmin';
 
 function App() {
-  const [userType, setUserType] = useState('customer');
+  const [userType, setUserType] = useState('movAdmin');
   //TODO: Check the user and set user type
 
   return (

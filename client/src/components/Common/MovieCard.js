@@ -11,19 +11,26 @@ import Axios from 'axios';
 const API = process.env.REACT_APP_API;
 
 export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
+  //initialising useHistory hook to redirect to other components
   let history = useHistory();
+
+  //function to trigger when viewDetails button is clicked | function will render a new component MovieDetaials
   const viewDetails = () => {
     history.push({ pathname: '/customer/moviedetails', movie });
   };
 
+  //function to trigger when bookNow button is clicked | function will render a new component Reservation
   const bookNow = () => {
     history.push({ pathname: '/customer/reservation', id: movie._id });
   };
 
+  //function to trigger when updateMovie button is clicked | function will render a new component EditMovies
   const updateMovie = () => {
     console.log('hey');
     history.push({ pathname: '/movadmin/movies/edit', movie });
   };
+
+  //function to trigger when deleteMovie button is clicked | function will directly call delete moive backend endpoint
   const deleteMovie = () => {
     const confirmation = window.confirm('Are you sure?');
 
@@ -37,6 +44,8 @@ export default function MediaCard({ movie, btn1, btn2, btn3, btn4 }) {
         });
     }
   };
+
+  //Display main movie details in a card format
   return (
     <Card sx={{ maxWidth: 350, margin: '15px' }}>
       <CardMedia component="img" height="250" image={movie.banner} />

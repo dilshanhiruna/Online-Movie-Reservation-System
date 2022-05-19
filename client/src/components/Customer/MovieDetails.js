@@ -29,7 +29,8 @@ export default function MovieDetails() {
   const [showTime, setShowTime] = useState(location.movie.showTime);
   const history = useHistory();
   const [banner, setBanner] = useState(location.movie.banner);
-  //get only relavant theater list form db
+
+  //calling get theaters endpoint to get the theater object of given theater Ids and storing them in theaters array
   useEffect(() => {
     theaterIds.map((theaterId) => {
       Axios.get(`${API}api/v1/theater/${theaterId}`)
@@ -42,6 +43,7 @@ export default function MovieDetails() {
     });
   }, []);
 
+  // Displaying all movie details
   return (
     <>
       <Grid container spacing={4} style={{ padding: '25px 10px 20px 150px' }}>

@@ -18,8 +18,8 @@ import { useHistory, useLocation } from 'react-router';
 const API = process.env.REACT_APP_API;
 
 export default function EditMovie() {
+  //setting all movie details retreived through props
   const location = useLocation();
-  //console.log(location.movie.name);
   const [id, setId] = useState(location.movie._id);
   const [name, setName] = useState(location.movie.name);
   const [description, setDescription] = useState(location.movie.description);
@@ -36,18 +36,15 @@ export default function EditMovie() {
     Axios.get(`${API}api/v1/theater`)
       .then((res) => {
         setTheatersDB(res.data.data);
-        //console.log(theatersDB);
-        theatersDB.map((theater) => {
-          //console.log(theater.theaterName);
-        });
       })
       .catch((err) => {
-        //console.log(err);
+        console.log(err);
       });
   }, []);
+
+  //function triggers when form is submitted. | Calling edit endpoint to update the movie
   async function onSubmit(e) {
     e.preventDefault();
-    //console.log(theatersSelected);
     const movieInfo = {
       name,
       description,
@@ -68,8 +65,8 @@ export default function EditMovie() {
       });
   }
 
-  const getSelectedTheaters = (value, isChecked) => {
-    // //console.log(value + isChecked);
+  //function to both select and unselect theaters from checkboxes
+  const selectUnselectTheater = (value, isChecked) => {
     if (isChecked) {
       setTheatersSelected((arr) => [...arr, `${value}`]);
     } else {
@@ -96,13 +93,14 @@ export default function EditMovie() {
       }
     );
     const img = await res.json();
-
+    //setting the uploaded image as the selected image
     setSelectedImage(file);
 
     //setting the saved image url as the banner
     setBanner(img.secure_url);
-    console.log('url...................' + img.secure_url);
   }
+
+  //display edit movie form
   return (
     <>
       <Grid container spacing={10} style={{ paddingLeft: '70px' }}>
@@ -143,16 +141,6 @@ export default function EditMovie() {
               defaultValue={name}
             />
             <br></br>
-            {/* <TextField
-              id="outlined-basic"
-              label="Movie Description"
-              variant="outlined"
-              onChange={(e) => setDescription(e.target.value)}
-              inputProps={{
-                maxLength: 50,
-              }}
-              defaultValue={description}
-            /> */}
             <TextareaAutosize
               id="outlined-basic"
               aria-label="Movie Description"
@@ -192,7 +180,7 @@ export default function EditMovie() {
                     label={theater.theaterName}
                     value={theater._id}
                     onChange={(e) =>
-                      getSelectedTheaters(e.target.value, e.target.checked)
+                      selectUnselectTheater(e.target.value, e.target.checked)
                     }
                   />
                 );

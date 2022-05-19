@@ -25,12 +25,7 @@ export default function AddMovies() {
   const [banner, setBanner] = useState('');
   const [selectedImage, setSelectedImage] = useState('');
 
-  //   function updateForm(value) {
-  //     return setForm((prev) => {
-  //       return { ...prev, ...value };
-  //     });
-  //   }
-  //get theater list form db
+  //get all theater list form db
   useEffect(() => {
     Axios.get(`${API}api/v1/theater`)
       .then((res) => {
@@ -44,6 +39,8 @@ export default function AddMovies() {
         console.log(err);
       });
   }, []);
+
+  //function triggers when form is submitted. | Calling post endpoint to create new movie
   async function onSubmit(e) {
     e.preventDefault();
     console.log(theatersSelected);
@@ -68,8 +65,8 @@ export default function AddMovies() {
       });
   }
 
-  const getSelectedTheaters = (value, isChecked) => {
-    // console.log(value + isChecked);
+  //function to both select and unselect theaters from checkboxes
+  const selectUnselectTheater = (value, isChecked) => {
     if (isChecked) {
       setTheatersSelected((arr) => [...arr, `${value}`]);
     } else {
@@ -101,6 +98,7 @@ export default function AddMovies() {
     setBanner(img.secure_url);
   }
 
+  //display add movie form
   return (
     <>
       <Grid container spacing={10} style={{ paddingLeft: '70px' }}>
@@ -180,7 +178,7 @@ export default function AddMovies() {
                     label={theater.theaterName}
                     value={theater._id}
                     onChange={(e) =>
-                      getSelectedTheaters(e.target.value, e.target.checked)
+                      selectUnselectTheater(e.target.value, e.target.checked)
                     }
                   />
                 );
