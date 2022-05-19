@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 
+//A database model to store movie details
 const MovieSchema = new mongoose.Schema({
-  // movieID: {
-  //   type: String,
-  //   required: [true, 'Please add an ID'],
-  // },
-
   name: {
     type: String,
     required: [true, 'Please add a name'],

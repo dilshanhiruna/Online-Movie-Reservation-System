@@ -1,6 +1,6 @@
 const Movie = require('../models/Movie');
 
-//@desc Get all movies
+//@desc This endpoint will return all the movies of the db
 //@route GET /api/v1/movies
 //@access public
 exports.getMovies = async (req, res, next) => {
@@ -24,7 +24,7 @@ exports.getMovies = async (req, res, next) => {
   }
 };
 
-//@desc Get a single movie
+//@desc Endpoint to get a single movie | filtered by the id provided in query params
 //@route GET /api/v1/movies/:id
 //@access public
 exports.getMovie = async (req, res, next) => {
@@ -48,7 +48,7 @@ exports.getMovie = async (req, res, next) => {
   }
 };
 
-//@desc Add new movie
+//@desc Endpoint to create new movie
 //@route POST /api/v1/movies
 //@access private
 exports.addMovie = async (req, res, next) => {
@@ -68,7 +68,7 @@ exports.addMovie = async (req, res, next) => {
   }
 };
 
-//@desc Update a movie
+//@desc Endpoint to update a movie | identified by the id provided in query params
 //@route PUT /api/v1/movies/:id
 //@access private
 exports.updateMovie = async (req, res, next) => {
@@ -97,7 +97,7 @@ exports.updateMovie = async (req, res, next) => {
   }
 };
 
-//@desc Delete a movie
+//@desc Endpoint to delete a movie | identified by the id provided in query params
 //@route DELETE /api/v1/movies/:id
 //@access private
 exports.deleteMovie = async (req, res, next) => {

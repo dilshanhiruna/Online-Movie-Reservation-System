@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 const {
   getMovies,
@@ -6,11 +6,10 @@ const {
   addMovie,
   updateMovie,
   deleteMovie,
-} = require("../controllers/Movies");
+} = require('../controllers/Movies');
 
-// const { protect } = require('../middleware/auth');
-
-router.route("/").get(getMovies).post(addMovie);
-router.route("/:id").get(getMovie).put(updateMovie).delete(deleteMovie);
+//routing for movie endpoints
+router.route('/').get(getMovies).post(addMovie);
+router.route('/:id').get(getMovie).put(updateMovie).delete(deleteMovie);
 
 module.exports = router;
